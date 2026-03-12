@@ -1,0 +1,171 @@
+categories:
+  - name: Streaming
+    apps:
+      - name: Netflix
+        url: https://www.netflix.com
+        logo: https://cdn.simpleicons.org/netflix/E50914
+      - name: Disney+
+        url: https://www.disneyplus.com
+        logo: https://cdn.simpleicons.org/disneyplus/113CCF
+      - name: Max
+        url: https://www.max.com
+        logo: https://cdn.simpleicons.org/hbo/A020F0
+      - name: Prime Video
+        url: https://www.primevideo.com
+        logo: https://cdn.simpleicons.org/primevideo/00A8E0
+      - name: Apple TV+
+        url: https://tv.apple.com
+        logo: https://cdn.simpleicons.org/appletv/ffffff
+      - name: Movistar+
+        url: https://ver.movistarplus.es
+        logo: /logos/movistarplus.png
+        color: "#019DF4"
+      - name: SkyShowtime
+        url: https://www.skyshowtime.com
+        logo: /logos/skyshowtime.png
+        color: "#E4002B"
+      - name: Filmin
+        url: https://www.filmin.es
+        logo: /logos/filmin.png
+        color: "#F5A623"
+      - name: RTVE Play
+        url: https://www.rtve.es/play/
+        logo: /logos/rtveplay.png
+        color: "#E30613"
+      - name: ATRESplayer
+        url: https://www.atresplayer.com
+        logo: /logos/atresplayer.png
+        color: "#FF6600"
+      - name: Mitele
+        url: https://www.mitele.es
+        logo: /logos/mitele.png
+        color: "#E63324"
+      - name: YouTube
+        url: https://www.youtube.com
+        logo: https://cdn.simpleicons.org/youtube/FF0000
+
+  - name: Music
+    apps:
+      - name: Spotify
+        url: https://open.spotify.com
+        logo: https://cdn.simpleicons.org/spotify/1DB954
+      - name: YouTube Music
+        url: https://music.youtube.com
+        logo: https://cdn.simpleicons.org/youtubemusic/FF0000
+      - name: Apple Music
+        url: https://music.apple.com
+        logo: https://cdn.simpleicons.org/applemusic/FA243C
+      - name: Tidal
+        url: https://tidal.com
+        logo: https://cdn.simpleicons.org/tidal/000000
+        color: "#ffffff"
+      - name: SoundCloud
+        url: https://soundcloud.com
+        logo: https://cdn.simpleicons.org/soundcloud/FF5500
+
+  - name: Sports
+    apps:
+      - name: DAZN
+        url: https://www.dazn.com
+        logo: https://cdn.simpleicons.org/dazn/F8F8F8
+        color: "#ffff00"
+      - name: F1 TV
+        url: https://f1tv.formula1.com
+        logo: /logos/f1tv.png
+        color: "#E10600"
+      - name: NBA League Pass
+        url: https://www.nba.com/watch
+        logo: /logos/nba.png
+        color: "#1D428A"
+      - name: Eleven Sports
+        url: https://es.elevensports.com
+        logo: /logos/elevensports.png
+        color: "#FF6600"
+      - name: Eurosport
+        url: https://www.eurosport.es
+        logo: /logos/eurosport.png
+        color: "#003DA5"
+
+  - name: Personal Media
+    apps:
+      - name: Plex
+        url: https://app.plex.tv
+        logo: https://cdn.simpleicons.org/plex/E5A00D
+      - name: Jellyfin
+        url: https://192.168.1.20:8096
+        logo: https://cdn.simpleicons.org/jellyfin/00A4DC
+      - name: Emby
+        url: https://192.168.1.20:8920
+        logo: https://cdn.simpleicons.org/emby/52B54B
+      - name: Stremio
+        url: https://web.stremio.com
+        logo: https://cdn.simpleicons.org/stremio/8A5FBF
+
+  - name: Gaming
+    apps:
+      - name: Twitch
+        url: https://www.twitch.tv
+        logo: https://cdn.simpleicons.org/twitch/9146FF
+      - name: Xbox Cloud
+        url: https://www.xbox.com/play
+        logo: https://cdn.simpleicons.org/xbox/107C10
+      - name: GeForce Now
+        url: https://play.geforcenow.com
+        logo: https://cdn.simpleicons.org/nvidia/76B900
+      - name: Steam
+        url: https://store.steampowered.com
+        logo: https://cdn.simpleicons.org/steam/ffffff
+        color: "#1b2838"
+
+  - name: Utility
+    apps:
+      - name: Google Maps
+        url: https://maps.google.com
+        logo: https://cdn.simpleicons.org/googlemaps/4285F4
+      - name: Waze
+        url: https://www.waze.com
+        logo: https://cdn.simpleicons.org/waze/05C8F7
+      - name: PlugShare
+        url: https://www.plugshare.com
+        logo: /logos/plugshare.png
+        color: "#6CC04A"
+      - name: Ventusky
+        url: https://www.ventusky.com
+        logo: /logos/ventusky.png
+        color: "#2196F3"
+      - name: Tesla
+        url: https://www.tesla.com
+        logo: https://cdn.simpleicons.org/tesla/CC0000
+      - name: Google Calendar
+        url: https://calendar.google.com
+        logo: https://cdn.simpleicons.org/googlecalendar/4285F4
+      - name: Google Drive
+        url: https://drive.google.com
+        logo: https://cdn.simpleicons.org/googledrive/4285F4
+
+  - name: Homelab
+    apps:
+      - name: Proxmox
+        url: https://192.168.1.10:8006
+        logo: /logos/proxmox.png
+        color: "#E57000"
+      - name: Portainer
+        url: https://192.168.1.10:9443
+        logo: https://cdn.simpleicons.org/portainer/13BEF9
+      - name: Grafana
+        url: https://192.168.1.60:3000
+        logo: https://cdn.simpleicons.org/grafana/F46800
+      - name: Home Assistant
+        url: https://192.168.1.30:8123
+        logo: https://cdn.simpleicons.org/homeassistant/18BCF2
+      - name: Nextcloud
+        url: https://192.168.1.40
+        logo: https://cdn.simpleicons.org/nextcloud/0082C9
+      - name: Sonarr
+        url: https://192.168.1.50:8989
+        logo: /logos/sonarr.png
+        color: "#35C5F4"
+      - name: Radarr
+        url: https://192.168.1.50:7878
+        logo: /logos/radarr.png
+        color: "#FFC230"
