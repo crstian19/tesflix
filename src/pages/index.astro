@@ -5,12 +5,14 @@ import yaml from 'js-yaml';
 import sharp from 'sharp';
 import Clock from '../components/Clock.svelte';
 import UrlLauncher from '../components/UrlLauncher.svelte';
+import { Font } from 'astro:assets';
 
 interface App {
 	name: string;
 	url: string;
 	logo: string;
 	color?: string;
+	regions?: string[];
 }
 
 interface Category {
@@ -107,6 +109,7 @@ const categories = await Promise.all(
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<title>Tesflix</title>
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<Font cssVariable="--font-inter" preload />
 	</head>
 
 	<body>
@@ -293,6 +296,7 @@ const categories = await Promise.all(
 								rel="noopener noreferrer"
 								class="card"
 								style={`--app-color: ${app.color};`}
+								data-regions={app.regions?.length ? app.regions.join(",") : undefined}
 							>
 								<span class="spotlight" aria-hidden="true"></span>
 								<span class="border-glow" aria-hidden="true"></span>
@@ -1179,6 +1183,112 @@ const categories = await Promise.all(
 
 			restoreOrder();
 
+			// ── Region filter (GPS timezone → country) ──
+			const TZ_COUNTRY: Record<string, string> = {
+				// Spain
+				'Europe/Madrid': 'ES', 'Atlantic/Canary': 'ES',
+				// France
+				'Europe/Paris': 'FR',
+				// Germany
+				'Europe/Berlin': 'DE', 'Europe/Busingen': 'DE',
+				// Netherlands
+				'Europe/Amsterdam': 'NL',
+				// Belgium
+				'Europe/Brussels': 'BE',
+				// UK
+				'Europe/London': 'GB',
+				// Italy
+				'Europe/Rome': 'IT',
+				// Portugal
+				'Europe/Lisbon': 'PT', 'Atlantic/Azores': 'PT', 'Atlantic/Madeira': 'PT',
+				// Austria
+				'Europe/Vienna': 'AT',
+				// Switzerland
+				'Europe/Zurich': 'CH',
+				// Norway
+				'Europe/Oslo': 'NO',
+				// Sweden
+				'Europe/Stockholm': 'SE',
+				// Denmark
+				'Europe/Copenhagen': 'DK',
+				// Finland
+				'Europe/Helsinki': 'FI',
+				// Poland
+				'Europe/Warsaw': 'PL',
+				// Czech Republic
+				'Europe/Prague': 'CZ',
+				// Hungary
+				'Europe/Budapest': 'HU',
+				// Romania
+				'Europe/Bucharest': 'RO',
+				// Greece
+				'Europe/Athens': 'GR',
+				// Ireland
+				'Europe/Dublin': 'IE',
+				// Luxembourg
+				'Europe/Luxembourg': 'LU',
+				// Slovakia
+				'Europe/Bratislava': 'SK',
+				// Slovenia
+				'Europe/Ljubljana': 'SI',
+				// Croatia
+				'Europe/Zagreb': 'HR',
+				// Serbia
+				'Europe/Belgrade': 'RS',
+				// Bulgaria
+				'Europe/Sofia': 'BG',
+				// USA
+				'America/New_York': 'US', 'America/Chicago': 'US', 'America/Denver': 'US',
+				'America/Los_Angeles': 'US', 'America/Phoenix': 'US', 'America/Anchorage': 'US',
+				'Pacific/Honolulu': 'US',
+				// Canada
+				'America/Toronto': 'CA', 'America/Vancouver': 'CA', 'America/Edmonton': 'CA',
+				'America/Winnipeg': 'CA', 'America/Halifax': 'CA',
+				// Australia
+				'Australia/Sydney': 'AU', 'Australia/Melbourne': 'AU', 'Australia/Brisbane': 'AU',
+				'Australia/Perth': 'AU', 'Australia/Adelaide': 'AU',
+				// Japan
+				'Asia/Tokyo': 'JP',
+				// China
+				'Asia/Shanghai': 'CN', 'Asia/Urumqi': 'CN',
+				// South Korea
+				'Asia/Seoul': 'KR',
+				// Norway (Svalbard)
+				'Arctic/Longyearbyen': 'NO',
+			};
+
+			function detectCountry(): string {
+				try {
+					const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
+					return TZ_COUNTRY[tz] ?? '';
+				} catch {
+					return '';
+				}
+			}
+
+			function applyRegionFilter(country: string) {
+				if (!country) return; // unknown location → show everything
+
+				document.querySelectorAll<HTMLElement>('[data-regions]').forEach(card => {
+					const regions = card.dataset.regions;
+					if (!regions) return; // no attribute = global app, always visible
+					card.style.display = regions.split(',').includes(country) ? '' : 'none';
+				});
+
+				// Hide category sections that end up with no visible cards
+				document.querySelectorAll<HTMLElement>('.category').forEach(section => {
+					const grid = section.querySelector<HTMLElement>('.grid');
+					if (!grid) return;
+					const hasVisible = [...grid.querySelectorAll<HTMLElement>('.card')]
+						.some(c => c.style.display !== 'none');
+					section.style.display = hasVisible ? '' : 'none';
+				});
+			}
+
+			const regionOverride = localStorage.getItem('tesflix-region');
+			const detectedCountry = regionOverride || detectCountry();
+			applyRegionFilter(detectedCountry);
+
 			// ── Custom Apps ──
 			const CUSTOM_KEY = 'tesflix-custom-apps';
 			const YOUTUBE_REDIRECT = 'https://www.youtube.com/redirect?q=';
@@ -1390,8 +1500,6 @@ const categories = await Promise.all(
 </html>
 
 <style is:global>
-	@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap');
-
 	*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 	:root {
@@ -1406,7 +1514,7 @@ const categories = await Promise.all(
 	body {
 		background-color: var(--bg);
 		color: var(--text);
-		font-family: 'Inter', system-ui, sans-serif;
+		font-family: var(--font-inter), system-ui, sans-serif;
 		min-height: 100dvh;
 		-webkit-font-smoothing: antialiased;
 		overflow-x: hidden;

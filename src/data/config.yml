@@ -20,26 +20,32 @@ categories:
         url: https://ver.movistarplus.es
         logo: /logos/movistarplus.png
         color: "#019DF4"
+        regions: ['ES']
       - name: SkyShowtime
         url: https://www.skyshowtime.com
         logo: /logos/skyshowtime.png
         color: "#E4002B"
+        regions: ['ES', 'PT', 'NO', 'SE', 'DK', 'FI', 'NL', 'PL', 'HR', 'SI', 'SK', 'RS', 'BG', 'RO']
       - name: Filmin
         url: https://www.filmin.es
         logo: /logos/filmin.png
         color: "#F5A623"
+        regions: ['ES']
       - name: RTVE Play
         url: https://www.rtve.es/play/
         logo: /logos/rtveplay.png
         color: "#E30613"
+        regions: ['ES']
       - name: ATRESplayer
         url: https://www.atresplayer.com
         logo: /logos/atresplayer.png
         color: "#FF6600"
+        regions: ['ES']
       - name: Mitele
         url: https://www.mitele.es
         logo: /logos/mitele.png
         color: "#E63324"
+        regions: ['ES']
       - name: YouTube
         url: https://www.youtube.com
         logo: https://cdn.simpleicons.org/youtube/FF0000
@@ -81,6 +87,7 @@ categories:
         url: https://es.elevensports.com
         logo: /logos/elevensports.png
         color: "#FF6600"
+        regions: ['ES', 'PT']
       - name: Eurosport
         url: https://www.eurosport.es
         logo: /logos/eurosport.png
@@ -169,3 +176,78 @@ categories:
         url: https://192.168.1.50:7878
         logo: /logos/radarr.png
         color: "#FFC230"
+
+  - name: Charging
+    apps:
+      # Spain
+      - name: Iberdrola SmartCharge
+        url: https://smartcharge.iberdrola.es
+        logo: https://cdn.simpleicons.org/iberdrola/00A650
+        color: "#00A650"
+        regions: ['ES']
+      - name: Endesa X Way
+        url: https://www.endesaxway.com
+        logo: https://cdn.simpleicons.org/endesa/009999"
+        color: "#00B4AA"
+        regions: ['ES']
+      - name: Zunder
+        url: https://zunder.com
+        logo: /logos/zunder.png
+        color: "#FF6B00"
+        regions: ['ES']
+      # France
+      - name: TotalEnergies Charge
+        url: https://charge.totalenergies.fr
+        logo: https://cdn.simpleicons.org/totalenergies/FF1430
+        color: "#FF1430"
+        regions: ['FR', 'BE', 'LU']
+      - name: Izivia
+        url: https://izivia.com
+        logo: /logos/izivia.png
+        color: "#E2001A"
+        regions: ['FR']
+      # Germany + Austria + Switzerland
+      - name: EnBW mobility+
+        url: https://www.enbw.com/elektromobilitaet
+        logo: /logos/enbw.png
+        color: "#E2001A"
+        regions: ['DE', 'AT', 'CH']
+      - name: IONITY
+        url: https://ionity.eu
+        logo: /logos/ionity.png
+        color: "#FF4B00"
+        regions: ['DE', 'AT', 'CH', 'FR', 'BE', 'NL', 'ES', 'PT', 'NO', 'SE', 'DK', 'FI', 'PL', 'IT', 'GB', 'IE']
+      # Netherlands + Belgium
+      - name: Fastned
+        url: https://fastnedcharging.com
+        logo: /logos/fastned.png
+        color: "#FFD200"
+        regions: ['NL', 'BE', 'DE', 'FR', 'GB', 'CH']
+      # UK
+      - name: Pod Point
+        url: https://pod-point.com
+        logo: /logos/podpoint.png
+        color: "#00A650"
+        regions: ['GB']
+      - name: Osprey Charging
+        url: https://ospreycharging.co.uk
+        logo: /logos/osprey.png
+        color: "#00B0F0"
+        regions: ['GB']
+      # Nordics
+      - name: Recharge (Circle K)
+        url: https://rechargeinfra.com
+        logo: /logos/recharge.png
+        color: "#E2001A"
+        regions: ['NO', 'SE', 'DK', 'FI']
+      # Pan-European
+      - name: Chargemap
+        url: https://chargemap.com
+        logo: https://cdn.simpleicons.org/chargemap/00A650
+        color: "#00A650"
+        regions: ['FR', 'BE', 'NL', 'DE', 'AT', 'CH', 'IT', 'ES', 'PT', 'LU']
+      - name: PlugSurfing
+        url: https://plugsurfing.com
+        logo: /logos/plugsurfing.png
+        color: "#6CBE45"
+        regions: ['DE', 'AT', 'CH', 'NL', 'BE', 'FR', 'SE', 'NO', 'DK', 'FI', 'PL']
