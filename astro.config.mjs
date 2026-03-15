@@ -9,8 +9,8 @@ export default defineConfig({
 	},
 	fonts: [{
 		provider: fontProviders.google(),
-		name: 'Inter',
-		cssVariable: '--font-inter',
+		name: 'Geist',
+		cssVariable: '--font-geist',
 		weights: [400, 500, 600, 700, 900]
 	}]
 });

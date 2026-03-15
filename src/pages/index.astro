@@ -109,7 +109,7 @@ const categories = await Promise.all(
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<title>Tesflix</title>
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<Font cssVariable="--font-inter" preload />
+		<Font cssVariable="--font-geist" preload />
 	</head>
 
 	<body>
@@ -385,6 +385,7 @@ const categories = await Promise.all(
 				<span data-i18n="fab.tooltip">Add new app</span>
 			</div>
 			<button class="fab" id="btn-add-app" aria-label="Add custom app">
+				<span class="fab-ping" aria-hidden="true"></span>
 				<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
 			</button>
 		</div>
@@ -1504,11 +1505,16 @@ const categories = await Promise.all(
 	body {
 		background-color: var(--bg);
 		color: var(--text);
-		font-family: var(--font-inter), system-ui, sans-serif;
+		font-family: var(--font-geist), system-ui, sans-serif;
 		min-height: 100dvh;
 		-webkit-font-smoothing: antialiased;
 		overflow-x: hidden;
 	}
+
+	::-webkit-scrollbar { width: 4px; }
+	::-webkit-scrollbar-track { background: transparent; }
+	::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.15); border-radius: 2px; }
+	::-webkit-scrollbar-thumb:hover { background: rgba(255, 255, 255, 0.25); }
 
 	/* ── Ambient background ── */
 	.ambient {
@@ -1805,6 +1811,8 @@ const categories = await Promise.all(
 		min-height: 160px;
 	}
 
+	.card:hover .card-inner { opacity: 1; }
+
 	.card:hover {
 		transform: scale(1.04) translateY(-3px);
 		border-color: color-mix(in srgb, var(--app-color) 50%, transparent);
@@ -1873,6 +1881,8 @@ const categories = await Promise.all(
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+		opacity: 0.82;
+		transition: opacity 200ms ease;
 		justify-content: center;
 		gap: 1rem;
 		height: 100%;
@@ -2023,7 +2033,21 @@ const categories = await Promise.all(
 		display: block;
 	}
 
+	@keyframes fab-ping {
+		75%, 100% { transform: scale(1.8); opacity: 0; }
+	}
+
+	.fab-ping {
+		position: absolute;
+		inset: 0;
+		border-radius: 50%;
+		background: rgba(229, 9, 20, 0.4);
+		animation: fab-ping 1.8s cubic-bezier(0, 0, 0.2, 1) infinite;
+		pointer-events: none;
+	}
+
 	.fab {
+		position: relative;
 		width: 72px;
 		height: 72px;
 		border-radius: 50%;
@@ -2178,11 +2202,17 @@ const categories = await Promise.all(
 	.form-btn-cancel:hover { background: rgba(255, 255, 255, 0.12); color: var(--text); }
 
 	.form-btn-submit {
-		background: #E50914;
+		background: rgba(255, 255, 255, 0.1);
 		color: #fff;
+		border: 1px solid rgba(255, 255, 255, 0.15);
+		backdrop-filter: blur(16px);
+		-webkit-backdrop-filter: blur(16px);
 	}
 
-	.form-btn-submit:hover { background: #f0141e; }
+	.form-btn-submit:hover {
+		background: rgba(255, 255, 255, 0.18);
+		border-color: rgba(255, 255, 255, 0.25);
+	}
 
 	/* ── Reduced motion ── */
 	@media (prefers-reduced-motion: reduce) {
@@ -2214,14 +2244,17 @@ const categories = await Promise.all(
 		padding: 0.45rem 1rem;
 		border-radius: 999px;
 		cursor: pointer;
-		transition: color 150ms ease, border-color 150ms ease, background 150ms ease;
+		transition: color 150ms ease, border-color 150ms ease, background 150ms ease, transform 150ms ease;
 	}
 
 	.header-btn:hover {
 		color: var(--text);
 		border-color: rgba(255, 255, 255, 0.2);
 		background: rgba(255, 255, 255, 0.07);
+		transform: scale(1.03);
 	}
+
+	.header-btn:active { transform: scale(0.97); }
 
 	/* ── Modals ── */
 	.modal-overlay {
@@ -2258,12 +2291,14 @@ const categories = await Promise.all(
 		max-height: 85dvh;
 		overflow-y: auto;
 		box-shadow: 0 32px 80px rgba(0, 0, 0, 0.6);
-		transform: translateY(12px);
-		transition: transform 200ms ease;
+		transform: translateY(16px) scale(0.95);
+		opacity: 0;
+		transition: transform 300ms ease-out, opacity 300ms ease-out;
 	}
 
 	.modal-overlay.is-open .modal-box {
-		transform: translateY(0);
+		transform: translateY(0) scale(1);
+		opacity: 1;
 	}
 
 	.modal-close {

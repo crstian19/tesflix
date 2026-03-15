@@ -176,7 +176,7 @@
 
 	.input-wrap:focus-within {
 		border-color: rgba(255, 255, 255, 0.25);
-		box-shadow: 0 0 0 3px rgba(229, 9, 20, 0.15);
+		box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.08);
 	}
 
 	.has-error .input-wrap {
@@ -248,7 +248,7 @@
 		flex-shrink: 0;
 	}
 
-	.launch-btn:hover { background: #f0141e; }
+	.launch-btn:hover { background: #f0141e; transform: scale(1.02); }
 	.launch-btn:active { transform: scale(0.97); }
 
 	.launch-btn svg {
