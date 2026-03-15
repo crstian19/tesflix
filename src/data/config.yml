@@ -3,16 +3,16 @@ categories:
     apps:
       - name: Netflix
         url: https://www.netflix.com
-        logo: https://cdn.simpleicons.org/netflix/E50914
+        logo: https://svgl.app/library/netflix-icon.svg
       - name: Disney+
         url: https://www.disneyplus.com
-        logo: https://cdn.simpleicons.org/disneyplus/113CCF
+        logo: https://svgl.app/library/disneyplus.svg
       - name: Max
         url: https://www.max.com
         logo: https://cdn.simpleicons.org/hbo/A020F0
       - name: Prime Video
         url: https://www.primevideo.com
-        logo: https://cdn.simpleicons.org/primevideo/00A8E0
+        logo: https://svgl.app/library/prime-video.svg
       - name: Apple TV+
         url: https://tv.apple.com
         logo: https://cdn.simpleicons.org/appletv/ffffff
@@ -48,26 +48,7 @@ categories:
         regions: ['ES']
       - name: YouTube
         url: https://www.youtube.com
-        logo: https://cdn.simpleicons.org/youtube/FF0000
-
-  - name: Music
-    apps:
-      - name: Spotify
-        url: https://open.spotify.com
-        logo: https://cdn.simpleicons.org/spotify/1DB954
-      - name: YouTube Music
-        url: https://music.youtube.com
-        logo: https://cdn.simpleicons.org/youtubemusic/FF0000
-      - name: Apple Music
-        url: https://music.apple.com
-        logo: https://cdn.simpleicons.org/applemusic/FA243C
-      - name: Tidal
-        url: https://tidal.com
-        logo: https://cdn.simpleicons.org/tidal/000000
-        color: "#ffffff"
-      - name: SoundCloud
-        url: https://soundcloud.com
-        logo: https://cdn.simpleicons.org/soundcloud/FF5500
+        logo: https://svgl.app/library/youtube.svg
 
   - name: Sports
     apps:
@@ -112,23 +93,19 @@ categories:
     apps:
       - name: Twitch
         url: https://www.twitch.tv
-        logo: https://cdn.simpleicons.org/twitch/9146FF
+        logo: https://svgl.app/library/twitch.svg
       - name: Xbox Cloud
         url: https://www.xbox.com/play
-        logo: https://cdn.simpleicons.org/xbox/107C10
+        logo: https://svgl.app/library/xbox.svg
       - name: GeForce Now
         url: https://play.geforcenow.com
         logo: https://cdn.simpleicons.org/nvidia/76B900
-      - name: Steam
-        url: https://store.steampowered.com
-        logo: https://cdn.simpleicons.org/steam/ffffff
-        color: "#1b2838"
 
   - name: Utility
     apps:
       - name: Google Maps
         url: https://maps.google.com
-        logo: https://cdn.simpleicons.org/googlemaps/4285F4
+        logo: https://svgl.app/library/googleMaps.svg
       - name: Waze
         url: https://www.waze.com
         logo: https://cdn.simpleicons.org/waze/05C8F7
@@ -143,56 +120,23 @@ categories:
       - name: Tesla
         url: https://www.tesla.com
         logo: https://cdn.simpleicons.org/tesla/CC0000
-      - name: Google Calendar
-        url: https://calendar.google.com
-        logo: https://cdn.simpleicons.org/googlecalendar/4285F4
-      - name: Google Drive
-        url: https://drive.google.com
-        logo: https://cdn.simpleicons.org/googledrive/4285F4
-
-  - name: Homelab
-    apps:
-      - name: Proxmox
-        url: https://192.168.1.10:8006
-        logo: /logos/proxmox.png
-        color: "#E57000"
-      - name: Portainer
-        url: https://192.168.1.10:9443
-        logo: https://cdn.simpleicons.org/portainer/13BEF9
-      - name: Grafana
-        url: https://192.168.1.60:3000
-        logo: https://cdn.simpleicons.org/grafana/F46800
-      - name: Home Assistant
-        url: https://192.168.1.30:8123
-        logo: https://cdn.simpleicons.org/homeassistant/18BCF2
-      - name: Nextcloud
-        url: https://192.168.1.40
-        logo: https://cdn.simpleicons.org/nextcloud/0082C9
-      - name: Sonarr
-        url: https://192.168.1.50:8989
-        logo: /logos/sonarr.png
-        color: "#35C5F4"
-      - name: Radarr
-        url: https://192.168.1.50:7878
-        logo: /logos/radarr.png
-        color: "#FFC230"
 
   - name: Charging
     apps:
       # Spain
       - name: Iberdrola SmartCharge
         url: https://smartcharge.iberdrola.es
-        logo: https://cdn.simpleicons.org/iberdrola/00A650
+        logo: /logos/iberdrola.svg
         color: "#00A650"
         regions: ['ES']
       - name: Endesa X Way
         url: https://www.endesaxway.com
-        logo: https://cdn.simpleicons.org/endesa/009999"
+        logo: /logos/endesa-x.png
         color: "#00B4AA"
         regions: ['ES']
       - name: Zunder
         url: https://zunder.com
-        logo: /logos/zunder.png
+        logo: /logos/zunder.svg
         color: "#FF6B00"
         regions: ['ES']
       # France
@@ -214,7 +158,7 @@ categories:
         regions: ['DE', 'AT', 'CH']
       - name: IONITY
         url: https://ionity.eu
-        logo: /logos/ionity.png
+        logo: /logos/Ionity.svg
         color: "#FF4B00"
         regions: ['DE', 'AT', 'CH', 'FR', 'BE', 'NL', 'ES', 'PT', 'NO', 'SE', 'DK', 'FI', 'PL', 'IT', 'GB', 'IE']
       # Netherlands + Belgium
