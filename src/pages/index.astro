@@ -108,6 +108,7 @@ const categories = await Promise.all(
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<title>Tesflix</title>
+		<meta name="description" content="Tesflix — a community-made dashboard for Tesla's in-car browser. Stream music, videos, and more directly from your Tesla." />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<Font cssVariable="--font-geist" preload />
 	</head>
@@ -136,28 +137,31 @@ const categories = await Promise.all(
 					</button>
 				</div>
 				<h1 class="logo">
-					<img src="/logos/tesflix.png" alt="Tesflix" class="logo-img" />
+					<picture>
+						<source srcset="/logos/tesflix.webp" type="image/webp" />
+						<img src="/logos/tesflix.png" alt="Tesflix" class="logo-img" fetchpriority="high" />
+					</picture>
 				</h1>
 				<div class="header-right">
 					<div class="lang-picker" id="lang-picker">
-						<button class="header-btn lang-btn" id="lang-btn" aria-haspopup="listbox" aria-expanded="false">
+						<button class="header-btn lang-btn" id="lang-btn" aria-haspopup="menu" aria-expanded="false">
 							<span id="lang-current">🇬🇧 EN</span>
 							<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
 						</button>
-						<div class="lang-dropdown" id="lang-dropdown" role="listbox">
-							<button class="lang-option" data-lang="en">🇬🇧 English</button>
-							<button class="lang-option" data-lang="no">🇳🇴 Norsk</button>
-							<button class="lang-option" data-lang="de">🇩🇪 Deutsch</button>
-							<button class="lang-option" data-lang="sv">🇸🇪 Svenska</button>
-							<button class="lang-option" data-lang="nl">🇳🇱 Nederlands</button>
-							<button class="lang-option" data-lang="fr">🇫🇷 Français</button>
-							<button class="lang-option" data-lang="da">🇩🇰 Dansk</button>
-							<button class="lang-option" data-lang="fi">🇫🇮 Suomi</button>
-							<button class="lang-option" data-lang="it">🇮🇹 Italiano</button>
-							<button class="lang-option" data-lang="es">🇪🇸 Español</button>
-							<button class="lang-option" data-lang="pt">🇵🇹 Português</button>
-							<button class="lang-option" data-lang="pl">🇵🇱 Polski</button>
-							<button class="lang-option" data-lang="zh">🇨🇳 中文</button>
+						<div class="lang-dropdown" id="lang-dropdown" role="menu">
+							<button class="lang-option" role="menuitem" data-lang="en">🇬🇧 English</button>
+							<button class="lang-option" role="menuitem" data-lang="no">🇳🇴 Norsk</button>
+							<button class="lang-option" role="menuitem" data-lang="de">🇩🇪 Deutsch</button>
+							<button class="lang-option" role="menuitem" data-lang="sv">🇸🇪 Svenska</button>
+							<button class="lang-option" role="menuitem" data-lang="nl">🇳🇱 Nederlands</button>
+							<button class="lang-option" role="menuitem" data-lang="fr">🇫🇷 Français</button>
+							<button class="lang-option" role="menuitem" data-lang="da">🇩🇰 Dansk</button>
+							<button class="lang-option" role="menuitem" data-lang="fi">🇫🇮 Suomi</button>
+							<button class="lang-option" role="menuitem" data-lang="it">🇮🇹 Italiano</button>
+							<button class="lang-option" role="menuitem" data-lang="es">🇪🇸 Español</button>
+							<button class="lang-option" role="menuitem" data-lang="pt">🇵🇹 Português</button>
+							<button class="lang-option" role="menuitem" data-lang="pl">🇵🇱 Polski</button>
+							<button class="lang-option" role="menuitem" data-lang="zh">🇨🇳 中文</button>
 						</div>
 					</div>
 					<Clock client:load />
@@ -165,8 +169,8 @@ const categories = await Promise.all(
 			</header>
 
 			<!-- About Modal -->
-			<div class="modal-overlay" id="modal-about" aria-hidden="true">
-				<div class="modal-box" role="dialog" aria-labelledby="about-title">
+			<div class="modal-overlay" id="modal-about" aria-hidden="true" inert>
+				<div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="about-title">
 					<button class="modal-close" data-close="modal-about" aria-label="Close">&times;</button>
 					<h2 id="about-title" class="modal-title" data-i18n="about.title">About Tesflix</h2>
 					<p class="modal-text" data-i18n="about.p1">
@@ -228,8 +232,8 @@ const categories = await Promise.all(
 			</div>
 
 			<!-- FAQ Modal -->
-			<div class="modal-overlay" id="modal-faq" aria-hidden="true">
-				<div class="modal-box" role="dialog" aria-labelledby="faq-title">
+			<div class="modal-overlay" id="modal-faq" aria-hidden="true" inert>
+				<div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="faq-title">
 					<button class="modal-close" data-close="modal-faq" aria-label="Close">&times;</button>
 					<h2 id="faq-title" class="modal-title" data-i18n="faq.title">FAQ</h2>
 					<dl class="faq-list">
@@ -258,8 +262,8 @@ const categories = await Promise.all(
 			</div>
 
 			<!-- Self-Host Modal -->
-			<div class="modal-overlay" id="modal-selfhost" aria-hidden="true">
-				<div class="modal-box" role="dialog" aria-labelledby="selfhost-title">
+			<div class="modal-overlay" id="modal-selfhost" aria-hidden="true" inert>
+				<div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="selfhost-title">
 					<button class="modal-close" data-close="modal-selfhost" aria-label="Close">&times;</button>
 					<h2 id="selfhost-title" class="modal-title" data-i18n="selfhost.title">Self-Hosting</h2>
 					<dl class="faq-list">
@@ -285,8 +289,8 @@ const categories = await Promise.all(
 			</div>
 
 			<!-- Support Modal -->
-			<div class="modal-overlay" id="modal-support" aria-hidden="true">
-				<div class="modal-box" role="dialog" aria-labelledby="support-title">
+			<div class="modal-overlay" id="modal-support" aria-hidden="true" inert>
+				<div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="support-title">
 					<button class="modal-close" data-close="modal-support" aria-label="Close">&times;</button>
 
 					<!-- View: platform list -->
@@ -403,8 +407,8 @@ const categories = await Promise.all(
 				</div>
 			</footer>
 		<!-- Add App Modal -->
-		<div class="modal-overlay" id="modal-add-app" aria-hidden="true">
-			<div class="modal-box" role="dialog" aria-labelledby="add-app-title">
+		<div class="modal-overlay" id="modal-add-app" aria-hidden="true" inert>
+			<div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="add-app-title">
 				<button class="modal-close" data-close="modal-add-app" aria-label="Close">&times;</button>
 				<h2 id="add-app-title" class="modal-title">Add App</h2>
 				<form id="add-app-form" novalidate>
@@ -1171,7 +1175,8 @@ const categories = await Promise.all(
 				const el = document.getElementById(id);
 				if (!el) return;
 				el.classList.add('is-open');
-				el.setAttribute('aria-hidden', 'false');
+				el.removeAttribute('aria-hidden');
+				el.removeAttribute('inert');
 			}
 
 			function closeModal(id: string) {
@@ -1179,6 +1184,7 @@ const categories = await Promise.all(
 				if (!el) return;
 				el.classList.remove('is-open');
 				el.setAttribute('aria-hidden', 'true');
+				el.setAttribute('inert', '');
 			}
 
 			document.getElementById('btn-about')?.addEventListener('click', () => openModal('modal-about'));
