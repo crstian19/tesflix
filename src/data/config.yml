@@ -3,16 +3,16 @@ categories:
     apps:
       - name: Netflix
         url: https://www.netflix.com
-        logo: https://svgl.app/library/netflix-icon.svg
+        logo: /logos/netflix-icon.svg
       - name: Disney+
         url: https://www.disneyplus.com
-        logo: https://svgl.app/library/disneyplus.svg
+        logo: /logos/disneyplus.svg
       - name: Max
         url: https://www.max.com
         logo: https://cdn.simpleicons.org/hbo/A020F0
       - name: Prime Video
         url: https://www.primevideo.com
-        logo: https://svgl.app/library/prime-video.svg
+        logo: /logos/prime-video.svg
       - name: Apple TV+
         url: https://tv.apple.com
         logo: https://cdn.simpleicons.org/appletv/ffffff
@@ -48,7 +48,7 @@ categories:
         regions: ['ES']
       - name: YouTube
         url: https://www.youtube.com
-        logo: https://svgl.app/library/youtube.svg
+        logo: /logos/youtube.svg
 
   - name: Sports
     apps:
@@ -93,10 +93,10 @@ categories:
     apps:
       - name: Twitch
         url: https://www.twitch.tv
-        logo: https://svgl.app/library/twitch.svg
+        logo: /logos/twitch.svg
       - name: Xbox Cloud
         url: https://www.xbox.com/play
-        logo: https://svgl.app/library/xbox.svg
+        logo: /logos/xbox.svg
       - name: GeForce Now
         url: https://play.geforcenow.com
         logo: https://cdn.simpleicons.org/nvidia/76B900
@@ -105,7 +105,7 @@ categories:
     apps:
       - name: Google Maps
         url: https://maps.google.com
-        logo: https://svgl.app/library/googleMaps.svg
+        logo: /logos/googleMaps.svg
       - name: Waze
         url: https://www.waze.com
         logo: https://cdn.simpleicons.org/waze/05C8F7
@@ -142,7 +142,7 @@ categories:
       # France
       - name: TotalEnergies Charge
         url: https://charge.totalenergies.fr
-        logo: https://cdn.simpleicons.org/totalenergies/FF1430
+        logo: /logos/totalenergies.svg
         color: "#FF1430"
         regions: ['FR', 'BE', 'LU']
       - name: Izivia
@@ -187,7 +187,7 @@ categories:
       # Pan-European
       - name: Chargemap
         url: https://chargemap.com
-        logo: https://cdn.simpleicons.org/chargemap/00A650
+        logo: /logos/chargemap.svg
         color: "#00A650"
         regions: ['FR', 'BE', 'NL', 'DE', 'AT', 'CH', 'IT', 'ES', 'PT', 'LU']
       - name: PlugSurfing

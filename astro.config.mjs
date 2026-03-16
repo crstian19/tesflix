@@ -4,6 +4,9 @@ import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
 	integrations: [svelte()],
+	build: {
+		inlineStylesheets: 'always'
+	},
 	vite: {
 		plugins: [tailwindcss()]
 	},
