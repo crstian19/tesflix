@@ -2400,6 +2400,54 @@ const categories = await Promise.all(
 		.fab-tooltip { animation: none; }
 	}
 
+	/* ── Touch devices: disable spotlight and blur for performance ── */
+	@media (pointer: coarse) {
+		.spotlight,
+		.border-glow {
+			display: none;
+		}
+
+		.card {
+			backdrop-filter: none;
+			-webkit-backdrop-filter: none;
+		}
+
+		.lang-dropdown {
+			backdrop-filter: none;
+			-webkit-backdrop-filter: none;
+		}
+
+		.fab-tooltip {
+			backdrop-filter: none;
+			-webkit-backdrop-filter: none;
+		}
+
+		.modal-overlay {
+			backdrop-filter: none;
+			-webkit-backdrop-filter: none;
+		}
+
+		.modal-box {
+			backdrop-filter: none;
+			-webkit-backdrop-filter: none;
+		}
+
+		.header-btn {
+			backdrop-filter: none;
+			-webkit-backdrop-filter: none;
+		}
+
+		.form-btn-submit {
+			backdrop-filter: none;
+			-webkit-backdrop-filter: none;
+		}
+
+		.project-btn {
+			backdrop-filter: none;
+			-webkit-backdrop-filter: none;
+		}
+	}
+
 	/* ── Header action buttons ── */
 	.header-actions {
 		grid-column: 1;
