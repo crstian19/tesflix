@@ -144,27 +144,10 @@ const categories = await Promise.all(
 					</picture>
 				</h1>
 				<div class="header-right">
-					<div class="lang-picker" id="lang-picker">
-						<button class="header-btn lang-btn" id="lang-btn" aria-haspopup="menu" aria-expanded="false">
-							<span id="lang-current">🇬🇧 EN</span>
-							<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
-						</button>
-						<div class="lang-dropdown" id="lang-dropdown" role="menu">
-							<button class="lang-option" role="menuitem" data-lang="en">🇬🇧 English</button>
-							<button class="lang-option" role="menuitem" data-lang="no">🇳🇴 Norsk</button>
-							<button class="lang-option" role="menuitem" data-lang="de">🇩🇪 Deutsch</button>
-							<button class="lang-option" role="menuitem" data-lang="sv">🇸🇪 Svenska</button>
-							<button class="lang-option" role="menuitem" data-lang="nl">🇳🇱 Nederlands</button>
-							<button class="lang-option" role="menuitem" data-lang="fr">🇫🇷 Français</button>
-							<button class="lang-option" role="menuitem" data-lang="da">🇩🇰 Dansk</button>
-							<button class="lang-option" role="menuitem" data-lang="fi">🇫🇮 Suomi</button>
-							<button class="lang-option" role="menuitem" data-lang="it">🇮🇹 Italiano</button>
-							<button class="lang-option" role="menuitem" data-lang="es">🇪🇸 Español</button>
-							<button class="lang-option" role="menuitem" data-lang="pt">🇵🇹 Português</button>
-							<button class="lang-option" role="menuitem" data-lang="pl">🇵🇱 Polski</button>
-							<button class="lang-option" role="menuitem" data-lang="zh">🇨🇳 中文</button>
-						</div>
-					</div>
+					<button class="header-btn lang-btn" id="lang-btn" aria-label="Language & Region">
+						<span id="lang-current">🇬🇧 EN</span>
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+					</button>
 					<Clock client:load />
 				</div>
 			</header>
@@ -347,7 +330,60 @@ const categories = await Promise.all(
 				</div>
 			</div>
 
-			<div class="launcher-wrap">
+			<!-- Locale Modal -->
+		<div class="modal-overlay" id="modal-locale" aria-hidden="true" inert>
+			<div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="locale-title">
+				<button class="modal-close" data-close="modal-locale" aria-label="Close">&times;</button>
+				<h2 id="locale-title" class="modal-title" data-i18n="locale.title">Language & Region</h2>
+
+				<p class="locale-section-label" data-i18n="locale.lang-label">Language</p>
+				<p class="locale-section-desc" data-i18n="locale.lang-desc">Changes the interface language across the whole dashboard.</p>
+				<div class="locale-grid">
+					<button class="locale-option" data-lang="en">🇬🇧 English</button>
+					<button class="locale-option" data-lang="no">🇳🇴 Norsk</button>
+					<button class="locale-option" data-lang="de">🇩🇪 Deutsch</button>
+					<button class="locale-option" data-lang="sv">🇸🇪 Svenska</button>
+					<button class="locale-option" data-lang="nl">🇳🇱 Nederlands</button>
+					<button class="locale-option" data-lang="fr">🇫🇷 Français</button>
+					<button class="locale-option" data-lang="da">🇩🇰 Dansk</button>
+					<button class="locale-option" data-lang="fi">🇫🇮 Suomi</button>
+					<button class="locale-option" data-lang="it">🇮🇹 Italiano</button>
+					<button class="locale-option" data-lang="es">🇪🇸 Español</button>
+					<button class="locale-option" data-lang="pt">🇵🇹 Português</button>
+					<button class="locale-option" data-lang="pl">🇵🇱 Polski</button>
+					<button class="locale-option" data-lang="zh">🇨🇳 中文</button>
+				</div>
+
+				<p class="locale-section-label" data-i18n="locale.country-label">Country</p>
+				<p class="locale-section-desc" data-i18n="locale.country-desc">Filters apps to show only those available in your country. Detected automatically from your car's location.</p>
+				<div class="locale-grid">
+					<button class="locale-country" data-country="">🌍 <span data-i18n="locale.all">All</span></button>
+					<button class="locale-country" data-country="US">🇺🇸 United States</button>
+					<button class="locale-country" data-country="CN">🇨🇳 China</button>
+					<button class="locale-country" data-country="DE">🇩🇪 Germany</button>
+					<button class="locale-country" data-country="GB">🇬🇧 United Kingdom</button>
+					<button class="locale-country" data-country="FR">🇫🇷 France</button>
+					<button class="locale-country" data-country="NO">🇳🇴 Norway</button>
+					<button class="locale-country" data-country="NL">🇳🇱 Netherlands</button>
+					<button class="locale-country" data-country="AU">🇦🇺 Australia</button>
+					<button class="locale-country" data-country="SE">🇸🇪 Sweden</button>
+					<button class="locale-country" data-country="CA">🇨🇦 Canada</button>
+					<button class="locale-country" data-country="CH">🇨🇭 Switzerland</button>
+					<button class="locale-country" data-country="BE">🇧🇪 Belgium</button>
+					<button class="locale-country" data-country="AT">🇦🇹 Austria</button>
+					<button class="locale-country" data-country="DK">🇩🇰 Denmark</button>
+					<button class="locale-country" data-country="IT">🇮🇹 Italy</button>
+					<button class="locale-country" data-country="ES">🇪🇸 Spain</button>
+					<button class="locale-country" data-country="FI">🇫🇮 Finland</button>
+					<button class="locale-country" data-country="PL">🇵🇱 Poland</button>
+					<button class="locale-country" data-country="PT">🇵🇹 Portugal</button>
+					<button class="locale-country" data-country="IE">🇮🇪 Ireland</button>
+					<button class="locale-country" data-country="LU">🇱🇺 Luxembourg</button>
+				</div>
+			</div>
+		</div>
+
+		<div class="launcher-wrap">
 				<UrlLauncher client:load />
 			</div>
 
@@ -514,6 +550,12 @@ const categories = await Promise.all(
 					'support.back': '← Back',
 					'support.scan': 'Scan with your phone to donate',
 					'support.open': 'Open link',
+					'locale.title': 'Language & Region',
+					'locale.lang-label': 'Language',
+					'locale.country-label': 'Country',
+					'locale.all': 'All',
+					'locale.lang-desc': 'Changes the interface language across the whole dashboard.',
+					'locale.country-desc': "Filters apps to show only those available in your country. Detected automatically from your car's location.",
 				},
 				no: {
 					'btn.about': 'Om',
@@ -563,6 +605,12 @@ const categories = await Promise.all(
 				'support.back': '← Tilbake',
 				'support.scan': 'Skann med telefonen for å donere',
 				'support.open': 'Åpne lenke',
+				'locale.title': 'Språk og region',
+				'locale.lang-label': 'Språk',
+				'locale.country-label': 'Land',
+				'locale.all': 'Alle',
+				'locale.lang-desc': 'Endrer grensesnittspråket på hele dashbordet.',
+				'locale.country-desc': 'Filtrerer apper for å vise bare de som er tilgjengelige i ditt land. Oppdages automatisk fra bilens posisjon.',
 				},
 				de: {
 					'btn.about': 'Über',
@@ -612,6 +660,12 @@ const categories = await Promise.all(
 				'support.back': '← Zurück',
 				'support.scan': 'Mit dem Handy scannen um zu spenden',
 				'support.open': 'Link öffnen',
+				'locale.title': 'Sprache & Region',
+				'locale.lang-label': 'Sprache',
+				'locale.country-label': 'Land',
+				'locale.all': 'Alle',
+				'locale.lang-desc': 'Ändert die Sprache der gesamten Oberfläche.',
+				'locale.country-desc': 'Filtert Apps, um nur die in deinem Land verfügbaren anzuzeigen. Wird automatisch über den Standort deines Autos erkannt.',
 				},
 				sv: {
 					'btn.about': 'Om',
@@ -661,6 +715,12 @@ const categories = await Promise.all(
 				'support.back': '← Tillbaka',
 				'support.scan': 'Skanna med din telefon för att donera',
 				'support.open': 'Öppna länk',
+				'locale.title': 'Språk & region',
+				'locale.lang-label': 'Språk',
+				'locale.country-label': 'Land',
+				'locale.all': 'Alla',
+				'locale.lang-desc': 'Ändrar gränssnittsspråket för hela dashbordet.',
+				'locale.country-desc': 'Filtrerar appar för att visa enbart de tillgängliga i ditt land. Identifieras automatiskt från bilens plats.',
 				},
 				nl: {
 					'btn.about': 'Over',
@@ -710,6 +770,12 @@ const categories = await Promise.all(
 				'support.back': '← Terug',
 				'support.scan': 'Scan met je telefoon om te doneren',
 				'support.open': 'Link openen',
+				'locale.title': 'Taal & regio',
+				'locale.lang-label': 'Taal',
+				'locale.country-label': 'Land',
+				'locale.all': 'Alle',
+				'locale.lang-desc': 'Wijzigt de interfacetaal van het hele dashboard.',
+				'locale.country-desc': 'Filtert apps om alleen die beschikbaar in jouw land te tonen. Automatisch gedetecteerd op basis van de locatie van je auto.',
 				},
 				fr: {
 					'btn.about': 'À propos',
@@ -759,6 +825,12 @@ const categories = await Promise.all(
 				'support.back': '← Retour',
 				'support.scan': 'Scannez avec votre téléphone pour faire un don',
 				'support.open': 'Ouvrir le lien',
+				'locale.title': 'Langue & région',
+				'locale.lang-label': 'Langue',
+				'locale.country-label': 'Pays',
+				'locale.all': 'Tous',
+				'locale.lang-desc': "Change la langue de l'interface sur tout le tableau de bord.",
+				'locale.country-desc': "Filtre les apps pour n'afficher que celles disponibles dans ton pays. Détecté automatiquement depuis la position de ta voiture.",
 				},
 				da: {
 					'btn.about': 'Om',
@@ -808,6 +880,12 @@ const categories = await Promise.all(
 				'support.back': '← Tilbage',
 				'support.scan': 'Scan med din telefon for at donere',
 				'support.open': 'Åbn link',
+				'locale.title': 'Sprog & region',
+				'locale.lang-label': 'Sprog',
+				'locale.country-label': 'Land',
+				'locale.all': 'Alle',
+				'locale.lang-desc': 'Ændrer grænsefladsproget på hele dashboardet.',
+				'locale.country-desc': 'Filtrerer apps for kun at vise dem, der er tilgængelige i dit land. Registreres automatisk fra bilens placering.',
 				},
 				fi: {
 					'btn.about': 'Tietoja',
@@ -857,6 +935,12 @@ const categories = await Promise.all(
 				'support.back': '← Takaisin',
 				'support.scan': 'Skannaa puhelimellasi lahjoittaaksesi',
 				'support.open': 'Avaa linkki',
+				'locale.title': 'Kieli ja alue',
+				'locale.lang-label': 'Kieli',
+				'locale.country-label': 'Maa',
+				'locale.all': 'Kaikki',
+				'locale.lang-desc': 'Muuttaa koko käyttöliittymän kielen.',
+				'locale.country-desc': 'Suodattaa sovellukset näyttämään vain maassasi saatavilla olevat. Havaitaan automaattisesti autosi sijainnista.',
 				},
 				it: {
 					'btn.about': 'Info',
@@ -906,6 +990,12 @@ const categories = await Promise.all(
 				'support.back': '← Indietro',
 				'support.scan': 'Scansiona con il tuo telefono per donare',
 				'support.open': 'Apri link',
+				'locale.title': 'Lingua & regione',
+				'locale.lang-label': 'Lingua',
+				'locale.country-label': 'Paese',
+				'locale.all': 'Tutti',
+				'locale.lang-desc': "Cambia la lingua dell'interfaccia su tutto il dashboard.",
+				'locale.country-desc': 'Filtra le app per mostrare solo quelle disponibili nel tuo paese. Rilevato automaticamente dalla posizione della tua auto.',
 				},
 				es: {
 					'btn.about': 'Acerca de',
@@ -955,6 +1045,12 @@ const categories = await Promise.all(
 				'support.back': '← Volver',
 				'support.scan': 'Escanea con tu móvil para donar',
 				'support.open': 'Abrir enlace',
+				'locale.title': 'Idioma y región',
+				'locale.lang-label': 'Idioma',
+				'locale.country-label': 'País',
+				'locale.all': 'Todos',
+				'locale.lang-desc': 'Cambia el idioma de la interfaz en todo el panel.',
+				'locale.country-desc': 'Filtra las apps para mostrar solo las disponibles en tu país. Se detecta automáticamente desde la ubicación de tu coche.',
 				},
 				pt: {
 					'btn.about': 'Sobre',
@@ -1004,6 +1100,12 @@ const categories = await Promise.all(
 				'support.back': '← Voltar',
 				'support.scan': 'Escaneie com seu celular para doar',
 				'support.open': 'Abrir link',
+				'locale.title': 'Idioma e região',
+				'locale.lang-label': 'Idioma',
+				'locale.country-label': 'País',
+				'locale.all': 'Todos',
+				'locale.lang-desc': 'Muda o idioma da interface em todo o painel.',
+				'locale.country-desc': 'Filtra apps para mostrar apenas as disponíveis no teu país. Detetado automaticamente pela localização do teu carro.',
 				},
 				pl: {
 					'btn.about': 'O nas',
@@ -1053,6 +1155,12 @@ const categories = await Promise.all(
 				'support.back': '← Wróć',
 				'support.scan': 'Zeskanuj telefonem, aby przekazać darowiznę',
 				'support.open': 'Otwórz link',
+				'locale.title': 'Język i region',
+				'locale.lang-label': 'Język',
+				'locale.country-label': 'Kraj',
+				'locale.all': 'Wszystkie',
+				'locale.lang-desc': 'Zmienia język interfejsu całego dashboardu.',
+				'locale.country-desc': 'Filtruje aplikacje, aby pokazać tylko te dostępne w twoim kraju. Wykrywane automatycznie na podstawie lokalizacji twojego samochodu.',
 				},
 				zh: {
 					'btn.about': '关于',
@@ -1102,6 +1210,12 @@ const categories = await Promise.all(
 				'support.back': '← 返回',
 				'support.scan': '用手机扫描二维码捐款',
 				'support.open': '打开链接',
+				'locale.title': '语言与地区',
+				'locale.lang-label': '语言',
+				'locale.country-label': '国家',
+				'locale.all': '全部',
+				'locale.lang-desc': '更改整个仪表板的界面语言。',
+				'locale.country-desc': '过滤应用，仅显示您所在国家/地区可用的应用。根据您车辆的位置自动检测。',
 				},
 			};
 
@@ -1131,7 +1245,7 @@ const categories = await Promise.all(
 				const cur = document.getElementById('lang-current');
 				if (cur) cur.textContent = LANG_LABELS[lang] ?? LANG_LABELS['en'];
 				// mark active option
-				document.querySelectorAll<HTMLElement>('.lang-option').forEach(btn => {
+				document.querySelectorAll<HTMLElement>('.locale-option').forEach(btn => {
 					btn.classList.toggle('is-active', btn.dataset.lang === lang);
 				});
 				// dispatch event for Svelte components
@@ -1143,33 +1257,8 @@ const categories = await Promise.all(
 			const initialLang = getLangCode(savedLang || navigator.language);
 			applyTranslations(initialLang);
 
-			// Picker toggle
-			const langBtn = document.getElementById('lang-btn')!;
-			const langPicker = document.getElementById('lang-picker')!;
-			const langDropdown = document.getElementById('lang-dropdown')!;
-
-			langBtn.addEventListener('click', (e) => {
-				e.stopPropagation();
-				const open = langPicker.classList.toggle('is-open');
-				langBtn.setAttribute('aria-expanded', String(open));
-			});
-
-			langDropdown.querySelectorAll<HTMLElement>('.lang-option').forEach(btn => {
-				btn.addEventListener('click', () => {
-					const lang = btn.dataset.lang!;
-					localStorage.setItem('tesflix-lang', lang);
-					applyTranslations(lang);
-					langPicker.classList.remove('is-open');
-					langBtn.setAttribute('aria-expanded', 'false');
-				});
-			});
-
-			document.addEventListener('click', (e) => {
-				if (!langPicker.contains(e.target as Node)) {
-					langPicker.classList.remove('is-open');
-					langBtn.setAttribute('aria-expanded', 'false');
-				}
-			});
+			// Locale modal button
+			document.getElementById('lang-btn')?.addEventListener('click', () => openModal('modal-locale'));
 
 			// ── Modals ──
 			function openModal(id: string) {
@@ -1191,6 +1280,31 @@ const categories = await Promise.all(
 			document.getElementById('btn-about')?.addEventListener('click', () => openModal('modal-about'));
 			document.getElementById('btn-faq')?.addEventListener('click', () => openModal('modal-faq'));
 			document.getElementById('btn-selfhost')?.addEventListener('click', () => openModal('modal-selfhost'));
+
+			// ── Locale modal: language options ──
+			document.querySelectorAll<HTMLElement>('.locale-option').forEach(btn => {
+				btn.addEventListener('click', () => {
+					const lang = btn.dataset.lang!;
+					localStorage.setItem('tesflix-lang', lang);
+					applyTranslations(lang);
+				});
+			});
+
+			// ── Locale modal: country options ──
+			function applyCountryActive(country: string) {
+				document.querySelectorAll<HTMLElement>('.locale-country').forEach(b => {
+					b.classList.toggle('is-active', b.dataset.country === country);
+				});
+			}
+
+			document.querySelectorAll<HTMLElement>('.locale-country').forEach(btn => {
+				btn.addEventListener('click', () => {
+					const country = btn.dataset.country!;
+					localStorage.setItem('tesflix-region', country);
+					applyRegionFilter(country);
+					applyCountryActive(country);
+				});
+			});
 			document.getElementById('btn-support')?.addEventListener('click', () => openModal('modal-support'));
 
 			// ── Support modal two-view logic ──
@@ -1444,7 +1558,15 @@ const categories = await Promise.all(
 			}
 
 			function applyRegionFilter(country: string) {
-				if (!country) return; // unknown location → show everything
+				// Reset all region-filtered cards first
+				document.querySelectorAll<HTMLElement>('[data-regions]').forEach(card => {
+					card.style.display = '';
+				});
+				document.querySelectorAll<HTMLElement>('.category').forEach(section => {
+					section.style.display = '';
+				});
+
+				if (!country) return; // no country = show everything
 
 				document.querySelectorAll<HTMLElement>('[data-regions]').forEach(card => {
 					const regions = card.dataset.regions;
@@ -1463,8 +1585,9 @@ const categories = await Promise.all(
 			}
 
 			const regionOverride = localStorage.getItem('tesflix-region');
-			const detectedCountry = regionOverride || detectCountry();
+			const detectedCountry = regionOverride !== null ? regionOverride : detectCountry();
 			applyRegionFilter(detectedCountry);
+			applyCountryActive(detectedCountry);
 
 			// ── Custom Apps ──
 			const CUSTOM_KEY = 'tesflix-custom-apps';
@@ -1778,10 +1901,6 @@ const categories = await Promise.all(
 		gap: 0.5rem;
 	}
 
-	.lang-picker {
-		position: relative;
-	}
-
 	.lang-btn {
 		display: flex;
 		align-items: center;
@@ -1792,64 +1911,61 @@ const categories = await Promise.all(
 		width: 10px;
 		height: 10px;
 		flex-shrink: 0;
-		transition: transform 200ms ease;
 	}
 
-	.lang-picker.is-open .lang-btn svg {
-		transform: rotate(180deg);
+	.locale-section-label {
+		font-size: 0.7rem;
+		font-weight: 600;
+		text-transform: uppercase;
+		letter-spacing: 0.08em;
+		color: var(--muted);
+		margin: 1rem 0 0.5rem;
 	}
 
-	.lang-dropdown {
-		position: absolute;
-		top: calc(100% + 0.5rem);
-		right: 0;
-		background: rgba(12, 12, 20, 0.95);
-		border: 1px solid rgba(255, 255, 255, 0.1);
-		backdrop-filter: blur(20px);
-		-webkit-backdrop-filter: blur(20px);
-		border-radius: 12px;
-		padding: 0.4rem;
+	.locale-section-label:first-of-type {
+		margin-top: 0.25rem;
+	}
+
+	.locale-section-desc {
+		font-size: 0.75rem;
+		color: var(--muted);
+		margin: -0.25rem 0 0.5rem;
+		line-height: 1.4;
+	}
+
+	.locale-grid {
 		display: flex;
-		flex-direction: column;
-		gap: 0.15rem;
-		min-width: 140px;
-		box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
-		opacity: 0;
-		pointer-events: none;
-		transform: translateY(-6px);
-		transition: opacity 150ms ease, transform 150ms ease;
-		z-index: 50;
+		flex-wrap: wrap;
+		gap: 0.4rem;
 	}
 
-	.lang-picker.is-open .lang-dropdown {
-		opacity: 1;
-		pointer-events: auto;
-		transform: translateY(0);
-	}
-
-	.lang-option {
-		background: transparent;
-		border: none;
+	.locale-option,
+	.locale-country {
+		background: rgba(255, 255, 255, 0.05);
+		border: 1px solid rgba(255, 255, 255, 0.08);
 		color: var(--muted);
 		font-family: inherit;
-		font-size: 0.78rem;
+		font-size: 0.8rem;
 		font-weight: 500;
-		padding: 0.45rem 0.75rem;
+		padding: 0.4rem 0.75rem;
 		border-radius: 8px;
 		cursor: pointer;
-		text-align: left;
-		transition: background 120ms ease, color 120ms ease;
+		transition: background 120ms ease, color 120ms ease, border-color 120ms ease;
 		white-space: nowrap;
 	}
 
-	.lang-option:hover {
-		background: rgba(255, 255, 255, 0.07);
+	.locale-option:hover,
+	.locale-country:hover {
+		background: rgba(255, 255, 255, 0.1);
 		color: var(--text);
+		border-color: rgba(255, 255, 255, 0.15);
 	}
 
-	.lang-option.is-active {
+	.locale-option.is-active,
+	.locale-country.is-active {
 		color: var(--text);
-		background: rgba(229, 9, 20, 0.15);
+		background: rgba(229, 9, 20, 0.18);
+		border-color: rgba(229, 9, 20, 0.4);
 	}
 
 	@media (max-width: 768px) {
@@ -2415,11 +2531,6 @@ const categories = await Promise.all(
 		}
 
 		.card {
-			backdrop-filter: none;
-			-webkit-backdrop-filter: none;
-		}
-
-		.lang-dropdown {
 			backdrop-filter: none;
 			-webkit-backdrop-filter: none;
 		}
