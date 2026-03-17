@@ -477,6 +477,16 @@ const categories = await Promise.all(
 						<label class="form-label" for="app-new-cat">Category name <span class="form-required">*</span></label>
 						<input class="form-input" type="text" id="app-new-cat" placeholder="My Apps" autocomplete="off" />
 					</div>
+					<div class="form-row form-row--toggle">
+						<label class="form-label">Fullscreen</label>
+						<label class="toggle-switch">
+							<input type="checkbox" id="app-fullscreen" checked />
+							<span class="toggle-track">
+								<span class="toggle-thumb"></span>
+							</span>
+							<span class="toggle-hint" id="app-fullscreen-hint">Opens via YouTube redirect (fullscreen in Tesla)</span>
+						</label>
+					</div>
 					<p class="form-error" id="form-error" style="display:none"></p>
 					<div class="form-actions">
 						<button type="button" class="form-btn form-btn-cancel" data-close="modal-add-app">Cancel</button>
@@ -1600,6 +1610,7 @@ const categories = await Promise.all(
 				logo: string;
 				color: string;
 				category: string;
+				fullscreen: boolean;
 			}
 
 			function loadCustomApps(): CustomApp[] {
@@ -1613,7 +1624,7 @@ const categories = await Promise.all(
 
 			function createCustomCard(app: CustomApp): HTMLAnchorElement {
 				const a = document.createElement('a');
-				a.href = `${YOUTUBE_REDIRECT}${encodeURIComponent(app.url)}`;
+				a.href = app.fullscreen ? `${YOUTUBE_REDIRECT}${encodeURIComponent(app.url)}` : app.url;
 				a.target = '_blank';
 				a.rel = 'noopener noreferrer';
 				a.className = 'card';
@@ -1749,7 +1760,16 @@ const categories = await Promise.all(
 				(document.getElementById('app-color') as HTMLInputElement).value = '#e50914';
 				(document.getElementById('new-cat-row') as HTMLElement).style.display = 'none';
 				(document.getElementById('form-error') as HTMLElement).style.display = 'none';
+				const fsCheckbox = document.getElementById('app-fullscreen') as HTMLInputElement;
+				fsCheckbox.checked = true;
+				(document.getElementById('app-fullscreen-hint') as HTMLElement).textContent = 'Opens via YouTube redirect (fullscreen in Tesla)';
 				openModal('modal-add-app');
+			});
+
+			document.getElementById('app-fullscreen')?.addEventListener('change', function(this: HTMLInputElement) {
+				(document.getElementById('app-fullscreen-hint') as HTMLElement).textContent = this.checked
+					? 'Opens via YouTube redirect (fullscreen in Tesla)'
+					: 'Opens directly in the browser (normal tab)';
 			});
 
 			document.getElementById('app-category')?.addEventListener('change', (e) => {
@@ -1779,9 +1799,10 @@ const categories = await Promise.all(
 
 				errorEl.style.display = 'none';
 
+				const appFullscreen = (document.getElementById('app-fullscreen') as HTMLInputElement).checked;
 				const app: CustomApp = {
 					id: crypto.randomUUID(),
-					name, url, logo, color, category,
+					name, url, logo, color, category, fullscreen: appFullscreen,
 				};
 				const apps = loadCustomApps();
 				apps.push(app);
@@ -2466,6 +2487,63 @@ const categories = await Promise.all(
 		padding: 2px;
 		cursor: pointer;
 		flex-shrink: 0;
+	}
+
+	.form-row--toggle {
+		align-items: flex-start;
+	}
+
+	.toggle-switch {
+		display: flex;
+		align-items: center;
+		gap: 0.6rem;
+		cursor: pointer;
+		user-select: none;
+	}
+
+	.toggle-switch input {
+		position: absolute;
+		opacity: 0;
+		width: 0;
+		height: 0;
+	}
+
+	.toggle-track {
+		position: relative;
+		width: 36px;
+		height: 20px;
+		background: rgba(255, 255, 255, 0.1);
+		border-radius: 999px;
+		border: 1px solid rgba(255, 255, 255, 0.12);
+		transition: background 200ms ease, border-color 200ms ease;
+		flex-shrink: 0;
+	}
+
+	.toggle-switch input:checked + .toggle-track {
+		background: rgba(229, 9, 20, 0.5);
+		border-color: rgba(229, 9, 20, 0.6);
+	}
+
+	.toggle-thumb {
+		position: absolute;
+		top: 2px;
+		left: 2px;
+		width: 14px;
+		height: 14px;
+		background: #94a3b8;
+		border-radius: 50%;
+		transition: transform 200ms ease, background 200ms ease;
+	}
+
+	.toggle-switch input:checked ~ .toggle-track .toggle-thumb {
+		transform: translateX(16px);
+		background: #fff;
+	}
+
+	.toggle-hint {
+		font-size: 0.75rem;
+		color: var(--muted);
+		line-height: 1.3;
 	}
 
 	.form-error {
