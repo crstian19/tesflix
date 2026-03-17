@@ -106,6 +106,7 @@ categories:
       - name: Google Maps
         url: https://maps.google.com
         logo: https://svgl.app/library/googleMaps.svg
+        fullscreen: false
       - name: Waze
         url: https://www.waze.com
         logo: https://cdn.simpleicons.org/waze/05C8F7
