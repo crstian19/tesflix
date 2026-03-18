@@ -165,7 +165,8 @@
 		flex: 1;
 		position: relative;
 		display: flex;
-		align-items: center;
+		align-items: stretch;
+		height: 3.25rem;
 		background: rgba(255, 255, 255, 0.05);
 		border: 1px solid rgba(255, 255, 255, 0.1);
 		border-radius: 14px;
@@ -185,6 +186,8 @@
 	}
 
 	.icon {
+		display: block;
+		align-self: center;
 		width: 20px;
 		height: 20px;
 		color: #64748b;
@@ -194,14 +197,17 @@
 
 	input {
 		flex: 1;
+		align-self: center;
 		background: transparent;
 		border: none;
 		outline: none;
 		color: #f8fafc;
 		font-size: 1rem;
-		padding: 0.9rem 0.75rem;
+		line-height: 1;
+		padding: 0 0.75rem;
 		font-family: inherit;
 		min-width: 0;
+		-webkit-appearance: none;
 	}
 
 	input::placeholder {
@@ -215,6 +221,7 @@
 		color: #475569;
 		padding: 0.5rem;
 		margin-right: 0.5rem;
+		align-self: center;
 		display: flex;
 		align-items: center;
 		justify-content: center;
