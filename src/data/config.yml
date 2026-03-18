@@ -25,7 +25,7 @@ categories:
         url: https://www.skyshowtime.com
         logo: /logos/skyshowtime.png
         color: "#E4002B"
-        regions: ['ES', 'PT', 'NO', 'SE', 'DK', 'FI', 'NL', 'PL', 'HR', 'SI', 'SK', 'RS', 'BG', 'RO']
+        regions: ['ES', 'PT', 'NO', 'SE', 'DK', 'FI', 'NL', 'PL']
       - name: Filmin
         url: https://www.filmin.es
         logo: /logos/filmin.png
@@ -56,23 +56,26 @@ categories:
         url: https://www.dazn.com
         logo: https://cdn.simpleicons.org/dazn/F8F8F8
         color: "#ffff00"
+        regions: ['DE', 'AT', 'CH', 'IT', 'ES', 'US', 'CA', 'JP']
       - name: F1 TV
         url: https://f1tv.formula1.com
         logo: /logos/f1tv.png
         color: "#E10600"
+        regions: ['US', 'CA', 'AU', 'FR', 'BE', 'ES', 'PT', 'NO', 'SE', 'DK', 'FI', 'PL']
       - name: NBA League Pass
         url: https://www.nba.com/watch
         logo: /logos/nba.png
         color: "#1D428A"
       - name: Eleven Sports
-        url: https://es.elevensports.com
+        url: https://www.elevensports.com
         logo: /logos/elevensports.png
         color: "#FF6600"
         regions: ['ES', 'PT']
       - name: Eurosport
-        url: https://www.eurosport.es
+        url: https://www.eurosport.com
         logo: /logos/eurosport.png
         color: "#003DA5"
+        regions: ['DE', 'AT', 'CH', 'FR', 'BE', 'NL', 'ES', 'PT', 'IT', 'NO', 'SE', 'DK', 'FI', 'PL', 'GB', 'IE']
 
   - name: Personal Media
     apps:
@@ -110,89 +113,203 @@ categories:
       - name: Waze
         url: https://www.waze.com
         logo: https://cdn.simpleicons.org/waze/05C8F7
+        fullscreen: false
       - name: PlugShare
         url: https://www.plugshare.com
         logo: /logos/plugshare.png
         color: "#6CC04A"
+        fullscreen: false
       - name: Ventusky
         url: https://www.ventusky.com
         logo: /logos/ventusky.png
         color: "#2196F3"
+        fullscreen: false
       - name: Tesla
         url: https://www.tesla.com
         logo: https://cdn.simpleicons.org/tesla/CC0000
+        fullscreen: false
 
   - name: Charging
     apps:
+      # United States
+      - name: ChargePoint
+        url: https://www.chargepoint.com
+        logo: https://cdn.simpleicons.org/chargepoint/0078D4
+        color: "#0078D4"
+        fullscreen: false
+        regions: ['US', 'CA']
+      - name: Electrify America
+        url: https://www.electrifyamerica.com
+        logo: https://cdn.simpleicons.org/electrifyamerica/5A2D82
+        color: "#5A2D82"
+        fullscreen: false
+        regions: ['US']
+      - name: EVgo
+        url: https://www.evgo.com
+        logo: https://cdn.simpleicons.org/evgo/00A651
+        color: "#00A651"
+        fullscreen: false
+        regions: ['US']
+      - name: Blink Charging
+        url: https://www.blinkcharging.com
+        logo: https://cdn.simpleicons.org/blink/0068FF
+        color: "#0068FF"
+        fullscreen: false
+        regions: ['US']
+      # Canada
+      - name: FLO
+        url: https://flo.com
+        logo: https://cdn.simpleicons.org/flo/00A550
+        color: "#00A550"
+        fullscreen: false
+        regions: ['CA']
+      # Australia
+      - name: Chargefox
+        url: https://www.chargefox.com
+        logo: https://cdn.simpleicons.org/chargefox/F26522
+        color: "#F26522"
+        fullscreen: false
+        regions: ['AU']
+      - name: NRMA Charging
+        url: https://www.mynrma.com.au/electric-vehicles/charging
+        logo: https://cdn.simpleicons.org/nrma/E31837
+        color: "#E31837"
+        fullscreen: false
+        regions: ['AU']
+      - name: Evie Networks
+        url: https://evienetworks.com.au
+        logo: https://cdn.simpleicons.org/evienetworks/00B2A9
+        color: "#00B2A9"
+        fullscreen: false
+        regions: ['AU']
+      # China
+      - name: State Grid EV
+        url: https://www.evcs.com.cn
+        logo: https://cdn.simpleicons.org/stategrid/006DB8
+        color: "#006DB8"
+        fullscreen: false
+        regions: ['CN']
+      - name: TELD
+        url: https://www.teld.cn
+        logo: https://cdn.simpleicons.org/teld/00A651
+        color: "#00A651"
+        fullscreen: false
+        regions: ['CN']
       # Spain
       - name: Iberdrola SmartCharge
         url: https://smartcharge.iberdrola.es
         logo: /logos/iberdrola.svg
         color: "#00A650"
+        fullscreen: false
         regions: ['ES']
       - name: Endesa X Way
         url: https://www.endesaxway.com
         logo: /logos/endesa-x.png
         color: "#00B4AA"
+        fullscreen: false
         regions: ['ES']
       - name: Zunder
         url: https://zunder.com
         logo: /logos/zunder.svg
         color: "#FF6B00"
+        fullscreen: false
         regions: ['ES']
       # France
       - name: TotalEnergies Charge
         url: https://charge.totalenergies.fr
         logo: /logos/totalenergies.svg
         color: "#FF1430"
+        fullscreen: false
         regions: ['FR', 'BE', 'LU']
       - name: Izivia
         url: https://izivia.com
         logo: /logos/izivia.png
         color: "#E2001A"
+        fullscreen: false
         regions: ['FR']
       # Germany + Austria + Switzerland
       - name: EnBW mobility+
         url: https://www.enbw.com/elektromobilitaet
         logo: /logos/enbw.png
         color: "#E2001A"
+        fullscreen: false
         regions: ['DE', 'AT', 'CH']
-      - name: IONITY
-        url: https://ionity.eu
-        logo: /logos/Ionity.svg
-        color: "#FF4B00"
-        regions: ['DE', 'AT', 'CH', 'FR', 'BE', 'NL', 'ES', 'PT', 'NO', 'SE', 'DK', 'FI', 'PL', 'IT', 'GB', 'IE']
+      # Italy
+      - name: Enel X Way
+        url: https://www.enelxway.com
+        logo: https://cdn.simpleicons.org/enelxway/00A651
+        color: "#00A651"
+        fullscreen: false
+        regions: ['IT', 'ES', 'PT', 'DE', 'FR', 'NL', 'BE', 'CH']
+      - name: Be Charge
+        url: https://www.becharge.it
+        logo: https://cdn.simpleicons.org/becharge/0033A0
+        color: "#0033A0"
+        fullscreen: false
+        regions: ['IT']
+      # Ireland
+      - name: ESB eCars
+        url: https://www.esb.ie/esb-ecars
+        logo: https://cdn.simpleicons.org/esb/003DA5
+        color: "#003DA5"
+        fullscreen: false
+        regions: ['IE']
+      # Portugal
+      - name: EDP Charge
+        url: https://edpcharge.pt
+        logo: https://cdn.simpleicons.org/edp/E31837
+        color: "#E31837"
+        fullscreen: false
+        regions: ['PT']
+      - name: Galp EV
+        url: https://www.galp.com/corp/en/drivers/electric-mobility
+        logo: https://cdn.simpleicons.org/galp/FF6600
+        color: "#FF6600"
+        fullscreen: false
+        regions: ['PT']
       # Netherlands + Belgium
       - name: Fastned
         url: https://fastnedcharging.com
         logo: /logos/fastned.png
         color: "#FFD200"
+        fullscreen: false
         regions: ['NL', 'BE', 'DE', 'FR', 'GB', 'CH']
       # UK
       - name: Pod Point
         url: https://pod-point.com
         logo: /logos/podpoint.png
         color: "#00A650"
+        fullscreen: false
         regions: ['GB']
       - name: Osprey Charging
         url: https://ospreycharging.co.uk
         logo: /logos/osprey.png
         color: "#00B0F0"
+        fullscreen: false
         regions: ['GB']
       # Nordics
       - name: Recharge (Circle K)
         url: https://rechargeinfra.com
         logo: /logos/recharge.png
         color: "#E2001A"
+        fullscreen: false
         regions: ['NO', 'SE', 'DK', 'FI']
       # Pan-European
+      - name: IONITY
+        url: https://ionity.eu
+        logo: /logos/Ionity.svg
+        color: "#FF4B00"
+        fullscreen: false
+        regions: ['DE', 'AT', 'CH', 'FR', 'BE', 'NL', 'ES', 'PT', 'NO', 'SE', 'DK', 'FI', 'PL', 'IT', 'GB', 'IE']
       - name: Chargemap
         url: https://chargemap.com
         logo: /logos/chargemap.svg
         color: "#00A650"
+        fullscreen: false
         regions: ['FR', 'BE', 'NL', 'DE', 'AT', 'CH', 'IT', 'ES', 'PT', 'LU']
       - name: PlugSurfing
         url: https://plugsurfing.com
         logo: /logos/plugsurfing.png
         color: "#6CBE45"
+        fullscreen: false
         regions: ['DE', 'AT', 'CH', 'NL', 'BE', 'FR', 'SE', 'NO', 'DK', 'FI', 'PL']
