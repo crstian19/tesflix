@@ -108,8 +108,8 @@ const categories = await Promise.all(
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<title>Tesflix</title>
-		<meta name="description" content="Tesflix — a community-made dashboard for Tesla's in-car browser. Stream music, videos, and more directly from your Tesla." />
+		<title>Tesdash</title>
+		<meta name="description" content="Tesdash — a community-made dashboard for Tesla's in-car browser. Stream music, videos, and more directly from your Tesla." />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<Font cssVariable="--font-geist" preload />
 	</head>
@@ -140,7 +140,7 @@ const categories = await Promise.all(
 				<h1 class="logo">
 					<picture>
 						<source srcset="/logos/tesflix.webp" type="image/webp" />
-						<img src="/logos/tesflix.png" alt="Tesflix" class="logo-img" fetchpriority="high" />
+						<img src="/logos/tesflix.png" alt="Tesdash" class="logo-img" fetchpriority="high" />
 					</picture>
 				</h1>
 				<div class="header-right">
@@ -156,9 +156,9 @@ const categories = await Promise.all(
 			<div class="modal-overlay" id="modal-about" aria-hidden="true" inert>
 				<div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="about-title">
 					<button class="modal-close" data-close="modal-about" aria-label="Close">&times;</button>
-					<h2 id="about-title" class="modal-title" data-i18n="about.title">About Tesflix</h2>
+					<h2 id="about-title" class="modal-title" data-i18n="about.title">About Tesdash</h2>
 					<p class="modal-text" data-i18n="about.p1">
-						Tesflix is a self-hosted, static dashboard designed to launch streaming services,
+						Tesdash is a self-hosted, static dashboard designed to launch streaming services,
 						music platforms, sports channels, personal media, gaming, and homelab tools —
 						all from your Tesla's in-vehicle browser.
 					</p>
@@ -221,8 +221,8 @@ const categories = await Promise.all(
 					<button class="modal-close" data-close="modal-faq" aria-label="Close">&times;</button>
 					<h2 id="faq-title" class="modal-title" data-i18n="faq.title">FAQ</h2>
 					<dl class="faq-list">
-						<dt data-i18n="faq.q1">What is Tesflix?</dt>
-						<dd data-i18n-html="faq.a1">Tesflix is a dashboard that lets you launch streaming services, music, sports, and other apps directly from your Tesla's browser — all opening in fullscreen with a single tap.</dd>
+						<dt data-i18n="faq.q1">What is Tesdash?</dt>
+						<dd data-i18n-html="faq.a1">Tesdash is a dashboard that lets you launch streaming services, music, sports, and other apps directly from your Tesla's browser — all opening in fullscreen with a single tap.</dd>
 
 						<dt data-i18n="faq.q2">How do I open an app?</dt>
 						<dd data-i18n-html="faq.a2">Just tap or click any app card. It will open the service in a new fullscreen tab in your Tesla's browser.</dd>
@@ -234,12 +234,12 @@ const categories = await Promise.all(
 						<dd data-i18n-html="faq.a4">Yes. Grab the dotted handle to the left of any category name and drag it to a new position. Your order is remembered across visits.</dd>
 
 						<dt data-i18n="faq.q5">Does it work outside my Tesla?</dt>
-						<dd data-i18n-html="faq.a5">Yes, Tesflix works in any modern browser on any device. The fullscreen behavior is optimized for Tesla's in-vehicle browser.</dd>
+						<dd data-i18n-html="faq.a5">Yes, Tesdash works in any modern browser on any device. The fullscreen behavior is optimized for Tesla's in-vehicle browser.</dd>
 
 						<dt data-i18n="faq.q6">Is it free?</dt>
 						<dd data-i18n-html="faq.a6">Completely free, no account or sign-up required.</dd>
 
-						<dt data-i18n="faq.q7">Does Tesflix store any of my data?</dt>
+						<dt data-i18n="faq.q7">Does Tesdash store any of my data?</dt>
 						<dd data-i18n-html="faq.a7">No. The only thing saved locally is your category order, stored in your browser's local storage. Nothing is sent to any server.</dd>
 					</dl>
 				</div>
@@ -258,7 +258,7 @@ const categories = await Promise.all(
 						<dd data-i18n-html="selfhost.a2">Edit <code>src/data/config.yml</code>. Each app needs a <code>name</code>, <code>url</code>, and <code>logo</code> (local path under <code>public/logos/</code> or a remote URL). No code changes needed — just rebuild.</dd>
 
 						<dt data-i18n="selfhost.q3">How are card accent colors determined?</dt>
-						<dd data-i18n-html="selfhost.a3">At build time, Tesflix extracts the most saturated pixel from each app's logo. You can override this by adding a <code>color: '#hexcode'</code> field to any app entry in the config.</dd>
+						<dd data-i18n-html="selfhost.a3">At build time, Tesdash extracts the most saturated pixel from each app's logo. You can override this by adding a <code>color: '#hexcode'</code> field to any app entry in the config.</dd>
 
 						<dt data-i18n="selfhost.q4">What do I need to run it?</dt>
 						<dd data-i18n-html="selfhost.a4">Node.js or Bun. Run <code>bun install</code> then <code>bun run build</code> to generate a static <code>/dist</code> folder you can deploy anywhere (Nginx, Caddy, Netlify, etc.).</dd>
@@ -267,7 +267,7 @@ const categories = await Promise.all(
 						<dd data-i18n-html="selfhost.a5">Yes. In <code>config.yml</code> add a new entry under <code>categories</code> with a <code>name</code> and list of <code>apps</code>. The dashboard rebuilds automatically.</dd>
 
 						<dt data-i18n="selfhost.q6">Is the source code available?</dt>
-						<dd data-i18n-html="selfhost.a6">Yes, Tesflix is open source. You can find it on GitHub and fork it to make it entirely your own.</dd>
+						<dd data-i18n-html="selfhost.a6">Yes, Tesdash is open source. You can find it on GitHub and fork it to make it entirely your own.</dd>
 					</dl>
 				</div>
 			</div>
@@ -283,7 +283,7 @@ const categories = await Promise.all(
 							<svg viewBox="0 0 24 24" fill="currentColor" class="support-hero-icon" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
 							<h2 id="support-title" class="modal-title" data-i18n="support.title">Support this project</h2>
 						</div>
-						<p class="modal-text support-desc" data-i18n="support.desc">Tesflix is free and open source. If it saves you time or brings you joy, consider supporting its development — it keeps the project alive.</p>
+						<p class="modal-text support-desc" data-i18n="support.desc">Tesdash is free and open source. If it saves you time or brings you joy, consider supporting its development — it keeps the project alive.</p>
 						<div class="support-options">
 							<button class="support-card" data-platform="paypal">
 								<div class="support-card-icon support-card-icon--paypal">
@@ -432,14 +432,14 @@ const categories = await Promise.all(
 
 			<footer>
 				<div class="footer-inner">
-					<a href="https://github.com/crstian19/tesflix" target="_blank" rel="noopener noreferrer" class="footer-github" aria-label="GitHub repository">
+					<a href="https://github.com/crstian19/tesdash" target="_blank" rel="noopener noreferrer" class="footer-github" aria-label="GitHub repository">
 						<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.341-3.369-1.341-.454-1.154-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.741 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
 						<span class="footer-oss">Open Source</span>
 					</a>
 					<span class="footer-sep">&mdash;</span>
 					<span><span data-i18n="footer.madeby">Made with ❤️ by</span> <a href="https://crstian.me" target="_blank" rel="noopener noreferrer" class="footer-link">Crstian</a> <span data-i18n="footer.from">from</span> 🇪🇸</span>
 					<span class="footer-sep">&mdash;</span>
-					<span>Tesflix {new Date().getFullYear()}</span>
+					<span>Tesdash {new Date().getFullYear()}</span>
 					<span class="footer-sep">&mdash;</span>
 					<a href="/legal" class="footer-link" data-i18n="footer.legal">Legal</a>
 				</div>
@@ -517,16 +517,16 @@ const categories = await Promise.all(
 					'btn.about': 'About',
 					'btn.selfhost': 'Self-Host',
 					'btn.support': 'Support this project',
-					'about.title': 'About Tesflix',
-					'about.p1': "Tesflix is a self-hosted, static dashboard designed to launch streaming services, music platforms, sports channels, personal media, gaming, and homelab tools — all from your Tesla's in-vehicle browser.",
+					'about.title': 'About Tesdash',
+					'about.p1': "Tesdash is a self-hosted, static dashboard designed to launch streaming services, music platforms, sports channels, personal media, gaming, and homelab tools — all from your Tesla's in-vehicle browser.",
 					'about.p2': "It runs entirely in your browser with no server required after deployment. Categories can be reordered to match your preferences, and a built-in URL launcher lets you open any website in fullscreen.",
 					'about.built-with': 'Built with',
 					'about.author-label': 'Author',
 				'about.projects': 'More projects',
 				'about.soon': 'Soon',
 					'faq.title': 'FAQ',
-					'faq.q1': 'What is Tesflix?',
-					'faq.a1': "Tesflix is a dashboard that lets you launch streaming services, music, sports, and other apps directly from your Tesla's browser — all opening in fullscreen with a single tap.",
+					'faq.q1': 'What is Tesdash?',
+					'faq.a1': "Tesdash is a dashboard that lets you launch streaming services, music, sports, and other apps directly from your Tesla's browser — all opening in fullscreen with a single tap.",
 					'faq.q2': 'How do I open an app?',
 					'faq.a2': "Just tap or click any app card. It will open the service in a new fullscreen tab in your Tesla's browser.",
 					'faq.q3': 'What is the URL Launcher?',
@@ -534,10 +534,10 @@ const categories = await Promise.all(
 					'faq.q4': 'Can I reorder the categories?',
 					'faq.a4': 'Yes. Grab the dotted handle to the left of any category name and drag it to a new position. Your order is remembered across visits.',
 					'faq.q5': 'Does it work outside my Tesla?',
-					'faq.a5': "Yes, Tesflix works in any modern browser on any device. The fullscreen behavior is optimized for Tesla's in-vehicle browser.",
+					'faq.a5': "Yes, Tesdash works in any modern browser on any device. The fullscreen behavior is optimized for Tesla's in-vehicle browser.",
 					'faq.q6': 'Is it free?',
 					'faq.a6': 'Completely free, no account or sign-up required.',
-					'faq.q7': 'Does Tesflix store any of my data?',
+					'faq.q7': 'Does Tesdash store any of my data?',
 					'faq.a7': "No. The only thing saved locally is your category order, stored in your browser's local storage. Nothing is sent to any server.",
 					'selfhost.title': 'Self-Hosting',
 					'selfhost.q1': 'How does the fullscreen trick work?',
@@ -545,19 +545,19 @@ const categories = await Promise.all(
 					'selfhost.q2': 'How do I add or remove apps?',
 					'selfhost.a2': 'Edit <code>src/data/config.yml</code>. Each app needs a <code>name</code>, <code>url</code>, and <code>logo</code> (local path under <code>public/logos/</code> or a remote URL). No code changes needed — just rebuild.',
 					'selfhost.q3': 'How are card accent colors determined?',
-					'selfhost.a3': "At build time, Tesflix extracts the most saturated pixel from each app's logo. You can override this by adding a <code>color: '#hexcode'</code> field to any app entry in the config.",
+					'selfhost.a3': "At build time, Tesdash extracts the most saturated pixel from each app's logo. You can override this by adding a <code>color: '#hexcode'</code> field to any app entry in the config.",
 					'selfhost.q4': 'What do I need to run it?',
 					'selfhost.a4': 'Node.js or Bun. Run <code>bun install</code> then <code>bun run build</code> to generate a static <code>/dist</code> folder you can deploy anywhere (Nginx, Caddy, Netlify, etc.).',
 					'selfhost.q5': 'Can I add custom categories?',
 					'selfhost.a5': 'Yes. In <code>config.yml</code> add a new entry under <code>categories</code> with a <code>name</code> and list of <code>apps</code>. The dashboard rebuilds automatically.',
 					'selfhost.q6': 'Is the source code available?',
-					'selfhost.a6': 'Yes, Tesflix is open source. You can find it on GitHub and fork it to make it entirely your own.',
+					'selfhost.a6': 'Yes, Tesdash is open source. You can find it on GitHub and fork it to make it entirely your own.',
 					'footer.madeby': 'Made with ❤️ by',
 					'footer.from': 'from',
 					'footer.legal': 'Legal',
 				'fab.tooltip': 'Add new app',
 				'support.title': 'Support this project',
-				'support.desc': 'Tesflix is free and open source. If it saves you time or brings you joy, consider supporting its development — it keeps the project alive.',
+				'support.desc': 'Tesdash is free and open source. If it saves you time or brings you joy, consider supporting its development — it keeps the project alive.',
 					'support.back': '← Back',
 					'support.scan': 'Scan with your phone to donate',
 					'support.open': 'Open link',
@@ -572,16 +572,16 @@ const categories = await Promise.all(
 					'btn.about': 'Om',
 					'btn.selfhost': 'Selvhostet',
 					'btn.support': 'Støtt dette prosjektet',
-					'about.title': 'Om Tesflix',
-					'about.p1': 'Tesflix er et selvhostet, statisk dashbord designet for å starte strømmetjenester, musikkplattformer, sportskanaler, personlige medier, spill og homelab-verktøy — alt fra Teslaens innebygde nettleser.',
+					'about.title': 'Om Tesdash',
+					'about.p1': 'Tesdash er et selvhostet, statisk dashbord designet for å starte strømmetjenester, musikkplattformer, sportskanaler, personlige medier, spill og homelab-verktøy — alt fra Teslaens innebygde nettleser.',
 					'about.p2': 'Det kjører helt i nettleseren din uten behov for server etter distribusjon. Kategorier kan omorganiseres etter dine preferanser, og en innebygd URL-starter lar deg åpne ethvert nettsted i fullskjerm.',
 					'about.built-with': 'Bygget med',
 					'about.author-label': 'Forfatter',
 					'about.projects': 'Flere prosjekter',
 					'about.soon': 'Snart',
 					'faq.title': 'FAQ',
-					'faq.q1': 'Hva er Tesflix?',
-					'faq.a1': "Tesflix er et dashbord som lar deg starte strømmetjenester, musikk, sport og andre apper direkte fra Teslaens nettleser — alt åpner i fullskjerm med ett trykk.",
+					'faq.q1': 'Hva er Tesdash?',
+					'faq.a1': "Tesdash er et dashbord som lar deg starte strømmetjenester, musikk, sport og andre apper direkte fra Teslaens nettleser — alt åpner i fullskjerm med ett trykk.",
 					'faq.q2': 'Hvordan åpner jeg en app?',
 					'faq.a2': "Bare trykk på et app-kort. Det vil åpne tjenesten i en ny fullskjermfane i Teslaens nettleser.",
 					'faq.q3': 'Hva er URL-starteren?',
@@ -589,10 +589,10 @@ const categories = await Promise.all(
 					'faq.q4': 'Kan jeg omorganisere kategoriene?',
 					'faq.a4': 'Ja. Ta tak i det prikkede håndtaket til venstre for et kategorinavn og dra det til en ny posisjon. Rekkefølgen din huskes mellom besøk.',
 					'faq.q5': 'Fungerer det utenfor Tesla?',
-					'faq.a5': "Ja, Tesflix fungerer i enhver moderne nettleser på alle enheter. Fullskjermoppførselen er optimalisert for Teslaens innebygde nettleser.",
+					'faq.a5': "Ja, Tesdash fungerer i enhver moderne nettleser på alle enheter. Fullskjermoppførselen er optimalisert for Teslaens innebygde nettleser.",
 					'faq.q6': 'Er det gratis?',
 					'faq.a6': 'Helt gratis, ingen konto eller registrering kreves.',
-					'faq.q7': 'Lagrer Tesflix noen av dataene mine?',
+					'faq.q7': 'Lagrer Tesdash noen av dataene mine?',
 					'faq.a7': "Nei. Det eneste som lagres lokalt er rekkefølgen på kategoriene dine, lagret i nettleserens lokale lagring. Ingenting sendes til noen server.",
 					'selfhost.title': 'Selvhosting',
 					'selfhost.q1': 'Hvordan fungerer fullskjerm-trikset?',
@@ -600,19 +600,19 @@ const categories = await Promise.all(
 					'selfhost.q2': 'Hvordan legger jeg til eller fjerner apper?',
 					'selfhost.a2': 'Rediger <code>src/data/config.yml</code>. Hver app trenger et <code>name</code>, <code>url</code> og <code>logo</code> (lokal sti under <code>public/logos/</code> eller en ekstern URL). Ingen kodeendringer nødvendig — bare bygg på nytt.',
 					'selfhost.q3': 'Hvordan bestemmes kortets aksentfarger?',
-					'selfhost.a3': "Ved byggetid trekker Tesflix ut det mest mettede pikselet fra hver apps logo. Du kan overstyre dette ved å legge til et <code>color: '#hexcode'</code>-felt i en app-post i konfigurasjonen.",
+					'selfhost.a3': "Ved byggetid trekker Tesdash ut det mest mettede pikselet fra hver apps logo. Du kan overstyre dette ved å legge til et <code>color: '#hexcode'</code>-felt i en app-post i konfigurasjonen.",
 					'selfhost.q4': 'Hva trenger jeg for å kjøre det?',
 					'selfhost.a4': 'Node.js eller Bun. Kjør <code>bun install</code> deretter <code>bun run build</code> for å generere en statisk <code>/dist</code>-mappe du kan distribuere hvor som helst (Nginx, Caddy, Netlify, osv.).',
 					'selfhost.q5': 'Kan jeg legge til egendefinerte kategorier?',
 					'selfhost.a5': 'Ja. I <code>config.yml</code> legg til en ny oppføring under <code>categories</code> med et <code>name</code> og en liste over <code>apps</code>. Dashbordet bygges automatisk på nytt.',
 					'selfhost.q6': 'Er kildekoden tilgjengelig?',
-					'selfhost.a6': 'Ja, Tesflix er åpen kildekode. Du kan finne det på GitHub og forke det for å gjøre det helt til ditt eget.',
+					'selfhost.a6': 'Ja, Tesdash er åpen kildekode. Du kan finne det på GitHub og forke det for å gjøre det helt til ditt eget.',
 					'footer.madeby': 'Laget med ❤️ av',
 					'footer.from': 'fra',
 					'footer.legal': 'Juridisk',
 				'fab.tooltip': 'Legg til ny app',
 				'support.title': 'Støtt dette prosjektet',
-				'support.desc': 'Tesflix er gratis og åpen kildekode. Hvis det sparer deg tid eller gir deg glede, vurder å kjøpe meg en kaffe — det holder prosjektet i live.',
+				'support.desc': 'Tesdash er gratis og åpen kildekode. Hvis det sparer deg tid eller gir deg glede, vurder å kjøpe meg en kaffe — det holder prosjektet i live.',
 				'support.back': '← Tilbake',
 				'support.scan': 'Skann med telefonen for å donere',
 				'support.open': 'Åpne lenke',
@@ -627,16 +627,16 @@ const categories = await Promise.all(
 					'btn.about': 'Über',
 					'btn.selfhost': 'Selbst hosten',
 					'btn.support': 'Projekt unterstützen',
-					'about.title': 'Über Tesflix',
-					'about.p1': 'Tesflix ist ein selbst gehostetes, statisches Dashboard, das zum Starten von Streaming-Diensten, Musikplattformen, Sportkanälen, persönlichen Medien, Gaming und Homelab-Tools entwickelt wurde — alles aus dem fahrzeugeigenen Browser des Tesla.',
+					'about.title': 'Über Tesdash',
+					'about.p1': 'Tesdash ist ein selbst gehostetes, statisches Dashboard, das zum Starten von Streaming-Diensten, Musikplattformen, Sportkanälen, persönlichen Medien, Gaming und Homelab-Tools entwickelt wurde — alles aus dem fahrzeugeigenen Browser des Tesla.',
 					'about.p2': 'Es läuft vollständig in Ihrem Browser ohne Server nach der Bereitstellung. Kategorien können nach Ihren Wünschen neu geordnet werden, und ein integrierter URL-Launcher ermöglicht es Ihnen, jede Website im Vollbildmodus zu öffnen.',
 					'about.built-with': 'Erstellt mit',
 					'about.author-label': 'Autor',
 					'about.projects': 'Weitere Projekte',
 					'about.soon': 'Demnächst',
 					'faq.title': 'FAQ',
-					'faq.q1': 'Was ist Tesflix?',
-					'faq.a1': "Tesflix ist ein Dashboard, mit dem Sie Streaming-Dienste, Musik, Sport und andere Apps direkt über den Browser Ihres Tesla starten können — alles öffnet sich mit einem einzigen Tippen im Vollbildmodus.",
+					'faq.q1': 'Was ist Tesdash?',
+					'faq.a1': "Tesdash ist ein Dashboard, mit dem Sie Streaming-Dienste, Musik, Sport und andere Apps direkt über den Browser Ihres Tesla starten können — alles öffnet sich mit einem einzigen Tippen im Vollbildmodus.",
 					'faq.q2': 'Wie öffne ich eine App?',
 					'faq.a2': "Tippen oder klicken Sie einfach auf eine App-Karte. Der Dienst öffnet sich in einem neuen Vollbild-Tab im Browser Ihres Tesla.",
 					'faq.q3': 'Was ist der URL-Launcher?',
@@ -644,10 +644,10 @@ const categories = await Promise.all(
 					'faq.q4': 'Kann ich die Kategorien neu anordnen?',
 					'faq.a4': 'Ja. Greifen Sie den gepunkteten Griff links neben einem Kategorienamen und ziehen Sie ihn an eine neue Position. Ihre Reihenfolge wird zwischen den Besuchen gespeichert.',
 					'faq.q5': 'Funktioniert es außerhalb meines Tesla?',
-					'faq.a5': "Ja, Tesflix funktioniert in jedem modernen Browser auf jedem Gerät. Das Vollbildverhalten ist für den fahrzeugeigenen Browser des Tesla optimiert.",
+					'faq.a5': "Ja, Tesdash funktioniert in jedem modernen Browser auf jedem Gerät. Das Vollbildverhalten ist für den fahrzeugeigenen Browser des Tesla optimiert.",
 					'faq.q6': 'Ist es kostenlos?',
 					'faq.a6': 'Völlig kostenlos, kein Konto oder Registrierung erforderlich.',
-					'faq.q7': 'Speichert Tesflix meine Daten?',
+					'faq.q7': 'Speichert Tesdash meine Daten?',
 					'faq.a7': "Nein. Das Einzige, was lokal gespeichert wird, ist Ihre Kategorienreihenfolge, die im lokalen Speicher Ihres Browsers gespeichert ist. Nichts wird an einen Server gesendet.",
 					'selfhost.title': 'Selbst-Hosting',
 					'selfhost.q1': 'Wie funktioniert der Vollbild-Trick?',
@@ -655,19 +655,19 @@ const categories = await Promise.all(
 					'selfhost.q2': 'Wie füge ich Apps hinzu oder entferne sie?',
 					'selfhost.a2': 'Bearbeiten Sie <code>src/data/config.yml</code>. Jede App benötigt einen <code>name</code>, eine <code>url</code> und ein <code>logo</code> (lokaler Pfad unter <code>public/logos/</code> oder eine Remote-URL). Keine Code-Änderungen erforderlich — einfach neu erstellen.',
 					'selfhost.q3': 'Wie werden die Akzentfarben der Karten bestimmt?',
-					'selfhost.a3': "Beim Build extrahiert Tesflix das gesättigtste Pixel aus dem Logo jeder App. Sie können dies überschreiben, indem Sie einem App-Eintrag in der Konfiguration ein <code>color: '#hexcode'</code>-Feld hinzufügen.",
+					'selfhost.a3': "Beim Build extrahiert Tesdash das gesättigtste Pixel aus dem Logo jeder App. Sie können dies überschreiben, indem Sie einem App-Eintrag in der Konfiguration ein <code>color: '#hexcode'</code>-Feld hinzufügen.",
 					'selfhost.q4': 'Was benötige ich, um es auszuführen?',
 					'selfhost.a4': 'Node.js oder Bun. Führen Sie <code>bun install</code> und dann <code>bun run build</code> aus, um einen statischen <code>/dist</code>-Ordner zu erstellen, den Sie überall bereitstellen können (Nginx, Caddy, Netlify, usw.).',
 					'selfhost.q5': 'Kann ich benutzerdefinierte Kategorien hinzufügen?',
 					'selfhost.a5': 'Ja. In <code>config.yml</code> fügen Sie einen neuen Eintrag unter <code>categories</code> mit einem <code>name</code> und einer Liste von <code>apps</code> hinzu. Das Dashboard wird automatisch neu erstellt.',
 					'selfhost.q6': 'Ist der Quellcode verfügbar?',
-					'selfhost.a6': 'Ja, Tesflix ist Open Source. Sie können es auf GitHub finden und forken, um es ganz Ihrem eigenen zu machen.',
+					'selfhost.a6': 'Ja, Tesdash ist Open Source. Sie können es auf GitHub finden und forken, um es ganz Ihrem eigenen zu machen.',
 					'footer.madeby': 'Erstellt mit ❤️ von',
 					'footer.from': 'aus',
 					'footer.legal': 'Impressum',
 				'fab.tooltip': 'App hinzufügen',
 				'support.title': 'Dieses Projekt unterstützen',
-				'support.desc': 'Tesflix ist kostenlos und Open Source. Wenn es dir Zeit spart oder Freude bereitet, erwäge mir einen Kaffee zu kaufen — das hält das Projekt am Leben.',
+				'support.desc': 'Tesdash ist kostenlos und Open Source. Wenn es dir Zeit spart oder Freude bereitet, erwäge mir einen Kaffee zu kaufen — das hält das Projekt am Leben.',
 				'support.back': '← Zurück',
 				'support.scan': 'Mit dem Handy scannen um zu spenden',
 				'support.open': 'Link öffnen',
@@ -682,16 +682,16 @@ const categories = await Promise.all(
 					'btn.about': 'Om',
 					'btn.selfhost': 'Självhosta',
 					'btn.support': 'Stöd projektet',
-					'about.title': 'Om Tesflix',
-					'about.p1': 'Tesflix är en självhostad, statisk instrumentpanel utformad för att starta streamingtjänster, musikplattformar, sportskanaler, personliga medier, gaming och homelab-verktyg — allt från din Teslas inbyggda webbläsare.',
+					'about.title': 'Om Tesdash',
+					'about.p1': 'Tesdash är en självhostad, statisk instrumentpanel utformad för att starta streamingtjänster, musikplattformar, sportskanaler, personliga medier, gaming och homelab-verktyg — allt från din Teslas inbyggda webbläsare.',
 					'about.p2': 'Det körs helt i din webbläsare utan server efter driftsättning. Kategorier kan ordnas om efter dina önskemål, och en inbyggd URL-startare låter dig öppna vilken webbplats som helst i helskärm.',
 					'about.built-with': 'Byggt med',
 					'about.author-label': 'Författare',
 					'about.projects': 'Fler projekt',
 					'about.soon': 'Snart',
 					'faq.title': 'FAQ',
-					'faq.q1': 'Vad är Tesflix?',
-					'faq.a1': "Tesflix är en instrumentpanel som låter dig starta streamingtjänster, musik, sport och andra appar direkt från din Teslas webbläsare — allt öppnas i helskärm med ett enda tryck.",
+					'faq.q1': 'Vad är Tesdash?',
+					'faq.a1': "Tesdash är en instrumentpanel som låter dig starta streamingtjänster, musik, sport och andra appar direkt från din Teslas webbläsare — allt öppnas i helskärm med ett enda tryck.",
 					'faq.q2': 'Hur öppnar jag en app?',
 					'faq.a2': "Tryck bara på ett appkort. Det öppnar tjänsten i en ny helskärmsflik i din Teslas webbläsare.",
 					'faq.q3': 'Vad är URL-startaren?',
@@ -699,10 +699,10 @@ const categories = await Promise.all(
 					'faq.q4': 'Kan jag ändra ordning på kategorierna?',
 					'faq.a4': 'Ja. Ta tag i det prickade handtaget till vänster om ett kategorinamn och dra det till en ny position. Din ordning sparas mellan besöken.',
 					'faq.q5': 'Fungerar det utanför min Tesla?',
-					'faq.a5': "Ja, Tesflix fungerar i vilken modern webbläsare som helst på vilken enhet som helst. Helskärmsbeteendet är optimerat för Teslas inbyggda webbläsare.",
+					'faq.a5': "Ja, Tesdash fungerar i vilken modern webbläsare som helst på vilken enhet som helst. Helskärmsbeteendet är optimerat för Teslas inbyggda webbläsare.",
 					'faq.q6': 'Är det gratis?',
 					'faq.a6': 'Helt gratis, inget konto eller registrering krävs.',
-					'faq.q7': 'Lagrar Tesflix någon av mina uppgifter?',
+					'faq.q7': 'Lagrar Tesdash någon av mina uppgifter?',
 					'faq.a7': "Nej. Det enda som sparas lokalt är din kategoriordning, lagrad i din webbläsares lokala lagring. Ingenting skickas till någon server.",
 					'selfhost.title': 'Självhosting',
 					'selfhost.q1': 'Hur fungerar helskärmsknepet?',
@@ -710,19 +710,19 @@ const categories = await Promise.all(
 					'selfhost.q2': 'Hur lägger jag till eller tar bort appar?',
 					'selfhost.a2': 'Redigera <code>src/data/config.yml</code>. Varje app behöver ett <code>name</code>, <code>url</code> och <code>logo</code> (lokal sökväg under <code>public/logos/</code> eller en fjärr-URL). Inga kodändringar behövs — bygg bara om.',
 					'selfhost.q3': 'Hur bestäms kortens accentfärger?',
-					'selfhost.a3': "Vid byggtid extraherar Tesflix den mest mättade pixeln från varje apps logotyp. Du kan åsidosätta detta genom att lägga till ett <code>color: '#hexcode'</code>-fält i en apppost i konfigurationen.",
+					'selfhost.a3': "Vid byggtid extraherar Tesdash den mest mättade pixeln från varje apps logotyp. Du kan åsidosätta detta genom att lägga till ett <code>color: '#hexcode'</code>-fält i en apppost i konfigurationen.",
 					'selfhost.q4': 'Vad behöver jag för att köra det?',
 					'selfhost.a4': 'Node.js eller Bun. Kör <code>bun install</code> sedan <code>bun run build</code> för att generera en statisk <code>/dist</code>-mapp som du kan driftsätta var som helst (Nginx, Caddy, Netlify, osv.).',
 					'selfhost.q5': 'Kan jag lägga till anpassade kategorier?',
 					'selfhost.a5': 'Ja. I <code>config.yml</code> lägg till en ny post under <code>categories</code> med ett <code>name</code> och en lista med <code>apps</code>. Instrumentpanelen byggs automatiskt om.',
 					'selfhost.q6': 'Är källkoden tillgänglig?',
-					'selfhost.a6': 'Ja, Tesflix är öppen källkod. Du kan hitta det på GitHub och forka det för att göra det helt till ditt eget.',
+					'selfhost.a6': 'Ja, Tesdash är öppen källkod. Du kan hitta det på GitHub och forka det för att göra det helt till ditt eget.',
 					'footer.madeby': 'Skapad med ❤️ av',
 					'footer.from': 'från',
 					'footer.legal': 'Juridik',
 				'fab.tooltip': 'Lägg till ny app',
 				'support.title': 'Stöd det här projektet',
-				'support.desc': 'Tesflix är gratis och öppen källkod. Om det sparar din tid eller ger dig glädje, överväg att köpa mig en kaffe — det håller projektet vid liv.',
+				'support.desc': 'Tesdash är gratis och öppen källkod. Om det sparar din tid eller ger dig glädje, överväg att köpa mig en kaffe — det håller projektet vid liv.',
 				'support.back': '← Tillbaka',
 				'support.scan': 'Skanna med din telefon för att donera',
 				'support.open': 'Öppna länk',
@@ -737,16 +737,16 @@ const categories = await Promise.all(
 					'btn.about': 'Over',
 					'btn.selfhost': 'Zelf hosten',
 					'btn.support': 'Steun het project',
-					'about.title': 'Over Tesflix',
-					'about.p1': "Tesflix is een zelfgehost, statisch dashboard ontworpen om streamingdiensten, muziekplatformen, sportkanalen, persoonlijke media, gaming en homelab-tools te starten — allemaal vanuit de ingebouwde browser van je Tesla.",
+					'about.title': 'Over Tesdash',
+					'about.p1': "Tesdash is een zelfgehost, statisch dashboard ontworpen om streamingdiensten, muziekplatformen, sportkanalen, persoonlijke media, gaming en homelab-tools te starten — allemaal vanuit de ingebouwde browser van je Tesla.",
 					'about.p2': 'Het draait volledig in je browser zonder server na de implementatie. Categorieën kunnen worden herschikt naar jouw voorkeuren, en een ingebouwde URL-launcher laat je elke website in volledig scherm openen.',
 					'about.built-with': 'Gebouwd met',
 					'about.author-label': 'Auteur',
 					'about.projects': 'Meer projecten',
 					'about.soon': 'Binnenkort',
 					'faq.title': 'FAQ',
-					'faq.q1': 'Wat is Tesflix?',
-					'faq.a1': "Tesflix is een dashboard waarmee je streamingdiensten, muziek, sport en andere apps direct vanuit de browser van je Tesla kunt starten — alles opent in volledig scherm met een enkele tik.",
+					'faq.q1': 'Wat is Tesdash?',
+					'faq.a1': "Tesdash is een dashboard waarmee je streamingdiensten, muziek, sport en andere apps direct vanuit de browser van je Tesla kunt starten — alles opent in volledig scherm met een enkele tik.",
 					'faq.q2': 'Hoe open ik een app?',
 					'faq.a2': "Tik of klik gewoon op een app-kaart. De service wordt geopend in een nieuw volledig scherm tabblad in de browser van je Tesla.",
 					'faq.q3': 'Wat is de URL-launcher?',
@@ -754,10 +754,10 @@ const categories = await Promise.all(
 					'faq.q4': 'Kan ik de categorieën herordenen?',
 					'faq.a4': 'Ja. Pak het gestippelde handvat links van een categorienaam en sleep het naar een nieuwe positie. Je volgorde wordt onthouden tussen bezoeken.',
 					'faq.q5': 'Werkt het buiten mijn Tesla?',
-					'faq.a5': "Ja, Tesflix werkt in elke moderne browser op elk apparaat. Het volledige schermgedrag is geoptimaliseerd voor de ingebouwde browser van Tesla.",
+					'faq.a5': "Ja, Tesdash werkt in elke moderne browser op elk apparaat. Het volledige schermgedrag is geoptimaliseerd voor de ingebouwde browser van Tesla.",
 					'faq.q6': 'Is het gratis?',
 					'faq.a6': 'Volledig gratis, geen account of aanmelding vereist.',
-					'faq.q7': 'Slaat Tesflix mijn gegevens op?',
+					'faq.q7': 'Slaat Tesdash mijn gegevens op?',
 					'faq.a7': "Nee. Het enige dat lokaal wordt opgeslagen is je categorievolgororde, opgeslagen in de lokale opslag van je browser. Er wordt niets naar een server verzonden.",
 					'selfhost.title': 'Zelf hosten',
 					'selfhost.q1': 'Hoe werkt de volledig-scherm-truc?',
@@ -765,19 +765,19 @@ const categories = await Promise.all(
 					'selfhost.q2': 'Hoe voeg ik apps toe of verwijder ik ze?',
 					'selfhost.a2': 'Bewerk <code>src/data/config.yml</code>. Elke app heeft een <code>name</code>, <code>url</code> en <code>logo</code> nodig (lokaal pad onder <code>public/logos/</code> of een externe URL). Geen codewijzigingen nodig — gewoon opnieuw bouwen.',
 					'selfhost.q3': 'Hoe worden de accentkleuren van kaarten bepaald?',
-					'selfhost.a3': "Tijdens het bouwen extraheert Tesflix de meest verzadigde pixel van het logo van elke app. Je kunt dit overschrijven door een <code>color: '#hexcode'</code>-veld toe te voegen aan een app-vermelding in de configuratie.",
+					'selfhost.a3': "Tijdens het bouwen extraheert Tesdash de meest verzadigde pixel van het logo van elke app. Je kunt dit overschrijven door een <code>color: '#hexcode'</code>-veld toe te voegen aan een app-vermelding in de configuratie.",
 					'selfhost.q4': 'Wat heb ik nodig om het uit te voeren?',
 					'selfhost.a4': 'Node.js of Bun. Voer <code>bun install</code> uit, dan <code>bun run build</code> om een statische <code>/dist</code>-map te genereren die je overal kunt implementeren (Nginx, Caddy, Netlify, enz.).',
 					'selfhost.q5': 'Kan ik aangepaste categorieën toevoegen?',
 					'selfhost.a5': 'Ja. Voeg in <code>config.yml</code> een nieuw item toe onder <code>categories</code> met een <code>name</code> en een lijst van <code>apps</code>. Het dashboard wordt automatisch opnieuw gebouwd.',
 					'selfhost.q6': 'Is de broncode beschikbaar?',
-					'selfhost.a6': 'Ja, Tesflix is open source. Je kunt het vinden op GitHub en het forken om het helemaal van jou te maken.',
+					'selfhost.a6': 'Ja, Tesdash is open source. Je kunt het vinden op GitHub en het forken om het helemaal van jou te maken.',
 					'footer.madeby': 'Gemaakt met ❤️ door',
 					'footer.from': 'uit',
 					'footer.legal': 'Juridisch',
 				'fab.tooltip': 'App toevoegen',
 				'support.title': 'Steun dit project',
-				'support.desc': 'Tesflix is gratis en open source. Als het je tijd bespaart of vreugde brengt, overweeg dan om me een koffie te kopen — dat houdt het project in leven.',
+				'support.desc': 'Tesdash is gratis en open source. Als het je tijd bespaart of vreugde brengt, overweeg dan om me een koffie te kopen — dat houdt het project in leven.',
 				'support.back': '← Terug',
 				'support.scan': 'Scan met je telefoon om te doneren',
 				'support.open': 'Link openen',
@@ -792,16 +792,16 @@ const categories = await Promise.all(
 					'btn.about': 'À propos',
 					'btn.selfhost': 'Auto-hébergement',
 					'btn.support': 'Soutenir le projet',
-					'about.title': 'À propos de Tesflix',
-					'about.p1': "Tesflix est un tableau de bord statique auto-hébergé conçu pour lancer des services de streaming, des plateformes musicales, des chaînes sportives, des médias personnels, des jeux et des outils homelab — le tout depuis le navigateur intégré de votre Tesla.",
+					'about.title': 'À propos de Tesdash',
+					'about.p1': "Tesdash est un tableau de bord statique auto-hébergé conçu pour lancer des services de streaming, des plateformes musicales, des chaînes sportives, des médias personnels, des jeux et des outils homelab — le tout depuis le navigateur intégré de votre Tesla.",
 					'about.p2': "Il fonctionne entièrement dans votre navigateur sans serveur requis après le déploiement. Les catégories peuvent être réorganisées selon vos préférences, et un lanceur d'URL intégré vous permet d'ouvrir n'importe quel site en plein écran.",
 					'about.built-with': 'Construit avec',
 					'about.author-label': 'Auteur',
 					'about.projects': 'Autres projets',
 					'about.soon': 'Bientôt',
 					'faq.title': 'FAQ',
-					'faq.q1': "Qu'est-ce que Tesflix ?",
-					'faq.a1': "Tesflix est un tableau de bord qui vous permet de lancer des services de streaming, de la musique, du sport et d'autres applications directement depuis le navigateur de votre Tesla — tout s'ouvre en plein écran d'un seul toucher.",
+					'faq.q1': "Qu'est-ce que Tesdash ?",
+					'faq.a1': "Tesdash est un tableau de bord qui vous permet de lancer des services de streaming, de la musique, du sport et d'autres applications directement depuis le navigateur de votre Tesla — tout s'ouvre en plein écran d'un seul toucher.",
 					'faq.q2': "Comment ouvrir une application ?",
 					'faq.a2': "Appuyez ou cliquez simplement sur une carte d'application. Le service s'ouvrira dans un nouvel onglet en plein écran dans le navigateur de votre Tesla.",
 					'faq.q3': "Qu'est-ce que le lanceur d'URL ?",
@@ -809,10 +809,10 @@ const categories = await Promise.all(
 					'faq.q4': "Puis-je réorganiser les catégories ?",
 					'faq.a4': "Oui. Saisissez la poignée pointillée à gauche d'un nom de catégorie et faites-la glisser vers une nouvelle position. Votre ordre est mémorisé entre les visites.",
 					'faq.q5': "Fonctionne-t-il en dehors de ma Tesla ?",
-					'faq.a5': "Oui, Tesflix fonctionne dans n'importe quel navigateur moderne sur n'importe quel appareil. Le comportement en plein écran est optimisé pour le navigateur intégré de Tesla.",
+					'faq.a5': "Oui, Tesdash fonctionne dans n'importe quel navigateur moderne sur n'importe quel appareil. Le comportement en plein écran est optimisé pour le navigateur intégré de Tesla.",
 					'faq.q6': "Est-ce gratuit ?",
 					'faq.a6': "Complètement gratuit, aucun compte ni inscription requis.",
-					'faq.q7': "Tesflix stocke-t-il mes données ?",
+					'faq.q7': "Tesdash stocke-t-il mes données ?",
 					'faq.a7': "Non. La seule chose sauvegardée localement est l'ordre de vos catégories, stocké dans le stockage local de votre navigateur. Rien n'est envoyé à un serveur.",
 					'selfhost.title': 'Auto-hébergement',
 					'selfhost.q1': "Comment fonctionne l'astuce plein écran ?",
@@ -820,19 +820,19 @@ const categories = await Promise.all(
 					'selfhost.q2': "Comment ajouter ou supprimer des applications ?",
 					'selfhost.a2': "Modifiez <code>src/data/config.yml</code>. Chaque application a besoin d'un <code>name</code>, d'une <code>url</code> et d'un <code>logo</code> (chemin local sous <code>public/logos/</code> ou une URL distante). Aucun changement de code nécessaire — reconstruisez simplement.",
 					'selfhost.q3': "Comment sont déterminées les couleurs d'accent des cartes ?",
-					'selfhost.a3': "Au moment de la construction, Tesflix extrait le pixel le plus saturé du logo de chaque application. Vous pouvez remplacer cela en ajoutant un champ <code>color: '#hexcode'</code> à n'importe quelle entrée d'application dans la configuration.",
+					'selfhost.a3': "Au moment de la construction, Tesdash extrait le pixel le plus saturé du logo de chaque application. Vous pouvez remplacer cela en ajoutant un champ <code>color: '#hexcode'</code> à n'importe quelle entrée d'application dans la configuration.",
 					'selfhost.q4': "De quoi ai-je besoin pour l'exécuter ?",
 					'selfhost.a4': "Node.js ou Bun. Exécutez <code>bun install</code> puis <code>bun run build</code> pour générer un dossier statique <code>/dist</code> que vous pouvez déployer n'importe où (Nginx, Caddy, Netlify, etc.).",
 					'selfhost.q5': "Puis-je ajouter des catégories personnalisées ?",
 					'selfhost.a5': "Oui. Dans <code>config.yml</code>, ajoutez une nouvelle entrée sous <code>categories</code> avec un <code>name</code> et une liste d'<code>apps</code>. Le tableau de bord se reconstruit automatiquement.",
 					'selfhost.q6': "Le code source est-il disponible ?",
-					'selfhost.a6': "Oui, Tesflix est open source. Vous pouvez le trouver sur GitHub et le forker pour en faire entièrement le vôtre.",
+					'selfhost.a6': "Oui, Tesdash est open source. Vous pouvez le trouver sur GitHub et le forker pour en faire entièrement le vôtre.",
 					'footer.madeby': 'Fait avec ❤️ par',
 					'footer.from': 'de',
 					'footer.legal': 'Mentions légales',
 				'fab.tooltip': 'Ajouter une app',
 				'support.title': 'Soutenir ce projet',
-				'support.desc': "Tesflix est gratuit et open source. Si cela vous fait gagner du temps ou vous apporte de la joie, envisagez de m\'offrir un café — cela maintient le projet en vie.",
+				'support.desc': "Tesdash est gratuit et open source. Si cela vous fait gagner du temps ou vous apporte de la joie, envisagez de m\'offrir un café — cela maintient le projet en vie.",
 				'support.back': '← Retour',
 				'support.scan': 'Scannez avec votre téléphone pour faire un don',
 				'support.open': 'Ouvrir le lien',
@@ -847,16 +847,16 @@ const categories = await Promise.all(
 					'btn.about': 'Om',
 					'btn.selfhost': 'Selvhostet',
 					'btn.support': 'Støt projektet',
-					'about.title': 'Om Tesflix',
-					'about.p1': 'Tesflix er et selvhostet, statisk dashboard designet til at starte streamingtjenester, musikplatforme, sportskanaler, personlige medier, gaming og homelab-værktøjer — alt fra din Teslas indbyggede browser.',
+					'about.title': 'Om Tesdash',
+					'about.p1': 'Tesdash er et selvhostet, statisk dashboard designet til at starte streamingtjenester, musikplatforme, sportskanaler, personlige medier, gaming og homelab-værktøjer — alt fra din Teslas indbyggede browser.',
 					'about.p2': 'Det kører helt i din browser uden server påkrævet efter implementering. Kategorier kan omarrangeres efter dine præferencer, og en indbygget URL-starter lader dig åbne ethvert websted i fuldskærm.',
 					'about.built-with': 'Bygget med',
 					'about.author-label': 'Forfatter',
 					'about.projects': 'Flere projekter',
 					'about.soon': 'Snart',
 					'faq.title': 'FAQ',
-					'faq.q1': 'Hvad er Tesflix?',
-					'faq.a1': "Tesflix er et dashboard, der lader dig starte streamingtjenester, musik, sport og andre apps direkte fra din Teslas browser — alt åbner i fuldskærm med et enkelt tryk.",
+					'faq.q1': 'Hvad er Tesdash?',
+					'faq.a1': "Tesdash er et dashboard, der lader dig starte streamingtjenester, musik, sport og andre apps direkte fra din Teslas browser — alt åbner i fuldskærm med et enkelt tryk.",
 					'faq.q2': 'Hvordan åbner jeg en app?',
 					'faq.a2': "Tryk eller klik blot på et app-kort. Det åbner tjenesten i en ny fuldskærmsfane i din Teslas browser.",
 					'faq.q3': 'Hvad er URL-starteren?',
@@ -864,10 +864,10 @@ const categories = await Promise.all(
 					'faq.q4': 'Kan jeg omarrangere kategorierne?',
 					'faq.a4': 'Ja. Tag fat i det prikede håndtag til venstre for et kategorinavn og træk det til en ny position. Din rækkefølge huskes mellem besøg.',
 					'faq.q5': 'Virker det uden for min Tesla?',
-					'faq.a5': "Ja, Tesflix virker i enhver moderne browser på enhver enhed. Fuldskærmsadfærden er optimeret til Teslas indbyggede browser.",
+					'faq.a5': "Ja, Tesdash virker i enhver moderne browser på enhver enhed. Fuldskærmsadfærden er optimeret til Teslas indbyggede browser.",
 					'faq.q6': 'Er det gratis?',
 					'faq.a6': 'Helt gratis, ingen konto eller tilmelding påkrævet.',
-					'faq.q7': 'Gemmer Tesflix nogen af mine data?',
+					'faq.q7': 'Gemmer Tesdash nogen af mine data?',
 					'faq.a7': "Nej. Det eneste der gemmes lokalt er din kategorirækkefølge, lagret i din browsers lokale lager. Intet sendes til nogen server.",
 					'selfhost.title': 'Selvhosting',
 					'selfhost.q1': 'Hvordan virker fuldskærmstrikset?',
@@ -875,19 +875,19 @@ const categories = await Promise.all(
 					'selfhost.q2': 'Hvordan tilføjer eller fjerner jeg apps?',
 					'selfhost.a2': 'Rediger <code>src/data/config.yml</code>. Hver app har brug for et <code>name</code>, <code>url</code> og <code>logo</code> (lokal sti under <code>public/logos/</code> eller en ekstern URL). Ingen kodeændringer nødvendige — byg blot om.',
 					'selfhost.q3': 'Hvordan bestemmes kortets akcentfarver?',
-					'selfhost.a3': "Ved byggetid udtrækker Tesflix den mest mættede pixel fra hvert apps logo. Du kan tilsidesætte dette ved at tilføje et <code>color: '#hexcode'</code>-felt til en app-post i konfigurationen.",
+					'selfhost.a3': "Ved byggetid udtrækker Tesdash den mest mættede pixel fra hvert apps logo. Du kan tilsidesætte dette ved at tilføje et <code>color: '#hexcode'</code>-felt til en app-post i konfigurationen.",
 					'selfhost.q4': 'Hvad har jeg brug for at køre det?',
 					'selfhost.a4': 'Node.js eller Bun. Kør <code>bun install</code> derefter <code>bun run build</code> for at generere en statisk <code>/dist</code>-mappe, som du kan implementere overalt (Nginx, Caddy, Netlify, osv.).',
 					'selfhost.q5': 'Kan jeg tilføje brugerdefinerede kategorier?',
 					'selfhost.a5': 'Ja. I <code>config.yml</code> tilføj en ny post under <code>categories</code> med et <code>name</code> og en liste over <code>apps</code>. Dashboardet genopbygges automatisk.',
 					'selfhost.q6': 'Er kildekoden tilgængelig?',
-					'selfhost.a6': 'Ja, Tesflix er open source. Du kan finde det på GitHub og forke det for at gøre det helt til dit eget.',
+					'selfhost.a6': 'Ja, Tesdash er open source. Du kan finde det på GitHub og forke det for at gøre det helt til dit eget.',
 					'footer.madeby': 'Lavet med ❤️ af',
 					'footer.from': 'fra',
 					'footer.legal': 'Juridisk',
 				'fab.tooltip': 'Tilføj ny app',
 				'support.title': 'Støt dette projekt',
-				'support.desc': 'Tesflix er gratis og open source. Hvis det sparer dig tid eller bringer dig glæde, overvej at købe mig en kop kaffe — det holder projektet i live.',
+				'support.desc': 'Tesdash er gratis og open source. Hvis det sparer dig tid eller bringer dig glæde, overvej at købe mig en kop kaffe — det holder projektet i live.',
 				'support.back': '← Tilbage',
 				'support.scan': 'Scan med din telefon for at donere',
 				'support.open': 'Åbn link',
@@ -902,16 +902,16 @@ const categories = await Promise.all(
 					'btn.about': 'Tietoja',
 					'btn.selfhost': 'Oma isännointi',
 					'btn.support': 'Tue tätä projektia',
-					'about.title': 'Tietoja Tesflixistä',
-					'about.p1': 'Tesflix on itse isännöity, staattinen kojelauta, joka on suunniteltu käynnistämään suoratoistopalveluja, musiikkialustoja, urheilukanavia, henkilökohtaisia medioita, pelejä ja homelab-työkaluja — kaikki Teslasi ajoneuvon selaimesta.',
+					'about.title': 'Tietoja Tesdashistä',
+					'about.p1': 'Tesdash on itse isännöity, staattinen kojelauta, joka on suunniteltu käynnistämään suoratoistopalveluja, musiikkialustoja, urheilukanavia, henkilökohtaisia medioita, pelejä ja homelab-työkaluja — kaikki Teslasi ajoneuvon selaimesta.',
 					'about.p2': 'Se toimii kokonaan selaimessasi ilman palvelinta käyttöönoton jälkeen. Kategorioita voidaan järjestää uudelleen mieltymystesi mukaan, ja sisäänrakennettu URL-käynnistäjä mahdollistaa minkä tahansa verkkosivuston avaamisen koko näytölle.',
 					'about.built-with': 'Rakennettu',
 					'about.author-label': 'Tekijä',
 					'about.projects': 'Lisää projekteja',
 					'about.soon': 'Pian',
 					'faq.title': 'FAQ',
-					'faq.q1': 'Mikä on Tesflix?',
-					'faq.a1': "Tesflix on kojelauta, jonka avulla voit käynnistää suoratoistopalveluja, musiikkia, urheilua ja muita sovelluksia suoraan Teslasi selaimesta — kaikki avautuvat koko näytölle yhdellä napautuksella.",
+					'faq.q1': 'Mikä on Tesdash?',
+					'faq.a1': "Tesdash on kojelauta, jonka avulla voit käynnistää suoratoistopalveluja, musiikkia, urheilua ja muita sovelluksia suoraan Teslasi selaimesta — kaikki avautuvat koko näytölle yhdellä napautuksella.",
 					'faq.q2': 'Miten avaan sovelluksen?',
 					'faq.a2': "Napauta tai napsauta mitä tahansa sovelluskorttia. Se avaa palvelun uudessa koko näytön välilehdessä Teslasi selaimessa.",
 					'faq.q3': 'Mikä on URL-käynnistäjä?',
@@ -919,10 +919,10 @@ const categories = await Promise.all(
 					'faq.q4': 'Voinko järjestää kategoriat uudelleen?',
 					'faq.a4': 'Kyllä. Tartu pisteelliseen kahvaan kategorian nimen vasemmalla puolella ja vedä se uuteen paikkaan. Järjestyksesi muistetaan käyntien välillä.',
 					'faq.q5': 'Toimiiko se Teslani ulkopuolella?',
-					'faq.a5': "Kyllä, Tesflix toimii missä tahansa modernissa selaimessa millä tahansa laitteella. Koko näytön toiminta on optimoitu Teslan ajoneuvon selaimelle.",
+					'faq.a5': "Kyllä, Tesdash toimii missä tahansa modernissa selaimessa millä tahansa laitteella. Koko näytön toiminta on optimoitu Teslan ajoneuvon selaimelle.",
 					'faq.q6': 'Onko se ilmainen?',
 					'faq.a6': 'Täysin ilmainen, ei tiliä tai rekisteröitymistä tarvita.',
-					'faq.q7': 'Tallentaako Tesflix tietojani?',
+					'faq.q7': 'Tallentaako Tesdash tietojani?',
 					'faq.a7': "Ei. Ainoa paikallisesti tallennettu asia on kategoriajärjestyksesi, joka on tallennettu selaimesi paikalliseen tallennustilaan. Mitään ei lähetetä palvelimelle.",
 					'selfhost.title': 'Oma isännointi',
 					'selfhost.q1': 'Miten koko näytön temppu toimii?',
@@ -930,19 +930,19 @@ const categories = await Promise.all(
 					'selfhost.q2': 'Miten lisään tai poistan sovelluksia?',
 					'selfhost.a2': 'Muokkaa <code>src/data/config.yml</code>. Jokainen sovellus tarvitsee <code>name</code>-, <code>url</code>- ja <code>logo</code>-kentät (paikallinen polku <code>public/logos/</code>-hakemistossa tai etä-URL). Ei koodimuutoksia tarvita — rakenna vain uudelleen.',
 					'selfhost.q3': 'Miten korttien korostusvärit määritetään?',
-					'selfhost.a3': "Rakennusaikana Tesflix poimii kyllästyneimmän pikselin jokaisen sovelluksen logosta. Voit ohittaa tämän lisäämällä <code>color: '#hexcode'</code>-kentän mihin tahansa sovellustietueeseen konfiguraatiossa.",
+					'selfhost.a3': "Rakennusaikana Tesdash poimii kyllästyneimmän pikselin jokaisen sovelluksen logosta. Voit ohittaa tämän lisäämällä <code>color: '#hexcode'</code>-kentän mihin tahansa sovellustietueeseen konfiguraatiossa.",
 					'selfhost.q4': 'Mitä tarvitsen sen ajamiseen?',
 					'selfhost.a4': 'Node.js tai Bun. Suorita <code>bun install</code> sitten <code>bun run build</code> luodaksesi staattisen <code>/dist</code>-kansion, jonka voit ottaa käyttöön missä tahansa (Nginx, Caddy, Netlify, jne.).',
 					'selfhost.q5': 'Voinko lisätä mukautettuja kategorioita?',
 					'selfhost.a5': 'Kyllä. <code>config.yml</code>-tiedostossa lisää uusi merkintä <code>categories</code>-kohtaan <code>name</code>:lla ja <code>apps</code>-listalla. Kojelauta rakentuu automaattisesti uudelleen.',
 					'selfhost.q6': 'Onko lähdekoodi saatavilla?',
-					'selfhost.a6': 'Kyllä, Tesflix on avoimen lähdekoodin projekti. Löydät sen GitHubista ja voit haarauttaa sen tehdäksesi siitä täysin omasi.',
+					'selfhost.a6': 'Kyllä, Tesdash on avoimen lähdekoodin projekti. Löydät sen GitHubista ja voit haarauttaa sen tehdäksesi siitä täysin omasi.',
 					'footer.madeby': 'Tehty ❤️ rakkaudella',
 					'footer.from': 'maasta',
 					'footer.legal': 'Oikeudellinen',
 				'fab.tooltip': 'Lisää uusi sovellus',
 				'support.title': 'Tue tätä projektia',
-				'support.desc': 'Tesflix on ilmainen ja avoimen lähdekoodin projekti. Jos se säästää aikaasi tai tuo iloa, harkitse kahvin ostamista minulle — se pitää projektin elossa.',
+				'support.desc': 'Tesdash on ilmainen ja avoimen lähdekoodin projekti. Jos se säästää aikaasi tai tuo iloa, harkitse kahvin ostamista minulle — se pitää projektin elossa.',
 				'support.back': '← Takaisin',
 				'support.scan': 'Skannaa puhelimellasi lahjoittaaksesi',
 				'support.open': 'Avaa linkki',
@@ -957,16 +957,16 @@ const categories = await Promise.all(
 					'btn.about': 'Info',
 					'btn.selfhost': 'Self-Hosting',
 					'btn.support': 'Supporta il progetto',
-					'about.title': 'Informazioni su Tesflix',
-					'about.p1': "Tesflix è una dashboard statica self-hosted progettata per avviare servizi di streaming, piattaforme musicali, canali sportivi, media personali, gaming e strumenti homelab — tutto dal browser integrato della tua Tesla.",
+					'about.title': 'Informazioni su Tesdash',
+					'about.p1': "Tesdash è una dashboard statica self-hosted progettata per avviare servizi di streaming, piattaforme musicali, canali sportivi, media personali, gaming e strumenti homelab — tutto dal browser integrato della tua Tesla.",
 					'about.p2': 'Funziona interamente nel tuo browser senza server richiesto dopo il deployment. Le categorie possono essere riordinate secondo le tue preferenze, e un launcher URL integrato ti permette di aprire qualsiasi sito in modalità a schermo intero.',
 					'about.built-with': 'Costruito con',
 					'about.author-label': 'Autore',
 					'about.projects': 'Altri progetti',
 					'about.soon': 'Prossimamente',
 					'faq.title': 'FAQ',
-					'faq.q1': "Cos'è Tesflix?",
-					'faq.a1': "Tesflix è una dashboard che ti permette di avviare servizi di streaming, musica, sport e altre app direttamente dal browser della tua Tesla — tutto si apre a schermo intero con un singolo tocco.",
+					'faq.q1': "Cos'è Tesdash?",
+					'faq.a1': "Tesdash è una dashboard che ti permette di avviare servizi di streaming, musica, sport e altre app direttamente dal browser della tua Tesla — tutto si apre a schermo intero con un singolo tocco.",
 					'faq.q2': 'Come apro un app?',
 					'faq.a2': "Tocca o clicca semplicemente su una scheda app. Aprirà il servizio in una nuova scheda a schermo intero nel browser della tua Tesla.",
 					'faq.q3': "Cos'è il launcher URL?",
@@ -974,10 +974,10 @@ const categories = await Promise.all(
 					'faq.q4': 'Posso riordinare le categorie?',
 					'faq.a4': 'Sì. Afferra la maniglia punteggiata a sinistra del nome di una categoria e trascinala in una nuova posizione. Il tuo ordine viene ricordato tra le visite.',
 					'faq.q5': 'Funziona fuori dalla mia Tesla?',
-					'faq.a5': "Sì, Tesflix funziona in qualsiasi browser moderno su qualsiasi dispositivo. Il comportamento a schermo intero è ottimizzato per il browser integrato di Tesla.",
+					'faq.a5': "Sì, Tesdash funziona in qualsiasi browser moderno su qualsiasi dispositivo. Il comportamento a schermo intero è ottimizzato per il browser integrato di Tesla.",
 					'faq.q6': 'È gratuito?',
 					'faq.a6': 'Completamente gratuito, nessun account o registrazione richiesti.',
-					'faq.q7': 'Tesflix conserva i miei dati?',
+					'faq.q7': 'Tesdash conserva i miei dati?',
 					'faq.a7': "No. L'unica cosa salvata localmente è l'ordine delle tue categorie, memorizzato nel local storage del tuo browser. Nulla viene inviato a nessun server.",
 					'selfhost.title': 'Self-Hosting',
 					'selfhost.q1': 'Come funziona il trucco dello schermo intero?',
@@ -985,19 +985,19 @@ const categories = await Promise.all(
 					'selfhost.q2': 'Come aggiungo o rimuovo app?',
 					'selfhost.a2': 'Modifica <code>src/data/config.yml</code>. Ogni app ha bisogno di un <code>name</code>, <code>url</code> e <code>logo</code> (percorso locale sotto <code>public/logos/</code> o un URL remoto). Nessuna modifica al codice necessaria — basta ricostruire.',
 					'selfhost.q3': "Come vengono determinate i colori d'accento delle schede?",
-					'selfhost.a3': "Al momento della build, Tesflix estrae il pixel più saturo dal logo di ogni app. Puoi sovrascrivere questo aggiungendo un campo <code>color: '#hexcode'</code> a qualsiasi voce app nella configurazione.",
+					'selfhost.a3': "Al momento della build, Tesdash estrae il pixel più saturo dal logo di ogni app. Puoi sovrascrivere questo aggiungendo un campo <code>color: '#hexcode'</code> a qualsiasi voce app nella configurazione.",
 					'selfhost.q4': 'Di cosa ho bisogno per eseguirlo?',
 					'selfhost.a4': 'Node.js o Bun. Esegui <code>bun install</code> poi <code>bun run build</code> per generare una cartella statica <code>/dist</code> che puoi distribuire ovunque (Nginx, Caddy, Netlify, ecc.).',
 					'selfhost.q5': 'Posso aggiungere categorie personalizzate?',
 					'selfhost.a5': 'Sì. In <code>config.yml</code> aggiungi una nuova voce sotto <code>categories</code> con un <code>name</code> e un elenco di <code>apps</code>. La dashboard si ricostruisce automaticamente.',
 					'selfhost.q6': 'Il codice sorgente è disponibile?',
-					'selfhost.a6': 'Sì, Tesflix è open source. Puoi trovarlo su GitHub e forkarlo per renderlo completamente tuo.',
+					'selfhost.a6': 'Sì, Tesdash è open source. Puoi trovarlo su GitHub e forkarlo per renderlo completamente tuo.',
 					'footer.madeby': 'Fatto con ❤️ da',
 					'footer.from': 'dalla',
 					'footer.legal': 'Note legali',
 				'fab.tooltip': 'Aggiungi app',
 				'support.title': 'Supporta questo progetto',
-				'support.desc': 'Tesflix è gratuito e open source. Se ti fa risparmiare tempo o ti porta gioia, considera di offrirmi un caffè — mantiene vivo il progetto.',
+				'support.desc': 'Tesdash è gratuito e open source. Se ti fa risparmiare tempo o ti porta gioia, considera di offrirmi un caffè — mantiene vivo il progetto.',
 				'support.back': '← Indietro',
 				'support.scan': 'Scansiona con il tuo telefono per donare',
 				'support.open': 'Apri link',
@@ -1012,16 +1012,16 @@ const categories = await Promise.all(
 					'btn.about': 'Acerca de',
 					'btn.selfhost': 'Auto-alojamiento',
 					'btn.support': 'Apoya el proyecto',
-					'about.title': 'Acerca de Tesflix',
-					'about.p1': 'Tesflix es un panel de control estático auto-alojado diseñado para lanzar servicios de streaming, plataformas musicales, canales deportivos, medios personales, gaming y herramientas homelab — todo desde el navegador integrado de tu Tesla.',
+					'about.title': 'Acerca de Tesdash',
+					'about.p1': 'Tesdash es un panel de control estático auto-alojado diseñado para lanzar servicios de streaming, plataformas musicales, canales deportivos, medios personales, gaming y herramientas homelab — todo desde el navegador integrado de tu Tesla.',
 					'about.p2': 'Funciona completamente en tu navegador sin necesidad de servidor después del despliegue. Las categorías pueden reordenarse según tus preferencias, y un lanzador de URL integrado te permite abrir cualquier sitio web en pantalla completa.',
 					'about.built-with': 'Construido con',
 					'about.author-label': 'Autor',
 					'about.projects': 'Más proyectos',
 					'about.soon': 'Próximamente',
 					'faq.title': 'FAQ',
-					'faq.q1': '¿Qué es Tesflix?',
-					'faq.a1': "Tesflix es un panel de control que te permite lanzar servicios de streaming, música, deportes y otras apps directamente desde el navegador de tu Tesla — todo se abre en pantalla completa con un solo toque.",
+					'faq.q1': '¿Qué es Tesdash?',
+					'faq.a1': "Tesdash es un panel de control que te permite lanzar servicios de streaming, música, deportes y otras apps directamente desde el navegador de tu Tesla — todo se abre en pantalla completa con un solo toque.",
 					'faq.q2': '¿Cómo abro una app?',
 					'faq.a2': "Simplemente toca o haz clic en cualquier tarjeta de app. Abrirá el servicio en una nueva pestaña a pantalla completa en el navegador de tu Tesla.",
 					'faq.q3': '¿Qué es el lanzador de URL?',
@@ -1029,10 +1029,10 @@ const categories = await Promise.all(
 					'faq.q4': '¿Puedo reordenar las categorías?',
 					'faq.a4': 'Sí. Agarra el asa punteada a la izquierda de cualquier nombre de categoría y arrástrala a una nueva posición. Tu orden se recuerda entre visitas.',
 					'faq.q5': '¿Funciona fuera de mi Tesla?',
-					'faq.a5': "Sí, Tesflix funciona en cualquier navegador moderno en cualquier dispositivo. El comportamiento de pantalla completa está optimizado para el navegador integrado de Tesla.",
+					'faq.a5': "Sí, Tesdash funciona en cualquier navegador moderno en cualquier dispositivo. El comportamiento de pantalla completa está optimizado para el navegador integrado de Tesla.",
 					'faq.q6': '¿Es gratuito?',
 					'faq.a6': 'Completamente gratuito, no se requiere cuenta ni registro.',
-					'faq.q7': '¿Tesflix almacena mis datos?',
+					'faq.q7': '¿Tesdash almacena mis datos?',
 					'faq.a7': "No. Lo único que se guarda localmente es el orden de tus categorías, almacenado en el almacenamiento local de tu navegador. Nada se envía a ningún servidor.",
 					'selfhost.title': 'Auto-alojamiento',
 					'selfhost.q1': '¿Cómo funciona el truco de pantalla completa?',
@@ -1040,19 +1040,19 @@ const categories = await Promise.all(
 					'selfhost.q2': '¿Cómo añado o elimino apps?',
 					'selfhost.a2': 'Edita <code>src/data/config.yml</code>. Cada app necesita un <code>name</code>, <code>url</code> y <code>logo</code> (ruta local bajo <code>public/logos/</code> o una URL remota). No se necesitan cambios de código — solo reconstruye.',
 					'selfhost.q3': '¿Cómo se determinan los colores de acento de las tarjetas?',
-					'selfhost.a3': "En el momento de la compilación, Tesflix extrae el píxel más saturado del logo de cada app. Puedes anular esto añadiendo un campo <code>color: '#hexcode'</code> a cualquier entrada de app en la configuración.",
+					'selfhost.a3': "En el momento de la compilación, Tesdash extrae el píxel más saturado del logo de cada app. Puedes anular esto añadiendo un campo <code>color: '#hexcode'</code> a cualquier entrada de app en la configuración.",
 					'selfhost.q4': '¿Qué necesito para ejecutarlo?',
 					'selfhost.a4': 'Node.js o Bun. Ejecuta <code>bun install</code> luego <code>bun run build</code> para generar una carpeta estática <code>/dist</code> que puedes desplegar en cualquier lugar (Nginx, Caddy, Netlify, etc.).',
 					'selfhost.q5': '¿Puedo añadir categorías personalizadas?',
 					'selfhost.a5': 'Sí. En <code>config.yml</code> añade una nueva entrada bajo <code>categories</code> con un <code>name</code> y una lista de <code>apps</code>. El panel de control se reconstruye automáticamente.',
 					'selfhost.q6': '¿Está disponible el código fuente?',
-					'selfhost.a6': 'Sí, Tesflix es de código abierto. Puedes encontrarlo en GitHub y bifurcarlo para hacerlo completamente tuyo.',
+					'selfhost.a6': 'Sí, Tesdash es de código abierto. Puedes encontrarlo en GitHub y bifurcarlo para hacerlo completamente tuyo.',
 					'footer.madeby': 'Hecho con ❤️ por',
 					'footer.from': 'de',
 					'footer.legal': 'Legal',
 				'fab.tooltip': 'Añadir nueva app',
 				'support.title': 'Apoya este proyecto',
-				'support.desc': 'Tesflix es gratuito y de código abierto. Si te ahorra tiempo o te trae alegría, considera invitarme a un café — mantiene vivo el proyecto.',
+				'support.desc': 'Tesdash es gratuito y de código abierto. Si te ahorra tiempo o te trae alegría, considera invitarme a un café — mantiene vivo el proyecto.',
 				'support.back': '← Volver',
 				'support.scan': 'Escanea con tu móvil para donar',
 				'support.open': 'Abrir enlace',
@@ -1067,16 +1067,16 @@ const categories = await Promise.all(
 					'btn.about': 'Sobre',
 					'btn.selfhost': 'Auto-hospedagem',
 					'btn.support': 'Apoie o projeto',
-					'about.title': 'Sobre o Tesflix',
-					'about.p1': 'Tesflix é um painel estático auto-hospedado projetado para lançar serviços de streaming, plataformas musicais, canais esportivos, mídia pessoal, jogos e ferramentas homelab — tudo a partir do navegador integrado do seu Tesla.',
+					'about.title': 'Sobre o Tesdash',
+					'about.p1': 'Tesdash é um painel estático auto-hospedado projetado para lançar serviços de streaming, plataformas musicais, canais esportivos, mídia pessoal, jogos e ferramentas homelab — tudo a partir do navegador integrado do seu Tesla.',
 					'about.p2': 'Funciona completamente no seu navegador sem servidor necessário após a implantação. As categorias podem ser reordenadas de acordo com suas preferências, e um lançador de URL integrado permite abrir qualquer site em tela cheia.',
 					'about.built-with': 'Construído com',
 					'about.author-label': 'Autor',
 					'about.projects': 'Mais projetos',
 					'about.soon': 'Em breve',
 					'faq.title': 'FAQ',
-					'faq.q1': 'O que é o Tesflix?',
-					'faq.a1': "Tesflix é um painel que permite lançar serviços de streaming, música, esportes e outros apps diretamente do navegador do seu Tesla — tudo abre em tela cheia com um único toque.",
+					'faq.q1': 'O que é o Tesdash?',
+					'faq.a1': "Tesdash é um painel que permite lançar serviços de streaming, música, esportes e outros apps diretamente do navegador do seu Tesla — tudo abre em tela cheia com um único toque.",
 					'faq.q2': 'Como abro um app?',
 					'faq.a2': "Basta tocar ou clicar em qualquer cartão de app. Ele abrirá o serviço em uma nova aba em tela cheia no navegador do seu Tesla.",
 					'faq.q3': 'O que é o lançador de URL?',
@@ -1084,10 +1084,10 @@ const categories = await Promise.all(
 					'faq.q4': 'Posso reordenar as categorias?',
 					'faq.a4': 'Sim. Segure a alça pontilhada à esquerda de qualquer nome de categoria e arraste-a para uma nova posição. Sua ordem é lembrada entre visitas.',
 					'faq.q5': 'Funciona fora do meu Tesla?',
-					'faq.a5': "Sim, o Tesflix funciona em qualquer navegador moderno em qualquer dispositivo. O comportamento em tela cheia é otimizado para o navegador integrado do Tesla.",
+					'faq.a5': "Sim, o Tesdash funciona em qualquer navegador moderno em qualquer dispositivo. O comportamento em tela cheia é otimizado para o navegador integrado do Tesla.",
 					'faq.q6': 'É gratuito?',
 					'faq.a6': 'Completamente gratuito, nenhuma conta ou cadastro necessário.',
-					'faq.q7': 'O Tesflix armazena meus dados?',
+					'faq.q7': 'O Tesdash armazena meus dados?',
 					'faq.a7': "Não. A única coisa salva localmente é a ordem das suas categorias, armazenada no armazenamento local do seu navegador. Nada é enviado para nenhum servidor.",
 					'selfhost.title': 'Auto-hospedagem',
 					'selfhost.q1': 'Como funciona o truque da tela cheia?',
@@ -1095,19 +1095,19 @@ const categories = await Promise.all(
 					'selfhost.q2': 'Como adiciono ou removo apps?',
 					'selfhost.a2': 'Edite <code>src/data/config.yml</code>. Cada app precisa de um <code>name</code>, <code>url</code> e <code>logo</code> (caminho local em <code>public/logos/</code> ou uma URL remota). Nenhuma alteração de código necessária — apenas reconstrua.',
 					'selfhost.q3': 'Como são determinadas as cores de destaque dos cartões?',
-					'selfhost.a3': "No momento da compilação, o Tesflix extrai o pixel mais saturado do logo de cada app. Você pode substituir isso adicionando um campo <code>color: '#hexcode'</code> a qualquer entrada de app na configuração.",
+					'selfhost.a3': "No momento da compilação, o Tesdash extrai o pixel mais saturado do logo de cada app. Você pode substituir isso adicionando um campo <code>color: '#hexcode'</code> a qualquer entrada de app na configuração.",
 					'selfhost.q4': 'O que preciso para executá-lo?',
 					'selfhost.a4': 'Node.js ou Bun. Execute <code>bun install</code> depois <code>bun run build</code> para gerar uma pasta estática <code>/dist</code> que você pode implantar em qualquer lugar (Nginx, Caddy, Netlify, etc.).',
 					'selfhost.q5': 'Posso adicionar categorias personalizadas?',
 					'selfhost.a5': 'Sim. Em <code>config.yml</code> adicione uma nova entrada em <code>categories</code> com um <code>name</code> e uma lista de <code>apps</code>. O painel é reconstruído automaticamente.',
 					'selfhost.q6': 'O código-fonte está disponível?',
-					'selfhost.a6': 'Sim, o Tesflix é de código aberto. Você pode encontrá-lo no GitHub e bifurcá-lo para torná-lo completamente seu.',
+					'selfhost.a6': 'Sim, o Tesdash é de código aberto. Você pode encontrá-lo no GitHub e bifurcá-lo para torná-lo completamente seu.',
 					'footer.madeby': 'Feito com ❤️ por',
 					'footer.from': 'de',
 					'footer.legal': 'Legal',
 				'fab.tooltip': 'Adicionar app',
 				'support.title': 'Apoie este projeto',
-				'support.desc': 'Tesflix é gratuito e de código aberto. Se economiza seu tempo ou traz alegria, considere me pagar um café — isso mantém o projeto vivo.',
+				'support.desc': 'Tesdash é gratuito e de código aberto. Se economiza seu tempo ou traz alegria, considere me pagar um café — isso mantém o projeto vivo.',
 				'support.back': '← Voltar',
 				'support.scan': 'Escaneie com seu celular para doar',
 				'support.open': 'Abrir link',
@@ -1122,16 +1122,16 @@ const categories = await Promise.all(
 					'btn.about': 'O nas',
 					'btn.selfhost': 'Własny hosting',
 					'btn.support': 'Wesprzyj projekt',
-					'about.title': 'O Tesflix',
-					'about.p1': 'Tesflix to samodzielnie hostowany, statyczny pulpit nawigacyjny zaprojektowany do uruchamiania usług streamingowych, platform muzycznych, kanałów sportowych, osobistych mediów, gier i narzędzi homelab — wszystko z wbudowanej przeglądarki Twojej Tesli.',
+					'about.title': 'O Tesdash',
+					'about.p1': 'Tesdash to samodzielnie hostowany, statyczny pulpit nawigacyjny zaprojektowany do uruchamiania usług streamingowych, platform muzycznych, kanałów sportowych, osobistych mediów, gier i narzędzi homelab — wszystko z wbudowanej przeglądarki Twojej Tesli.',
 					'about.p2': 'Działa całkowicie w Twojej przeglądarce bez serwera wymaganego po wdrożeniu. Kategorie można zmieniać kolejność zgodnie z preferencjami, a wbudowany launcher URL umożliwia otwieranie dowolnej strony w trybie pełnoekranowym.',
 					'about.built-with': 'Zbudowany z',
 					'about.author-label': 'Autor',
 					'about.projects': 'Więcej projektów',
 					'about.soon': 'Wkrótce',
 					'faq.title': 'FAQ',
-					'faq.q1': 'Czym jest Tesflix?',
-					'faq.a1': "Tesflix to pulpit nawigacyjny, który pozwala uruchamiać usługi streamingowe, muzykę, sport i inne aplikacje bezpośrednio z przeglądarki Twojej Tesli — wszystko otwiera się na pełnym ekranie jednym dotknięciem.",
+					'faq.q1': 'Czym jest Tesdash?',
+					'faq.a1': "Tesdash to pulpit nawigacyjny, który pozwala uruchamiać usługi streamingowe, muzykę, sport i inne aplikacje bezpośrednio z przeglądarki Twojej Tesli — wszystko otwiera się na pełnym ekranie jednym dotknięciem.",
 					'faq.q2': 'Jak otworzyć aplikację?',
 					'faq.a2': "Wystarczy dotknąć lub kliknąć dowolną kartę aplikacji. Otworzy ona usługę w nowej zakładce pełnoekranowej w przeglądarce Twojej Tesli.",
 					'faq.q3': 'Czym jest launcher URL?',
@@ -1139,10 +1139,10 @@ const categories = await Promise.all(
 					'faq.q4': 'Czy mogę zmienić kolejność kategorii?',
 					'faq.a4': 'Tak. Chwyć kropkowany uchwyt po lewej stronie nazwy kategorii i przeciągnij go na nową pozycję. Twoja kolejność jest zapamiętywana między wizytami.',
 					'faq.q5': 'Czy działa poza moją Teslą?',
-					'faq.a5': "Tak, Tesflix działa w każdej nowoczesnej przeglądarce na każdym urządzeniu. Zachowanie pełnoekranowe jest zoptymalizowane pod kątem wbudowanej przeglądarki Tesli.",
+					'faq.a5': "Tak, Tesdash działa w każdej nowoczesnej przeglądarce na każdym urządzeniu. Zachowanie pełnoekranowe jest zoptymalizowane pod kątem wbudowanej przeglądarki Tesli.",
 					'faq.q6': 'Czy jest bezpłatny?',
 					'faq.a6': 'Całkowicie bezpłatny, bez konta ani rejestracji.',
-					'faq.q7': 'Czy Tesflix przechowuje moje dane?',
+					'faq.q7': 'Czy Tesdash przechowuje moje dane?',
 					'faq.a7': "Nie. Jedyną rzeczą zapisywaną lokalnie jest kolejność Twoich kategorii, przechowywana w lokalnym magazynie Twojej przeglądarki. Nic nie jest wysyłane na żaden serwer.",
 					'selfhost.title': 'Własny hosting',
 					'selfhost.q1': 'Jak działa sztuczka pełnoekranowa?',
@@ -1150,19 +1150,19 @@ const categories = await Promise.all(
 					'selfhost.q2': 'Jak dodaję lub usuwam aplikacje?',
 					'selfhost.a2': 'Edytuj <code>src/data/config.yml</code>. Każda aplikacja potrzebuje <code>name</code>, <code>url</code> i <code>logo</code> (lokalnej ścieżki pod <code>public/logos/</code> lub zdalnego URL). Bez zmian w kodzie — wystarczy przebudować.',
 					'selfhost.q3': 'Jak są określane kolory akcentów kart?',
-					'selfhost.a3': "W czasie budowania Tesflix wyodrębnia najbardziej nasycony piksel z logo każdej aplikacji. Możesz to nadpisać, dodając pole <code>color: '#hexcode'</code> do dowolnego wpisu aplikacji w konfiguracji.",
+					'selfhost.a3': "W czasie budowania Tesdash wyodrębnia najbardziej nasycony piksel z logo każdej aplikacji. Możesz to nadpisać, dodając pole <code>color: '#hexcode'</code> do dowolnego wpisu aplikacji w konfiguracji.",
 					'selfhost.q4': 'Czego potrzebuję, aby to uruchomić?',
 					'selfhost.a4': 'Node.js lub Bun. Uruchom <code>bun install</code> a następnie <code>bun run build</code>, aby wygenerować statyczny folder <code>/dist</code>, który możesz wdrożyć gdziekolwiek (Nginx, Caddy, Netlify, itp.).',
 					'selfhost.q5': 'Czy mogę dodać niestandardowe kategorie?',
 					'selfhost.a5': 'Tak. W <code>config.yml</code> dodaj nowy wpis pod <code>categories</code> z <code>name</code> i listą <code>apps</code>. Pulpit nawigacyjny przebudowuje się automatycznie.',
 					'selfhost.q6': 'Czy kod źródłowy jest dostępny?',
-					'selfhost.a6': 'Tak, Tesflix jest open source. Możesz go znaleźć na GitHubie i forkować, aby uczynić go całkowicie swoim.',
+					'selfhost.a6': 'Tak, Tesdash jest open source. Możesz go znaleźć na GitHubie i forkować, aby uczynić go całkowicie swoim.',
 					'footer.madeby': 'Stworzone z ❤️ przez',
 					'footer.from': 'z',
 					'footer.legal': 'Prawne',
 				'fab.tooltip': 'Dodaj aplikację',
 				'support.title': 'Wesprzyj ten projekt',
-				'support.desc': 'Tesflix jest bezpłatny i open source. Jeśli oszczędza Ci czas lub sprawia radość, rozważ postawienie mi kawy — to utrzymuje projekt przy życiu.',
+				'support.desc': 'Tesdash jest bezpłatny i open source. Jeśli oszczędza Ci czas lub sprawia radość, rozważ postawienie mi kawy — to utrzymuje projekt przy życiu.',
 				'support.back': '← Wróć',
 				'support.scan': 'Zeskanuj telefonem, aby przekazać darowiznę',
 				'support.open': 'Otwórz link',
@@ -1177,16 +1177,16 @@ const categories = await Promise.all(
 					'btn.about': '关于',
 					'btn.selfhost': '自托管',
 					'btn.support': '支持这个项目',
-					'about.title': '关于 Tesflix',
-					'about.p1': 'Tesflix 是一个自托管的静态仪表板，旨在从您的特斯拉车载浏览器启动流媒体服务、音乐平台、体育频道、个人媒体、游戏和家庭实验室工具。',
+					'about.title': '关于 Tesdash',
+					'about.p1': 'Tesdash 是一个自托管的静态仪表板，旨在从您的特斯拉车载浏览器启动流媒体服务、音乐平台、体育频道、个人媒体、游戏和家庭实验室工具。',
 					'about.p2': '它完全在您的浏览器中运行，部署后无需服务器。类别可以根据您的偏好重新排序，内置的 URL 启动器可让您以全屏模式打开任何网站。',
 					'about.built-with': '使用',
 					'about.author-label': '作者',
 					'about.projects': '更多项目',
 					'about.soon': '即将推出',
 					'faq.title': '常见问题',
-					'faq.q1': '什么是 Tesflix？',
-					'faq.a1': "Tesflix 是一个仪表板，可让您直接从特斯拉浏览器启动流媒体服务、音乐、体育和其他应用程序 — 只需单次点击即可全屏打开。",
+					'faq.q1': '什么是 Tesdash？',
+					'faq.a1': "Tesdash 是一个仪表板，可让您直接从特斯拉浏览器启动流媒体服务、音乐、体育和其他应用程序 — 只需单次点击即可全屏打开。",
 					'faq.q2': '如何打开应用程序？',
 					'faq.a2': "只需点击任意应用卡片，它将在特斯拉浏览器的新全屏标签页中打开该服务。",
 					'faq.q3': '什么是 URL 启动器？',
@@ -1194,10 +1194,10 @@ const categories = await Promise.all(
 					'faq.q4': '我可以重新排序类别吗？',
 					'faq.a4': '可以。抓住任何类别名称左侧的点状手柄并将其拖动到新位置。您的顺序会在访问之间被记住。',
 					'faq.q5': '在特斯拉之外也能使用吗？',
-					'faq.a5': "是的，Tesflix 可在任何设备上的任何现代浏览器中使用。全屏行为针对特斯拉的车载浏览器进行了优化。",
+					'faq.a5': "是的，Tesdash 可在任何设备上的任何现代浏览器中使用。全屏行为针对特斯拉的车载浏览器进行了优化。",
 					'faq.q6': '它是免费的吗？',
 					'faq.a6': '完全免费，无需账户或注册。',
-					'faq.q7': 'Tesflix 会存储我的数据吗？',
+					'faq.q7': 'Tesdash 会存储我的数据吗？',
 					'faq.a7': "不会。唯一本地保存的内容是您的类别顺序，存储在浏览器的本地存储中。没有任何内容会发送到任何服务器。",
 					'selfhost.title': '自托管',
 					'selfhost.q1': '全屏技巧是如何工作的？',
@@ -1205,19 +1205,19 @@ const categories = await Promise.all(
 					'selfhost.q2': '如何添加或删除应用程序？',
 					'selfhost.a2': '编辑 <code>src/data/config.yml</code>。每个应用需要 <code>name</code>、<code>url</code> 和 <code>logo</code>（<code>public/logos/</code> 下的本地路径或远程 URL）。无需更改代码 — 只需重新构建。',
 					'selfhost.q3': '卡片强调色是如何确定的？',
-					'selfhost.a3': "在构建时，Tesflix 从每个应用的徽标中提取最饱和的像素。您可以通过在配置的任何应用条目中添加 <code>color: '#hexcode'</code> 字段来覆盖此设置。",
+					'selfhost.a3': "在构建时，Tesdash 从每个应用的徽标中提取最饱和的像素。您可以通过在配置的任何应用条目中添加 <code>color: '#hexcode'</code> 字段来覆盖此设置。",
 					'selfhost.q4': '我需要什么才能运行它？',
 					'selfhost.a4': 'Node.js 或 Bun。运行 <code>bun install</code> 然后 <code>bun run build</code> 生成静态 <code>/dist</code> 文件夹，您可以在任何地方部署（Nginx、Caddy、Netlify 等）。',
 					'selfhost.q5': '我可以添加自定义类别吗？',
 					'selfhost.a5': '可以。在 <code>config.yml</code> 中，在 <code>categories</code> 下添加带有 <code>name</code> 和 <code>apps</code> 列表的新条目。仪表板会自动重建。',
 					'selfhost.q6': '源代码是否可用？',
-					'selfhost.a6': '是的，Tesflix 是开源的。您可以在 GitHub 上找到它并 fork 它，使其完全属于您自己。',
+					'selfhost.a6': '是的，Tesdash 是开源的。您可以在 GitHub 上找到它并 fork 它，使其完全属于您自己。',
 					'footer.madeby': '用 ❤️ 制作，作者',
 					'footer.from': '来自',
 					'footer.legal': '法律',
 				'fab.tooltip': '添加应用',
 				'support.title': '支持这个项目',
-				'support.desc': 'Tesflix 是免费的开源项目。如果它为您节省了时间或带来了乐趣，请考虑请我喝杯咖啡——这能让项目持续下去。',
+				'support.desc': 'Tesdash 是免费的开源项目。如果它为您节省了时间或带来了乐趣，请考虑请我喝杯咖啡——这能让项目持续下去。',
 				'support.back': '← 返回',
 				'support.scan': '用手机扫描二维码捐款',
 				'support.open': '打开链接',
@@ -1260,11 +1260,11 @@ const categories = await Promise.all(
 					btn.classList.toggle('is-active', btn.dataset.lang === lang);
 				});
 				// dispatch event for Svelte components
-				window.dispatchEvent(new CustomEvent('tesflix:langchange', { detail: { lang } }));
+				window.dispatchEvent(new CustomEvent('tesdash:langchange', { detail: { lang } }));
 			}
 
 			// Init
-			const savedLang = localStorage.getItem('tesflix-lang');
+			const savedLang = localStorage.getItem('tesdash-lang');
 			const initialLang = getLangCode(savedLang || navigator.language);
 			applyTranslations(initialLang);
 
@@ -1296,7 +1296,7 @@ const categories = await Promise.all(
 			document.querySelectorAll<HTMLElement>('.locale-option').forEach(btn => {
 				btn.addEventListener('click', () => {
 					const lang = btn.dataset.lang!;
-					localStorage.setItem('tesflix-lang', lang);
+					localStorage.setItem('tesdash-lang', lang);
 					applyTranslations(lang);
 				});
 			});
@@ -1311,7 +1311,7 @@ const categories = await Promise.all(
 			document.querySelectorAll<HTMLElement>('.locale-country').forEach(btn => {
 				btn.addEventListener('click', () => {
 					const country = btn.dataset.country!;
-					localStorage.setItem('tesflix-region', country);
+					localStorage.setItem('tesdash-region', country);
 					applyRegionFilter(country);
 					applyCountryActive(country);
 				});
@@ -1383,7 +1383,7 @@ const categories = await Promise.all(
 
 			document.querySelectorAll<HTMLElement>('.card').forEach(attachSpotlight);
 
-			const STORAGE_KEY = 'tesflix-category-order';
+			const STORAGE_KEY = 'tesdash-category-order';
 			const container = document.getElementById('categories') as HTMLElement;
 
 			function getSections() {
@@ -1595,13 +1595,13 @@ const categories = await Promise.all(
 				});
 			}
 
-			const regionOverride = localStorage.getItem('tesflix-region');
+			const regionOverride = localStorage.getItem('tesdash-region');
 			const detectedCountry = regionOverride !== null ? regionOverride : detectCountry();
 			applyRegionFilter(detectedCountry);
 			applyCountryActive(detectedCountry);
 
 			// ── Custom Apps ──
-			const CUSTOM_KEY = 'tesflix-custom-apps';
+			const CUSTOM_KEY = 'tesdash-custom-apps';
 			const YOUTUBE_REDIRECT = 'https://www.youtube.com/redirect?q=';
 
 			interface CustomApp {

@@ -80,15 +80,15 @@
 
 	$effect(() => {
 		// Init from localStorage (client-only)
-		const saved = localStorage.getItem('tesflix-lang');
+		const saved = localStorage.getItem('tesdash-lang');
 		lang = saved || navigator.language.split('-')[0] || 'en';
 
 		const handler = (e: Event) => {
 			const detail = (e as CustomEvent<{ lang: string }>).detail;
 			if (detail?.lang) lang = detail.lang;
 		};
-		window.addEventListener('tesflix:langchange', handler);
-		return () => window.removeEventListener('tesflix:langchange', handler);
+		window.addEventListener('tesdash:langchange', handler);
+		return () => window.removeEventListener('tesdash:langchange', handler);
 	});
 
 	function launch() {
