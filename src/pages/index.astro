@@ -115,6 +115,9 @@ const categories = await Promise.all(
 		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
 		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 		<link rel="manifest" href="/site.webmanifest" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap" />
 		<Font cssVariable="--font-geist" preload />
 	</head>
 
@@ -132,6 +135,7 @@ const categories = await Promise.all(
 						<button class="header-btn" id="btn-about" data-i18n="btn.about">About</button>
 						<button class="header-btn" id="btn-faq">FAQ</button>
 						<button class="header-btn" id="btn-selfhost" data-i18n="btn.selfhost">Self-Host</button>
+
 					</div>
 					<button class="header-btn header-btn--support" id="btn-support">
 						<span class="support-btn-heart" aria-hidden="true">
@@ -139,6 +143,13 @@ const categories = await Promise.all(
 							❤️
 						</span>
 						<span data-i18n="btn.support">Support this project</span>
+					</button>
+					<button class="header-btn header-btn--charger" id="btn-charger">
+						<svg class="charger-bolt" viewBox="0 0 24 24" aria-hidden="true" width="16" height="16">
+							<path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" fill="#facc15" stroke="#facc15" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+							<path class="bolt-trace" d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" pathLength="100"/>
+						</svg>
+						<span data-i18n="btn.charger">Charge Calc</span>
 					</button>
 				</div>
 				<h1 class="logo">
@@ -272,6 +283,130 @@ const categories = await Promise.all(
 							<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.341-3.369-1.341-.454-1.154-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.741 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
 							GitHub
 						</a>
+					</div>
+				</div>
+			</div>
+
+			<!-- Charging Calculator Modal -->
+			<div class="modal-overlay" id="modal-charger" aria-hidden="true" inert>
+				<div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="charger-title">
+					<button class="modal-close" data-close="modal-charger" aria-label="Close">&times;</button>
+					<h2 id="charger-title" class="modal-title charger-modal-title">
+						<svg class="charger-bolt" viewBox="0 0 24 24" aria-hidden="true" width="20" height="20">
+							<path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" fill="#facc15" stroke="#facc15" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+							<path class="bolt-trace" d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" pathLength="100"/>
+						</svg>
+						EV Charging Calculator
+					</h2>
+					<div class="form-row" style="margin-bottom:1rem">
+						<label class="form-label" for="ch-model">Tesla Model</label>
+						<select class="form-input form-select" id="ch-model">
+							<option value="">— Custom —</option>
+							<optgroup label="Model 3 (pre-Highland)">
+								<option value="57.5">Model 3 RWD — 57.5 kWh net</option>
+								<option value="75">Model 3 Long Range AWD — 75 kWh net</option>
+								<option value="75">Model 3 Performance — 75 kWh net</option>
+							</optgroup>
+							<optgroup label="Model 3 Highland (2024+)">
+								<option value="57.5">Model 3 Highland RWD — 57.5 kWh net</option>
+								<option value="75">Model 3 Highland Long Range AWD — 75 kWh net</option>
+								<option value="75">Model 3 Highland Performance — 75 kWh net</option>
+							</optgroup>
+							<optgroup label="Model Y (pre-Juniper)">
+								<option value="57.5">Model Y RWD — 57.5 kWh net</option>
+								<option value="75">Model Y Long Range AWD — 75 kWh net</option>
+								<option value="75">Model Y Performance — 75 kWh net</option>
+							</optgroup>
+							<optgroup label="Model Y Juniper (2025+)">
+								<option value="57.5">Model Y Juniper RWD — 57.5 kWh net</option>
+								<option value="75">Model Y Juniper Long Range AWD — 75 kWh net</option>
+								<option value="75">Model Y Juniper Performance — 75 kWh net</option>
+							</optgroup>
+							<optgroup label="Model S">
+								<option value="95">Model S Long Range — 95 kWh net</option>
+								<option value="95">Model S Plaid — 95 kWh net</option>
+							</optgroup>
+							<optgroup label="Model X">
+								<option value="95">Model X Long Range — 95 kWh net</option>
+								<option value="95">Model X Plaid — 95 kWh net</option>
+							</optgroup>
+							<optgroup label="Cybertruck">
+								<option value="108">Cybertruck Standard Range — 108 kWh net</option>
+								<option value="119">Cybertruck Long Range — 119 kWh net</option>
+								<option value="119">Cybertruck Cyberbeast — 119 kWh net</option>
+							</optgroup>
+						</select>
+					</div>
+					<div class="charger-grid">
+						<div class="charger-field">
+							<label class="form-label" for="ch-capacity">Battery Capacity</label>
+							<div class="charger-input-wrap">
+								<input class="form-input" type="number" id="ch-capacity" value="75" min="1" max="300" step="0.5" />
+								<span class="charger-unit">kWh</span>
+							</div>
+						</div>
+						<div class="charger-field">
+							<label class="form-label" for="ch-power">Charging Power</label>
+							<div class="charger-input-wrap">
+								<input class="form-input" type="number" id="ch-power" value="11" min="1" max="350" step="0.5" />
+								<span class="charger-unit">kW</span>
+							</div>
+						</div>
+						<div class="charger-field">
+							<label class="form-label" for="ch-price">Price</label>
+							<div class="charger-input-wrap">
+								<input class="form-input" type="number" id="ch-price" value="0.20" min="0" max="10" step="0.01" />
+								<span class="charger-unit">€/kWh</span>
+							</div>
+						</div>
+						<div class="charger-field">
+							<label class="form-label" for="ch-time">Charging Time</label>
+							<div class="charger-input-wrap">
+								<input class="form-input" type="number" id="ch-time" value="2" min="0" max="48" step="0.25" />
+								<span class="charger-unit">h</span>
+							</div>
+						</div>
+					</div>
+					<div class="charger-field charger-field--full" style="margin-bottom:1.5rem">
+						<div class="charger-range-header">
+							<span class="form-label">Battery</span>
+							<div class="charger-range-values">
+								<span class="charger-range-val charger-range-val--current">
+									<span id="ch-current-pct">20%</span>
+									<span class="charger-range-kwh" id="ch-current-kwh">15.0 kWh</span>
+								</span>
+								<span class="charger-range-arrow">→</span>
+								<span class="charger-range-val charger-range-val--target">
+									<span id="ch-target-pct">80%</span>
+									<span class="charger-range-kwh" id="ch-target-kwh">60.0 kWh</span>
+								</span>
+							</div>
+						</div>
+						<div class="dual-range-wrap">
+							<div class="dual-range-track">
+								<div class="dual-range-fill" id="ch-range-fill"></div>
+							</div>
+							<input type="range" id="ch-current" class="dual-range dual-range--lower" value="20" min="0" max="100" step="1" />
+							<input type="range" id="ch-target" class="dual-range dual-range--upper" value="80" min="0" max="100" step="1" />
+						</div>
+					</div>
+					<div class="charger-results">
+						<div class="charger-stat">
+							<span class="charger-stat-label">Energy Added</span>
+							<span class="charger-stat-value" id="ch-result-energy">—</span>
+						</div>
+						<div class="charger-stat">
+							<span class="charger-stat-label">Final Battery</span>
+							<span class="charger-stat-value" id="ch-result-final">—</span>
+						</div>
+						<div class="charger-stat">
+							<span class="charger-stat-label">Session Cost</span>
+							<span class="charger-stat-value" id="ch-result-cost">—</span>
+						</div>
+						<div class="charger-stat">
+							<span class="charger-stat-label">Time to Target</span>
+							<span class="charger-stat-value" id="ch-result-timetofull">—</span>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -521,6 +656,7 @@ const categories = await Promise.all(
 					'btn.about': 'About',
 					'btn.selfhost': 'Self-Host',
 					'btn.support': 'Support this project',
+					'btn.charger': 'Charge Calc',
 					'about.title': 'About Tesdash',
 					'about.p1': "Tesdash is a self-hosted, static dashboard designed to launch streaming services, music platforms, sports channels, personal media, gaming, and homelab tools — all from your Tesla's in-vehicle browser.",
 					'about.p2': "It runs entirely in your browser with no server required after deployment. Categories can be reordered to match your preferences, and a built-in URL launcher lets you open any website in fullscreen.",
@@ -573,6 +709,7 @@ const categories = await Promise.all(
 					'btn.about': 'Om',
 					'btn.selfhost': 'Selvhostet',
 					'btn.support': 'Støtt dette prosjektet',
+					'btn.charger': 'Ladekalk',
 					'about.title': 'Om Tesdash',
 					'about.p1': 'Tesdash er et selvhostet, statisk dashbord designet for å starte strømmetjenester, musikkplattformer, sportskanaler, personlige medier, spill og homelab-verktøy — alt fra Teslaens innebygde nettleser.',
 					'about.p2': 'Det kjører helt i nettleseren din uten behov for server etter distribusjon. Kategorier kan omorganiseres etter dine preferanser, og en innebygd URL-starter lar deg åpne ethvert nettsted i fullskjerm.',
@@ -625,6 +762,7 @@ const categories = await Promise.all(
 					'btn.about': 'Über',
 					'btn.selfhost': 'Selbst hosten',
 					'btn.support': 'Projekt unterstützen',
+					'btn.charger': 'Laderechner',
 					'about.title': 'Über Tesdash',
 					'about.p1': 'Tesdash ist ein selbst gehostetes, statisches Dashboard, das zum Starten von Streaming-Diensten, Musikplattformen, Sportkanälen, persönlichen Medien, Gaming und Homelab-Tools entwickelt wurde — alles aus dem fahrzeugeigenen Browser des Tesla.',
 					'about.p2': 'Es läuft vollständig in Ihrem Browser ohne Server nach der Bereitstellung. Kategorien können nach Ihren Wünschen neu geordnet werden, und ein integrierter URL-Launcher ermöglicht es Ihnen, jede Website im Vollbildmodus zu öffnen.',
@@ -677,6 +815,7 @@ const categories = await Promise.all(
 					'btn.about': 'Om',
 					'btn.selfhost': 'Självhosta',
 					'btn.support': 'Stöd projektet',
+					'btn.charger': 'Laddkalkyl',
 					'about.title': 'Om Tesdash',
 					'about.p1': 'Tesdash är en självhostad, statisk instrumentpanel utformad för att starta streamingtjänster, musikplattformar, sportskanaler, personliga medier, gaming och homelab-verktyg — allt från din Teslas inbyggda webbläsare.',
 					'about.p2': 'Det körs helt i din webbläsare utan server efter driftsättning. Kategorier kan ordnas om efter dina önskemål, och en inbyggd URL-startare låter dig öppna vilken webbplats som helst i helskärm.',
@@ -729,6 +868,7 @@ const categories = await Promise.all(
 					'btn.about': 'Over',
 					'btn.selfhost': 'Zelf hosten',
 					'btn.support': 'Steun het project',
+					'btn.charger': 'Laadcalc',
 					'about.title': 'Over Tesdash',
 					'about.p1': "Tesdash is een zelfgehost, statisch dashboard ontworpen om streamingdiensten, muziekplatformen, sportkanalen, persoonlijke media, gaming en homelab-tools te starten — allemaal vanuit de ingebouwde browser van je Tesla.",
 					'about.p2': 'Het draait volledig in je browser zonder server na de implementatie. Categorieën kunnen worden herschikt naar jouw voorkeuren, en een ingebouwde URL-launcher laat je elke website in volledig scherm openen.',
@@ -781,6 +921,7 @@ const categories = await Promise.all(
 					'btn.about': 'À propos',
 					'btn.selfhost': 'Auto-hébergement',
 					'btn.support': 'Soutenir le projet',
+					'btn.charger': 'Calc. charge',
 					'about.title': 'À propos de Tesdash',
 					'about.p1': "Tesdash est un tableau de bord statique auto-hébergé conçu pour lancer des services de streaming, des plateformes musicales, des chaînes sportives, des médias personnels, des jeux et des outils homelab — le tout depuis le navigateur intégré de votre Tesla.",
 					'about.p2': "Il fonctionne entièrement dans votre navigateur sans serveur requis après le déploiement. Les catégories peuvent être réorganisées selon vos préférences, et un lanceur d'URL intégré vous permet d'ouvrir n'importe quel site en plein écran.",
@@ -833,6 +974,7 @@ const categories = await Promise.all(
 					'btn.about': 'Om',
 					'btn.selfhost': 'Selvhostet',
 					'btn.support': 'Støt projektet',
+					'btn.charger': 'Ladekalk',
 					'about.title': 'Om Tesdash',
 					'about.p1': 'Tesdash er et selvhostet, statisk dashboard designet til at starte streamingtjenester, musikplatforme, sportskanaler, personlige medier, gaming og homelab-værktøjer — alt fra din Teslas indbyggede browser.',
 					'about.p2': 'Det kører helt i din browser uden server påkrævet efter implementering. Kategorier kan omarrangeres efter dine præferencer, og en indbygget URL-starter lader dig åbne ethvert websted i fuldskærm.',
@@ -885,6 +1027,7 @@ const categories = await Promise.all(
 					'btn.about': 'Tietoja',
 					'btn.selfhost': 'Oma isännointi',
 					'btn.support': 'Tue tätä projektia',
+					'btn.charger': 'Latauslask.',
 					'about.title': 'Tietoja Tesdashistä',
 					'about.p1': 'Tesdash on itse isännöity, staattinen kojelauta, joka on suunniteltu käynnistämään suoratoistopalveluja, musiikkialustoja, urheilukanavia, henkilökohtaisia medioita, pelejä ja homelab-työkaluja — kaikki Teslasi ajoneuvon selaimesta.',
 					'about.p2': 'Se toimii kokonaan selaimessasi ilman palvelinta käyttöönoton jälkeen. Kategorioita voidaan järjestää uudelleen mieltymystesi mukaan, ja sisäänrakennettu URL-käynnistäjä mahdollistaa minkä tahansa verkkosivuston avaamisen koko näytölle.',
@@ -937,6 +1080,7 @@ const categories = await Promise.all(
 					'btn.about': 'Info',
 					'btn.selfhost': 'Self-Hosting',
 					'btn.support': 'Supporta il progetto',
+					'btn.charger': 'Calc. ricarica',
 					'about.title': 'Informazioni su Tesdash',
 					'about.p1': "Tesdash è una dashboard statica self-hosted progettata per avviare servizi di streaming, piattaforme musicali, canali sportivi, media personali, gaming e strumenti homelab — tutto dal browser integrato della tua Tesla.",
 					'about.p2': 'Funziona interamente nel tuo browser senza server richiesto dopo il deployment. Le categorie possono essere riordinate secondo le tue preferenze, e un launcher URL integrato ti permette di aprire qualsiasi sito in modalità a schermo intero.',
@@ -989,6 +1133,7 @@ const categories = await Promise.all(
 					'btn.about': 'Acerca de',
 					'btn.selfhost': 'Auto-alojamiento',
 					'btn.support': 'Apoya el proyecto',
+					'btn.charger': 'Calc. carga',
 					'about.title': 'Acerca de Tesdash',
 					'about.p1': 'Tesdash es un panel de control estático auto-alojado diseñado para lanzar servicios de streaming, plataformas musicales, canales deportivos, medios personales, gaming y herramientas homelab — todo desde el navegador integrado de tu Tesla.',
 					'about.p2': 'Funciona completamente en tu navegador sin necesidad de servidor después del despliegue. Las categorías pueden reordenarse según tus preferencias, y un lanzador de URL integrado te permite abrir cualquier sitio web en pantalla completa.',
@@ -1041,6 +1186,7 @@ const categories = await Promise.all(
 					'btn.about': 'Sobre',
 					'btn.selfhost': 'Auto-hospedagem',
 					'btn.support': 'Apoie o projeto',
+					'btn.charger': 'Calc. carga',
 					'about.title': 'Sobre o Tesdash',
 					'about.p1': 'Tesdash é um painel estático auto-hospedado projetado para lançar serviços de streaming, plataformas musicais, canais esportivos, mídia pessoal, jogos e ferramentas homelab — tudo a partir do navegador integrado do seu Tesla.',
 					'about.p2': 'Funciona completamente no seu navegador sem servidor necessário após a implantação. As categorias podem ser reordenadas de acordo com suas preferências, e um lançador de URL integrado permite abrir qualquer site em tela cheia.',
@@ -1093,6 +1239,7 @@ const categories = await Promise.all(
 					'btn.about': 'O nas',
 					'btn.selfhost': 'Własny hosting',
 					'btn.support': 'Wesprzyj projekt',
+					'btn.charger': 'Kalk. ładowania',
 					'about.title': 'O Tesdash',
 					'about.p1': 'Tesdash to samodzielnie hostowany, statyczny pulpit nawigacyjny zaprojektowany do uruchamiania usług streamingowych, platform muzycznych, kanałów sportowych, osobistych mediów, gier i narzędzi homelab — wszystko z wbudowanej przeglądarki Twojej Tesli.',
 					'about.p2': 'Działa całkowicie w Twojej przeglądarce bez serwera wymaganego po wdrożeniu. Kategorie można zmieniać kolejność zgodnie z preferencjami, a wbudowany launcher URL umożliwia otwieranie dowolnej strony w trybie pełnoekranowym.',
@@ -1145,6 +1292,7 @@ const categories = await Promise.all(
 					'btn.about': '关于',
 					'btn.selfhost': '自托管',
 					'btn.support': '支持这个项目',
+					'btn.charger': '充电计算',
 					'about.title': '关于 Tesdash',
 					'about.p1': 'Tesdash 是一个自托管的静态仪表板，旨在从您的特斯拉车载浏览器启动流媒体服务、音乐平台、体育频道、个人媒体、游戏和家庭实验室工具。',
 					'about.p2': '它完全在您的浏览器中运行，部署后无需服务器。类别可以根据您的偏好重新排序，内置的 URL 启动器可让您以全屏模式打开任何网站。',
@@ -1256,6 +1404,116 @@ const categories = await Promise.all(
 			document.getElementById('btn-about')?.addEventListener('click', () => openModal('modal-about'));
 			document.getElementById('btn-faq')?.addEventListener('click', () => openModal('modal-faq'));
 			document.getElementById('btn-selfhost')?.addEventListener('click', () => openModal('modal-selfhost'));
+			document.getElementById('btn-charger')?.addEventListener('click', () => openModal('modal-charger'));
+
+			// ── EV Charging Calculator ──
+			const chModel    = document.getElementById('ch-model') as HTMLSelectElement;
+			const chCapacity = document.getElementById('ch-capacity') as HTMLInputElement;
+			const chCurrent  = document.getElementById('ch-current') as HTMLInputElement;
+			const chTarget   = document.getElementById('ch-target') as HTMLInputElement;
+			const chFill     = document.getElementById('ch-range-fill') as HTMLElement;
+
+			chModel?.addEventListener('change', () => {
+				if (chModel.value) {
+					chCapacity.value = chModel.value;
+					syncTimeFromSliders();
+					calcCharger();
+				}
+			});
+
+			chCapacity?.addEventListener('input', () => {
+				chModel.value = '';
+				syncTimeFromSliders();
+				calcCharger();
+			});
+
+			function updateDualRange() {
+				const lo = parseFloat(chCurrent.value);
+				const hi = parseFloat(chTarget.value);
+				chFill.style.left  = lo + '%';
+				chFill.style.width = (hi - lo) + '%';
+				// z-index: when current reaches right edge, it needs to be on top to drag back left
+				const atMax = lo >= 99;
+				chCurrent.style.zIndex = atMax ? '4' : '2';
+				chTarget.style.zIndex  = atMax ? '2' : '4';
+			}
+
+			function calcCharger() {
+				const capacity = parseFloat(chCapacity.value) || 0;
+				const power    = parseFloat((document.getElementById('ch-power') as HTMLInputElement).value) || 0;
+				const price    = parseFloat((document.getElementById('ch-price') as HTMLInputElement).value) || 0;
+				const time     = parseFloat((document.getElementById('ch-time') as HTMLInputElement).value) || 0;
+				const current  = parseFloat(chCurrent.value) || 0;
+				const target   = parseFloat(chTarget.value) || 100;
+
+				(document.getElementById('ch-current-pct') as HTMLElement).textContent = current + '%';
+				(document.getElementById('ch-target-pct') as HTMLElement).textContent  = target + '%';
+				if (capacity > 0) {
+					(document.getElementById('ch-current-kwh') as HTMLElement).textContent = (capacity * current / 100).toFixed(1) + ' kWh';
+					(document.getElementById('ch-target-kwh') as HTMLElement).textContent  = (capacity * target  / 100).toFixed(1) + ' kWh';
+				}
+				updateDualRange();
+
+				if (capacity <= 0 || power <= 0) return;
+
+				const energyNeeded = Math.max(0, capacity * (target - current) / 100);
+				const energyAdded  = Math.min(power * time, energyNeeded);
+				const finalPct     = Math.min(target, current + (energyAdded / capacity) * 100);
+				const costSession  = energyAdded * price;
+				const timeToTarget = energyNeeded / power;
+
+				const fmt     = (v: number, d = 1) => v.toFixed(d);
+				const fmtTime = (h: number) => {
+					if (h <= 0) return '0m';
+					const hh = Math.floor(h);
+					const mm = Math.round((h - hh) * 60);
+					if (hh > 0 && mm > 0) return `${hh}h ${mm}m`;
+					if (hh > 0) return `${hh}h`;
+					return `${mm}m`;
+				};
+
+				(document.getElementById('ch-result-energy') as HTMLElement).textContent     = fmt(energyAdded) + ' kWh';
+				(document.getElementById('ch-result-final') as HTMLElement).textContent      = fmt(finalPct, 0) + '%';
+				(document.getElementById('ch-result-cost') as HTMLElement).textContent       = fmt(costSession, 2) + ' €';
+				(document.getElementById('ch-result-timetofull') as HTMLElement).textContent = fmtTime(timeToTarget);
+			}
+
+			function syncTimeFromSliders() {
+				const capacity = parseFloat(chCapacity.value) || 0;
+				const power    = parseFloat((document.getElementById('ch-power') as HTMLInputElement).value) || 0;
+				const current  = parseFloat(chCurrent.value) || 0;
+				const target   = parseFloat(chTarget.value) || 0;
+				if (capacity > 0 && power > 0 && target >= current) {
+					const t = (capacity * (target - current) / 100) / power;
+					(document.getElementById('ch-time') as HTMLInputElement).value = t.toFixed(2);
+				}
+			}
+
+			chCurrent?.addEventListener('input', () => {
+				if (parseFloat(chCurrent.value) > parseFloat(chTarget.value))
+					chCurrent.value = chTarget.value;
+				syncTimeFromSliders();
+				calcCharger();
+			});
+
+			chTarget?.addEventListener('input', () => {
+				if (parseFloat(chTarget.value) < parseFloat(chCurrent.value))
+					chTarget.value = chCurrent.value;
+				syncTimeFromSliders();
+				calcCharger();
+			});
+
+			// power/capacity also recalc time since it affects how long to reach target
+			['ch-power'].forEach(id => {
+				document.getElementById(id)?.addEventListener('input', () => {
+					syncTimeFromSliders();
+					calcCharger();
+				});
+			});
+
+			document.getElementById('ch-price')?.addEventListener('input', calcCharger);
+			document.getElementById('ch-time')?.addEventListener('input', calcCharger);
+			calcCharger();
 
 			// ── Locale modal: language options ──
 			document.querySelectorAll<HTMLElement>('.locale-option').forEach(btn => {
@@ -1801,7 +2059,7 @@ const categories = await Promise.all(
 	body {
 		background-color: var(--bg);
 		color: var(--text);
-		font-family: var(--font-geist), system-ui, sans-serif;
+		font-family: var(--font-geist), 'Noto Color Emoji', system-ui, sans-serif;
 		min-height: 100dvh;
 		-webkit-font-smoothing: antialiased;
 		overflow-x: hidden;
@@ -2303,11 +2561,10 @@ const categories = await Promise.all(
 	}
 
 	@keyframes fab-bounce {
-		0%, 100%   { transform: translateY(0); }
-		10%        { transform: translateY(-10px); }
-		20%        { transform: translateY(-2px); }
-		30%        { transform: translateY(-6px); }
-		40%        { transform: translateY(0); }
+		0%, 20%, 100%  { transform: translateY(0); }
+		6%             { transform: translateY(-10px); }
+		12%            { transform: translateY(-2px); }
+		17%            { transform: translateY(-6px); }
 	}
 
 	.fab-tooltip {
@@ -2324,7 +2581,7 @@ const categories = await Promise.all(
 		padding: 0.5rem 1rem;
 		border-radius: 10px;
 		box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
-		animation: fab-bounce 3.5s ease-in-out infinite;
+		animation: fab-bounce 7s ease-in-out infinite;
 	}
 
 	.fab-tooltip-arrow {
@@ -2407,6 +2664,173 @@ const categories = await Promise.all(
 
 	.card-delete svg { width: 12px; height: 12px; }
 
+	/* ── EV Charging Calculator ── */
+	.charger-modal-title {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+	}
+
+	.charger-grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 0.75rem 1rem;
+		margin-bottom: 1.5rem;
+	}
+
+	.charger-field {
+		display: flex;
+		flex-direction: column;
+		gap: 0.4rem;
+	}
+
+	.charger-field--full { grid-column: 1 / -1; }
+
+	.charger-input-wrap {
+		position: relative;
+		display: flex;
+		align-items: center;
+	}
+
+	.charger-input-wrap .form-input { padding-right: 3.5rem; }
+
+	.charger-unit {
+		position: absolute;
+		right: 0.75rem;
+		font-size: 0.72rem;
+		color: var(--muted);
+		pointer-events: none;
+		font-weight: 600;
+		letter-spacing: 0.03em;
+	}
+
+	/* Dual range slider */
+	.dual-range-wrap {
+		position: relative;
+		height: 44px;
+		display: flex;
+		align-items: center;
+		margin-top: 0.5rem;
+	}
+
+	.dual-range-track {
+		position: absolute;
+		width: 100%;
+		height: 5px;
+		border-radius: 4px;
+		background: rgba(255, 255, 255, 0.1);
+		pointer-events: none;
+	}
+
+	.dual-range-fill {
+		position: absolute;
+		height: 100%;
+		background: linear-gradient(90deg, #94a3b8, #34d399);
+		border-radius: 4px;
+	}
+
+	.dual-range {
+		position: absolute;
+		width: 100%;
+		height: 44px; /* full touch-target height */
+		-webkit-appearance: none;
+		appearance: none;
+		background: transparent;
+		pointer-events: none;
+		outline: none;
+		touch-action: none;
+	}
+
+	.dual-range::-webkit-slider-thumb {
+		-webkit-appearance: none;
+		width: 28px;
+		height: 28px;
+		border-radius: 50%;
+		cursor: pointer;
+		pointer-events: all;
+		border: 2px solid rgba(255, 255, 255, 0.3);
+		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+		transition: transform 120ms ease, box-shadow 120ms ease;
+	}
+
+	.dual-range::-webkit-slider-thumb:active { transform: scale(1.2); }
+
+	.dual-range--lower::-webkit-slider-thumb { background: #94a3b8; }
+	.dual-range--upper::-webkit-slider-thumb {
+		background: #34d399;
+		box-shadow: 0 0 10px rgba(52, 211, 153, 0.5);
+	}
+
+	.dual-range::-moz-range-thumb {
+		width: 28px;
+		height: 28px;
+		border-radius: 50%;
+		cursor: pointer;
+		pointer-events: all;
+		border: 2px solid rgba(255, 255, 255, 0.3);
+	}
+
+	.dual-range--lower::-moz-range-thumb { background: #94a3b8; }
+	.dual-range--upper::-moz-range-thumb { background: #34d399; }
+
+	.charger-range-header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-bottom: 0.25rem;
+	}
+
+	.charger-range-values {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+	}
+
+	.charger-range-val {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-end;
+		font-size: 0.82rem;
+		font-weight: 700;
+		line-height: 1.2;
+	}
+
+	.charger-range-val--current { color: #94a3b8; }
+	.charger-range-val--target  { color: #34d399; }
+	.charger-range-arrow        { color: var(--muted); font-size: 0.8rem; }
+	.charger-range-kwh          { font-size: 0.68rem; font-weight: 400; opacity: 0.7; }
+
+	.charger-results {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 0.75rem;
+	}
+
+	.charger-stat {
+		background: rgba(255, 255, 255, 0.04);
+		border: 1px solid rgba(255, 255, 255, 0.08);
+		border-radius: 14px;
+		padding: 1rem 1.1rem;
+		display: flex;
+		flex-direction: column;
+		gap: 0.4rem;
+	}
+
+	.charger-stat-label {
+		font-size: 0.68rem;
+		font-weight: 600;
+		text-transform: uppercase;
+		letter-spacing: 0.07em;
+		color: var(--muted);
+	}
+
+	.charger-stat-value {
+		font-size: 1.5rem;
+		font-weight: 700;
+		color: var(--text);
+		line-height: 1;
+	}
+
 	/* ── Add App Form ── */
 	.form-row {
 		display: flex;
@@ -2456,8 +2880,9 @@ const categories = await Promise.all(
 
 	.form-input::placeholder { color: #475569; }
 
-	.form-select { cursor: pointer; }
-	.form-select option { background: #0f0f18; }
+	.form-select { cursor: pointer; color-scheme: dark; }
+	.form-select option   { background: #12121c; color: #F8FAFC; }
+	.form-select optgroup { background: #0a0a0f; color: #94a3b8; font-style: normal; }
 
 	.form-color {
 		width: 44px;
@@ -2681,11 +3106,58 @@ const categories = await Promise.all(
 		color: #c084fc;
 		border-color: rgba(168, 85, 247, 0.5);
 		background: rgba(168, 85, 247, 0.07);
+		transform: scale(1.03);
+	}
+
+	.header-btn--charger {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		gap: 0.4rem;
+		color: #34d399;
+		border-color: rgba(52, 211, 153, 0.35);
+		background: rgba(52, 211, 153, 0.07);
+		padding: 0.55rem 1rem;
+		font-size: 0.8rem;
+		font-weight: 600;
+		width: 100%;
+		margin-top: 0.3rem;
+	}
+
+	.header-btn--charger:hover {
+		color: #6ee7b7;
+		border-color: rgba(52, 211, 153, 0.6);
+		background: rgba(52, 211, 153, 0.12);
+	}
+
+	@keyframes lightning-flicker {
+		0%, 100% { filter: drop-shadow(0 0 2px #facc15); opacity: 1; }
+		15%       { filter: drop-shadow(0 0 6px #facc15); opacity: 0.7; }
+		30%       { filter: drop-shadow(0 0 3px #facc15); opacity: 1; }
+		60%       { filter: drop-shadow(0 0 8px #fde68a); opacity: 0.5; }
+	}
+
+	.charger-bolt {}
+
+	.bolt-trace {
+		stroke-dasharray: 20 150;
+		stroke-dashoffset: 20;
+		animation: bolt-trace 6.5s ease-in-out infinite;
+		filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.9));
+	}
+
+	@keyframes bolt-trace {
+		0%   { stroke-dashoffset: 20;   opacity: 0; }
+		3%   { stroke-dashoffset: 20;   opacity: 1; }
+		22%  { stroke-dashoffset: -100; opacity: 1; }
+		26%  { stroke-dashoffset: -120; opacity: 0; }
+		27%  { stroke-dashoffset: 20;   opacity: 0; }
+		100% { stroke-dashoffset: 20;   opacity: 0; }
 	}
 
 	@keyframes support-ping {
-		0%         { transform: translate(-50%, -50%) scale(1); opacity: 1; }
-		75%, 100%  { transform: translate(-50%, -50%) scale(2); opacity: 0; }
+		0%          { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+		26%, 100%   { transform: translate(-50%, -50%) scale(2); opacity: 0; }
 	}
 
 	.support-btn-heart {
@@ -2693,7 +3165,7 @@ const categories = await Promise.all(
 		display: inline-flex;
 		align-items: center;
 		justify-content: center;
-		animation: fab-bounce 3.5s ease-in-out infinite;
+		animation: fab-bounce 7s ease-in-out infinite;
 	}
 
 	.support-btn-ping {
@@ -2704,7 +3176,7 @@ const categories = await Promise.all(
 		height: 1.2rem;
 		border-radius: 50%;
 		background: rgba(168, 85, 247, 0.45);
-		animation: support-ping 1.8s cubic-bezier(0, 0, 0.2, 1) infinite;
+		animation: support-ping 7s cubic-bezier(0, 0, 0.2, 1) infinite;
 		pointer-events: none;
 	}
 
