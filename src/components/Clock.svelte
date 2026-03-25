@@ -50,7 +50,7 @@
 
 	.date {
 		font-size: 0.75rem;
-		color: #64748b;
+		color: #94a3b8;
 		text-transform: capitalize;
 		margin-top: 0.25rem;
 		letter-spacing: 0.05em;
