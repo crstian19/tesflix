@@ -6,19 +6,19 @@ categories:
         logo: https://cdn.simpleicons.org/appletv/ffffff
       - name: ATRESplayer
         url: https://www.atresplayer.com
-        logo: /logos/atresplayer.png
+        logo: /logos/atresplayer.webp
         color: "#FF6600"
         regions: ['ES']
       - name: Disney+
         url: https://www.disneyplus.com
-        logo: /logos/disneyplus.png
+        logo: /logos/disneyplus.webp
       - name: Crunchyroll
         url: https://www.crunchyroll.com
-        logo: /logos/crunchyroll.png
+        logo: /logos/crunchyroll.webp
         color: "#F47521"
       - name: Filmin
         url: https://www.filmin.es
-        logo: /logos/filmin.png
+        logo: /logos/filmin.webp
         color: "#F5A623"
         regions: ['ES']
       - name: Max
@@ -32,7 +32,7 @@ categories:
         regions: ['ES']
       - name: Movistar+
         url: https://ver.movistarplus.es
-        logo: /logos/movistarplus.png
+        logo: /logos/movistarplus.webp
         color: "#019DF4"
         regions: ['ES']
       - name: Netflix
@@ -43,7 +43,7 @@ categories:
         logo: /logos/prime-video.svg
       - name: RTVE Play
         url: https://www.rtve.es/play/
-        logo: /logos/rtveplay.png
+        logo: /logos/rtveplay.webp
         color: "#E30613"
         regions: ['ES']
       - name: SkyShowtime
@@ -72,7 +72,7 @@ categories:
 
       - name: F1 TV
         url: https://f1tv.formula1.com
-        logo: /logos/f1tv.png
+        logo: /logos/f1tv.webp
         color: "#E10600"
         regions: ['US', 'CA', 'AU', 'FR', 'BE', 'ES', 'PT', 'NO', 'SE', 'DK', 'FI', 'PL']
 
@@ -162,7 +162,7 @@ categories:
       # Spain
       - name: Endesa X Way
         url: https://www.endesaxway.com
-        logo: /logos/endesa-x.png
+        logo: /logos/endesa-x.webp
         color: "#00B4AA"
         scale: 1.5
         fullscreen: false
@@ -209,7 +209,7 @@ categories:
         regions: ['IT']
       - name: Enel X Way
         url: https://www.enelxway.com
-        logo: /logos/enel-x-way.png
+        logo: /logos/enel-x-way.webp
         color: "#00A651"
         scale: 1.5
         fullscreen: false
