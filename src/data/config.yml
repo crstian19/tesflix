@@ -299,7 +299,7 @@ categories:
         fullscreen: false
       - name: PlugShare
         url: https://www.plugshare.com
-        logo: /logos/plugshare.png
+        logo: /logos/plugshare.webp
         color: "#6CC04A"
         fullscreen: false
       - name: Tesla
