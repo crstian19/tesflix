@@ -6,6 +6,7 @@ import sharp from 'sharp';
 import Clock from '../components/Clock.svelte';
 import UrlLauncher from '../components/UrlLauncher.svelte';
 import { Font } from 'astro:assets';
+import ClientRouter from 'astro/components/ClientRouter.astro';
 
 interface App {
 	name: string;
@@ -120,6 +121,7 @@ const categories = await Promise.all(
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap" />
 		<Font cssVariable="--font-geist" preload />
+		<ClientRouter />
 	</head>
 
 	<body>

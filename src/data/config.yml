@@ -11,7 +11,11 @@ categories:
         regions: ['ES']
       - name: Disney+
         url: https://www.disneyplus.com
-        logo: /logos/disneyplus.svg
+        logo: /logos/disneyplus.png
+      - name: Crunchyroll
+        url: https://www.crunchyroll.com
+        logo: /logos/crunchyroll.png
+        color: "#F47521"
       - name: Filmin
         url: https://www.filmin.es
         logo: /logos/filmin.png
@@ -22,8 +26,9 @@ categories:
         logo: https://cdn.simpleicons.org/hbo/A020F0
       - name: Mitele
         url: https://www.mitele.es
-        logo: /logos/mitele.png
+        logo: /logos/mitele.svg
         color: "#E63324"
+        invert: true
         regions: ['ES']
       - name: Movistar+
         url: https://ver.movistarplus.es
@@ -32,7 +37,7 @@ categories:
         regions: ['ES']
       - name: Netflix
         url: https://www.netflix.com
-        logo: /logos/netflix-icon.svg
+        logo: /logos/netflix.svg
       - name: Prime Video
         url: https://www.primevideo.com
         logo: /logos/prime-video.svg
@@ -43,12 +48,13 @@ categories:
         regions: ['ES']
       - name: SkyShowtime
         url: https://www.skyshowtime.com
-        logo: /logos/skyshowtime.png
+        logo: /logos/skyshowtime.svg
         color: "#E4002B"
         regions: ['ES', 'PT', 'NO', 'SE', 'DK', 'FI', 'NL', 'PL']
       - name: YouTube
         url: https://www.youtube.com
         logo: /logos/youtube.svg
+        color: "#FF0000"
 
   - name: Sports
     apps:
@@ -57,15 +63,11 @@ categories:
         logo: https://cdn.simpleicons.org/dazn/F8F8F8
         color: "#ffff00"
         regions: ['DE', 'AT', 'CH', 'IT', 'ES', 'US', 'CA', 'JP']
-      - name: Eleven Sports
-        url: https://www.elevensports.com
-        logo: /logos/elevensports.png
-        color: "#FF6600"
-        regions: ['ES', 'PT']
       - name: Eurosport
         url: https://www.eurosport.com
-        logo: /logos/eurosport.png
+        logo: /logos/eurosport.webp
         color: "#003DA5"
+        scale: 1.5
         regions: ['DE', 'AT', 'CH', 'FR', 'BE', 'NL', 'ES', 'PT', 'IT', 'NO', 'SE', 'DK', 'FI', 'PL', 'GB', 'IE']
 
       - name: F1 TV
@@ -73,10 +75,6 @@ categories:
         logo: /logos/f1tv.png
         color: "#E10600"
         regions: ['US', 'CA', 'AU', 'FR', 'BE', 'ES', 'PT', 'NO', 'SE', 'DK', 'FI', 'PL']
-      - name: NBA League Pass
-        url: https://www.nba.com/watch
-        logo: /logos/nba.png
-        color: "#1D428A"
 
   # Personal Media is intentionally hidden from the public dashboard.
   # Access your personal apps via the owner page (/me).
@@ -166,6 +164,7 @@ categories:
         url: https://www.endesaxway.com
         logo: /logos/endesa-x.png
         color: "#00B4AA"
+        scale: 1.5
         fullscreen: false
         regions: ['ES']
       - name: Iberdrola SmartCharge
@@ -178,6 +177,7 @@ categories:
         url: https://zunder.com
         logo: /logos/zunder.svg
         color: "#FF6B00"
+        scale: 1.5
         fullscreen: false
         regions: ['ES']
       # France
@@ -209,8 +209,9 @@ categories:
         regions: ['IT']
       - name: Enel X Way
         url: https://www.enelxway.com
-        logo: /logos/enel-x-way.svg
+        logo: /logos/enel-x-way.png
         color: "#00A651"
+        scale: 1.5
         fullscreen: false
         regions: ['IT', 'ES', 'PT', 'DE', 'FR', 'NL', 'BE', 'CH']
       # Ireland
@@ -261,12 +262,13 @@ categories:
         fullscreen: false
         regions: ['NO', 'SE', 'DK', 'FI']
 
-      - name: Chargemap
-        url: https://chargemap.com
-        logo: /logos/chargemap.svg
-        color: "#00A650"
+      - name: Electromaps
+        url: https://www.electromaps.com
+        logo: /logos/electromaps.svg
+        color: "#00B4AA"
+        scale: 1.5
         fullscreen: false
-        regions: ['FR', 'BE', 'NL', 'DE', 'AT', 'CH', 'IT', 'ES', 'PT', 'LU']
+        regions: ['ES']
       - name: IONITY
         url: https://ionity.eu
         logo: /logos/Ionity.svg
@@ -286,9 +288,6 @@ categories:
         url: https://play.geforcenow.com
         logo: https://cdn.simpleicons.org/nvidia/76B900
 
-      - name: Twitch
-        url: https://www.twitch.tv
-        logo: /logos/twitch.svg
       - name: Xbox Cloud
         url: https://www.xbox.com/play
         logo: /logos/xbox.svg
