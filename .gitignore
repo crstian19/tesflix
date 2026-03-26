@@ -19,6 +19,9 @@ src/data/config.me.yml
 .DS_Store
 Thumbs.db
 
+# Unlighthouse reports
+.unlighthouse/
+
 # Claude Code
 CLAUDE.md
 .claude/
