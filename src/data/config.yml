@@ -3,7 +3,7 @@ categories:
     apps:
       - name: Apple TV+
         url: https://tv.apple.com
-        logo: https://cdn.simpleicons.org/appletv/ffffff
+        logo: /logos/appletv.svg
       - name: ATRESplayer
         url: https://www.atresplayer.com
         logo: /logos/atresplayer.webp
@@ -23,10 +23,10 @@ categories:
         regions: ['ES']
       - name: Max
         url: https://www.max.com
-        logo: https://cdn.simpleicons.org/hbo/A020F0
+        logo: /logos/hbo.svg
       - name: Mitele
         url: https://www.mitele.es
-        logo: /logos/mitele.svg
+        logo: /logos/mitele.webp
         color: "#E63324"
         invert: true
         regions: ['ES']
@@ -60,7 +60,7 @@ categories:
     apps:
       - name: DAZN
         url: https://www.dazn.com
-        logo: https://cdn.simpleicons.org/dazn/F8F8F8
+        logo: /logos/dazn.svg
         color: "#ffff00"
         regions: ['DE', 'AT', 'CH', 'IT', 'ES', 'US', 'CA', 'JP']
       - name: Eurosport
@@ -286,7 +286,7 @@ categories:
     apps:
       - name: GeForce Now
         url: https://play.geforcenow.com
-        logo: https://cdn.simpleicons.org/nvidia/76B900
+        logo: /logos/nvidia.svg
 
       - name: Xbox Cloud
         url: https://www.xbox.com/play
@@ -304,7 +304,7 @@ categories:
         fullscreen: false
       - name: Tesla
         url: https://www.tesla.com
-        logo: https://cdn.simpleicons.org/tesla/CC0000
+        logo: /logos/tesla.svg
         fullscreen: false
 
       - name: Ventusky
@@ -314,5 +314,5 @@ categories:
         fullscreen: false
       - name: Waze
         url: https://www.waze.com
-        logo: https://cdn.simpleicons.org/waze/05C8F7
+        logo: /logos/waze.svg
         fullscreen: false

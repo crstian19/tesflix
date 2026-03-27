@@ -26,7 +26,7 @@ for (const file of toProcess) {
 	const outputName = `${nameWithoutExt}.webp`;
 	const outputPath = join(LOGOS_DIR, outputName);
 
-	const pipeline = sharp(inputPath).resize(200, 200, { fit: 'inside', withoutEnlargement: true }).webp({ quality: WEBP_QUALITY, effort: 6 });
+	const pipeline = sharp(inputPath).resize(160, 160, { fit: 'inside', withoutEnlargement: true }).webp({ quality: WEBP_QUALITY, effort: 6 });
 
 	if (ext === '.webp') {
 		const tmpPath = outputPath + '.tmp.webp';
