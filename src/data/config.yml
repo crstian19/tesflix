@@ -98,13 +98,13 @@ categories:
       # United States
       - name: Blink Charging
         url: https://www.blinkcharging.com
-        logo: /logos/blink-logo-wht.png
+        logo: /logos/blink-charging.webp
         color: "#0068FF"
         fullscreen: false
         regions: ['US']
       - name: ChargePoint
         url: https://www.chargepoint.com
-        logo: /logos/ChargePoint_logo.png
+        logo: /logos/chargepoint.webp
         color: "#0078D4"
         fullscreen: false
         regions: ['US', 'CA']
@@ -116,46 +116,46 @@ categories:
         regions: ['US']
       - name: EVgo
         url: https://www.evgo.com
-        logo: /logos/EVGO.png
+        logo: /logos/evgo.webp
         color: "#00A651"
         fullscreen: false
         regions: ['US']
       # Canada
       - name: FLO
         url: https://flo.com
-        logo: /logos/flo.png
+        logo: /logos/flo.webp
         color: "#00A550"
         fullscreen: false
         regions: ['CA']
       # Australia
       - name: Chargefox
         url: https://www.chargefox.com
-        logo: /logos/chargefox.png
+        logo: /logos/chargefox.webp
         color: "#F26522"
         fullscreen: false
         regions: ['AU']
       - name: Evie Networks
         url: https://evienetworks.com.au
-        logo: /logos/evie.png
+        logo: /logos/evie-networks.webp
         color: "#00B2A9"
         fullscreen: false
         regions: ['AU']
       - name: NRMA Charging
         url: https://www.mynrma.com.au/electric-vehicles/charging
-        logo: /logos/nrma.png
+        logo: /logos/nrma-charging.webp
         color: "#E31837"
         fullscreen: false
         regions: ['AU']
       # China
       - name: State Grid EV
         url: https://www.evcs.com.cn
-        logo: /logos/State-Grid-Corporation-of-China-Logo.png
+        logo: /logos/state-grid-ev.webp
         color: "#006DB8"
         fullscreen: false
         regions: ['CN']
       - name: TELD
         url: https://www.teld.cn
-        logo: /logos/teld.png
+        logo: /logos/teld.webp
         color: "#00A651"
         fullscreen: false
         regions: ['CN']
@@ -189,21 +189,21 @@ categories:
         regions: ['FR']
       - name: TotalEnergies Charge
         url: https://charge.totalenergies.fr
-        logo: /logos/totalenergies.png
+        logo: /logos/totalenergies.webp
         color: "#FF1430"
         fullscreen: false
         regions: ['FR', 'BE', 'LU']
       # Germany + Austria + Switzerland
       - name: EnBW mobility+
         url: https://www.enbw.com/elektromobilitaet
-        logo: /logos/enbw.png
+        logo: /logos/enbw.webp
         color: "#E2001A"
         fullscreen: false
         regions: ['DE', 'AT', 'CH']
       # Italy
       - name: Be Charge
         url: https://www.becharge.it
-        logo: /logos/Be_Charge_logo.png
+        logo: /logos/be-charge.webp
         color: "#0033A0"
         fullscreen: false
         regions: ['IT']
@@ -217,47 +217,47 @@ categories:
       # Ireland
       - name: ESB eCars
         url: https://www.esb.ie/esb-ecars
-        logo: /logos/ESB-brandmark-strapline-pos-2014-copy.png
+        logo: /logos/esb-ecars.webp
         color: "#003DA5"
         fullscreen: false
         regions: ['IE']
       # Portugal
       - name: EDP Charge
         url: https://edpcharge.pt
-        logo: /logos/EDP.png
+        logo: /logos/edp-charge.webp
         color: "#E31837"
         fullscreen: false
         regions: ['PT']
       - name: Galp EV
         url: https://www.galp.com/corp/en/drivers/electric-mobility
-        logo: /logos/Galp_Logo_2024.png
+        logo: /logos/galp-ev.webp
         color: "#FF6600"
         fullscreen: false
         regions: ['PT']
       # Netherlands + Belgium
       - name: Fastned
         url: https://fastnedcharging.com
-        logo: /logos/Fastned_new_logo.png
+        logo: /logos/fastned.webp
         color: "#FFD200"
         fullscreen: false
         regions: ['NL', 'BE', 'DE', 'FR', 'GB', 'CH']
       # UK
       - name: Osprey Charging
         url: https://ospreycharging.co.uk
-        logo: /logos/osprey.png
+        logo: /logos/osprey.webp
         color: "#00B0F0"
         fullscreen: false
         regions: ['GB']
       - name: Pod Point
         url: https://pod-point.com
-        logo: "/logos/Pod Point.png"
+        logo: /logos/podpoint.webp
         color: "#00A650"
         fullscreen: false
         regions: ['GB']
       # Nordics
       - name: Recharge (Circle K)
         url: https://rechargeinfra.com
-        logo: "/logos/recharge (circle k).png"
+        logo: /logos/recharge.webp
         color: "#E2001A"
         fullscreen: false
         regions: ['NO', 'SE', 'DK', 'FI']
@@ -277,7 +277,7 @@ categories:
         regions: ['DE', 'AT', 'CH', 'FR', 'BE', 'NL', 'ES', 'PT', 'NO', 'SE', 'DK', 'FI', 'PL', 'IT', 'GB', 'IE']
       - name: PlugSurfing
         url: https://plugsurfing.com
-        logo: /logos/Plugsurfing_white.png
+        logo: /logos/plugsurfing.webp
         color: "#6CBE45"
         fullscreen: false
         regions: ['DE', 'AT', 'CH', 'NL', 'BE', 'FR', 'SE', 'NO', 'DK', 'FI', 'PL']
@@ -290,7 +290,7 @@ categories:
 
       - name: Xbox Cloud
         url: https://www.xbox.com/play
-        logo: /logos/xbox-cloud.png
+        logo: /logos/xbox-cloud.webp
   - name: Utility
     apps:
       - name: Google Maps
@@ -309,7 +309,7 @@ categories:
 
       - name: Ventusky
         url: https://www.ventusky.com
-        logo: /logos/ventusky.png
+        logo: /logos/ventusky.webp
         color: "#2196F3"
         fullscreen: false
       - name: Waze
