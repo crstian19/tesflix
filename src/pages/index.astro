@@ -305,43 +305,42 @@ const categories = await Promise.all(
 						EV Charging Calculator
 					</h2>
 					<div class="form-row" style="margin-bottom:1rem">
-						<label class="form-label" for="ch-model">Tesla Model</label>
-						<select class="form-input form-select" id="ch-model">
-							<option value="">— Custom —</option>
-							<optgroup label="Model 3 (pre-Highland)">
-								<option value="57.5">Model 3 RWD — 57.5 kWh net</option>
-								<option value="75">Model 3 Long Range AWD — 75 kWh net</option>
-								<option value="75">Model 3 Performance — 75 kWh net</option>
-							</optgroup>
-							<optgroup label="Model 3 Highland (2024+)">
-								<option value="57.5">Model 3 Highland RWD — 57.5 kWh net</option>
-								<option value="75">Model 3 Highland Long Range AWD — 75 kWh net</option>
-								<option value="75">Model 3 Highland Performance — 75 kWh net</option>
-							</optgroup>
-							<optgroup label="Model Y (pre-Juniper)">
-								<option value="57.5">Model Y RWD — 57.5 kWh net</option>
-								<option value="75">Model Y Long Range AWD — 75 kWh net</option>
-								<option value="75">Model Y Performance — 75 kWh net</option>
-							</optgroup>
-							<optgroup label="Model Y Juniper (2025+)">
-								<option value="57.5">Model Y Juniper RWD — 57.5 kWh net</option>
-								<option value="75">Model Y Juniper Long Range AWD — 75 kWh net</option>
-								<option value="75">Model Y Juniper Performance — 75 kWh net</option>
-							</optgroup>
-							<optgroup label="Model S">
-								<option value="95">Model S Long Range — 95 kWh net</option>
-								<option value="95">Model S Plaid — 95 kWh net</option>
-							</optgroup>
-							<optgroup label="Model X">
-								<option value="95">Model X Long Range — 95 kWh net</option>
-								<option value="95">Model X Plaid — 95 kWh net</option>
-							</optgroup>
-							<optgroup label="Cybertruck">
-								<option value="108">Cybertruck Standard Range — 108 kWh net</option>
-								<option value="119">Cybertruck Long Range — 119 kWh net</option>
-								<option value="119">Cybertruck Cyberbeast — 119 kWh net</option>
-							</optgroup>
-						</select>
+						<label class="form-label" id="ch-model-label">Tesla Model</label>
+						<div class="csel-wrap" id="ch-model-wrap" role="combobox" aria-haspopup="listbox" aria-expanded="false" aria-labelledby="ch-model-label">
+							<button class="form-input csel-btn" id="ch-model-btn" type="button" aria-haspopup="listbox">
+								<span id="ch-model-text">— Custom —</span>
+								<svg class="csel-arrow" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+							</button>
+							<ul class="csel-list" id="ch-model-list" role="listbox" aria-labelledby="ch-model-label">
+								<li class="csel-option csel-selected" role="option" data-value="" aria-selected="true">— Custom —</li>
+								<li class="csel-group" role="presentation">Model 3 (pre-Highland)</li>
+								<li class="csel-option" role="option" data-value="57.5">Model 3 RWD — 57.5 kWh net</li>
+								<li class="csel-option" role="option" data-value="75">Model 3 Long Range AWD — 75 kWh net</li>
+								<li class="csel-option" role="option" data-value="75">Model 3 Performance — 75 kWh net</li>
+								<li class="csel-group" role="presentation">Model 3 Highland (2024+)</li>
+								<li class="csel-option" role="option" data-value="57.5">Model 3 Highland RWD — 57.5 kWh net</li>
+								<li class="csel-option" role="option" data-value="75">Model 3 Highland Long Range AWD — 75 kWh net</li>
+								<li class="csel-option" role="option" data-value="75">Model 3 Highland Performance — 75 kWh net</li>
+								<li class="csel-group" role="presentation">Model Y (pre-Juniper)</li>
+								<li class="csel-option" role="option" data-value="57.5">Model Y RWD — 57.5 kWh net</li>
+								<li class="csel-option" role="option" data-value="75">Model Y Long Range AWD — 75 kWh net</li>
+								<li class="csel-option" role="option" data-value="75">Model Y Performance — 75 kWh net</li>
+								<li class="csel-group" role="presentation">Model Y Juniper (2025+)</li>
+								<li class="csel-option" role="option" data-value="57.5">Model Y Juniper RWD — 57.5 kWh net</li>
+								<li class="csel-option" role="option" data-value="75">Model Y Juniper Long Range AWD — 75 kWh net</li>
+								<li class="csel-option" role="option" data-value="75">Model Y Juniper Performance — 75 kWh net</li>
+								<li class="csel-group" role="presentation">Model S</li>
+								<li class="csel-option" role="option" data-value="95">Model S Long Range — 95 kWh net</li>
+								<li class="csel-option" role="option" data-value="95">Model S Plaid — 95 kWh net</li>
+								<li class="csel-group" role="presentation">Model X</li>
+								<li class="csel-option" role="option" data-value="95">Model X Long Range — 95 kWh net</li>
+								<li class="csel-option" role="option" data-value="95">Model X Plaid — 95 kWh net</li>
+								<li class="csel-group" role="presentation">Cybertruck</li>
+								<li class="csel-option" role="option" data-value="108">Cybertruck Standard Range — 108 kWh net</li>
+								<li class="csel-option" role="option" data-value="119">Cybertruck Long Range — 119 kWh net</li>
+								<li class="csel-option" role="option" data-value="119">Cybertruck Cyberbeast — 119 kWh net</li>
+							</ul>
+						</div>
 					</div>
 					<div class="charger-grid">
 						<div class="charger-field">
@@ -1480,22 +1479,60 @@ const categories = await Promise.all(
 			document.getElementById('btn-charger')?.addEventListener('click', () => openModal('modal-charger'));
 
 			// ── EV Charging Calculator ──
-			const chModel    = document.getElementById('ch-model') as HTMLSelectElement;
-			const chCapacity = document.getElementById('ch-capacity') as HTMLInputElement;
-			const chCurrent  = document.getElementById('ch-current') as HTMLInputElement;
-			const chTarget   = document.getElementById('ch-target') as HTMLInputElement;
-			const chFill     = document.getElementById('ch-range-fill') as HTMLElement;
+			// Custom select for Tesla model (native <select> broken inside backdrop-filter stacking contexts)
+			let chModelValue = '';
+			const chModelWrap  = document.getElementById('ch-model-wrap') as HTMLElement;
+			const chModelBtn   = document.getElementById('ch-model-btn') as HTMLButtonElement;
+			const chModelText  = document.getElementById('ch-model-text') as HTMLElement;
+			const chModelList  = document.getElementById('ch-model-list') as HTMLElement;
 
-			chModel?.addEventListener('change', () => {
-				if (chModel.value) {
-					chCapacity.value = chModel.value;
+			function cselOpen() {
+				chModelWrap.setAttribute('aria-expanded', 'true');
+				chModelList.classList.add('csel-list--open');
+			}
+			function cselClose() {
+				chModelWrap.setAttribute('aria-expanded', 'false');
+				chModelList.classList.remove('csel-list--open');
+			}
+
+			chModelBtn?.addEventListener('click', (e) => {
+				e.stopPropagation();
+				chModelList.classList.contains('csel-list--open') ? cselClose() : cselOpen();
+			});
+
+			chModelList?.addEventListener('click', (e) => {
+				const li = (e.target as HTMLElement).closest<HTMLElement>('.csel-option');
+				if (!li) return;
+				chModelValue = li.dataset.value ?? '';
+				chModelText.textContent = li.textContent ?? '';
+				chModelList.querySelectorAll('.csel-option').forEach(o => {
+					o.classList.toggle('csel-selected', o === li);
+					o.setAttribute('aria-selected', String(o === li));
+				});
+				cselClose();
+				if (chModelValue) {
+					chCapacity.value = chModelValue;
 					syncTimeFromSliders();
 					calcCharger();
 				}
 			});
 
+			document.addEventListener('click', (e) => {
+				if (!chModelWrap?.contains(e.target as Node)) cselClose();
+			});
+
+			const chCapacity = document.getElementById('ch-capacity') as HTMLInputElement;
+			const chCurrent  = document.getElementById('ch-current') as HTMLInputElement;
+			const chTarget   = document.getElementById('ch-target') as HTMLInputElement;
+			const chFill     = document.getElementById('ch-range-fill') as HTMLElement;
+
 			chCapacity?.addEventListener('input', () => {
-				chModel.value = '';
+				chModelValue = '';
+				chModelText.textContent = '— Custom —';
+				chModelList?.querySelectorAll('.csel-option').forEach((o, i) => {
+					o.classList.toggle('csel-selected', i === 0);
+					o.setAttribute('aria-selected', i === 0 ? 'true' : 'false');
+				});
 				syncTimeFromSliders();
 				calcCharger();
 			});
@@ -3188,6 +3225,65 @@ const categories = await Promise.all(
 	.form-select { cursor: pointer; color-scheme: dark; }
 	.form-select option   { background: #12121c; color: #F8FAFC; }
 	.form-select optgroup { background: #0a0a0f; color: #94a3b8; font-style: normal; }
+
+	/* Custom select — avoids native dropdown issues inside backdrop-filter stacking contexts (Tesla browser) */
+	.csel-wrap { position: relative; width: 100%; }
+
+	.csel-btn {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 0.5rem;
+		cursor: pointer;
+		text-align: left;
+		user-select: none;
+	}
+
+	.csel-arrow {
+		flex-shrink: 0;
+		opacity: 0.6;
+		transition: transform 150ms ease;
+	}
+	[aria-expanded="true"] .csel-arrow { transform: rotate(180deg); }
+
+	.csel-list {
+		display: none;
+		position: absolute;
+		top: calc(100% + 6px);
+		left: 0;
+		right: 0;
+		z-index: 200;
+		background: #12121c;
+		border: 1px solid rgba(255,255,255,0.12);
+		border-radius: 10px;
+		list-style: none;
+		margin: 0;
+		padding: 0.25rem 0;
+		max-height: 260px;
+		overflow-y: auto;
+		box-shadow: 0 16px 40px rgba(0,0,0,0.6);
+	}
+	.csel-list--open { display: block; }
+
+	.csel-group {
+		padding: 0.55rem 0.9rem 0.2rem;
+		font-size: 0.7rem;
+		font-weight: 600;
+		letter-spacing: 0.06em;
+		text-transform: uppercase;
+		color: #64748b;
+		pointer-events: none;
+	}
+
+	.csel-option {
+		padding: 0.6rem 0.9rem;
+		font-size: 0.875rem;
+		color: #F8FAFC;
+		cursor: pointer;
+		transition: background 100ms ease;
+	}
+	.csel-option:hover { background: rgba(255,255,255,0.07); }
+	.csel-option.csel-selected { color: #e50914; }
 
 	.form-color {
 		width: 44px;
