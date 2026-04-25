@@ -111,8 +111,29 @@ const categories = await Promise.all(
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<title>Tesdash</title>
-		<meta name="description" content="Tesdash — a community-made dashboard for Tesla's in-car browser. Stream music, videos, and more directly from your Tesla." />
+		<title>Tesdash — Apps for Tesla's In-Car Browser</title>
+		<meta name="description" content="Dashboard for Tesla's browser. Stream Crunchyroll, Netflix & YouTube, find EV charging with PlugShare, play GeForce Now — 40+ apps for Tesla." />
+		<link rel="canonical" href="https://tesflix.crstian.me/" />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://tesflix.crstian.me/" />
+		<meta property="og:site_name" content="Tesdash" />
+		<meta property="og:title" content="Tesdash — Apps for Tesla's In-Car Browser" />
+		<meta property="og:description" content="Dashboard for Tesla's browser. Stream Crunchyroll, Netflix & YouTube, find EV charging with PlugShare, play GeForce Now — 40+ apps for Tesla." />
+		<meta property="og:image" content="https://tesflix.crstian.me/logos/tesdash.webp" />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content="Tesdash — Apps for Tesla's In-Car Browser" />
+		<meta name="twitter:description" content="Dashboard for Tesla's browser. Stream Crunchyroll, Netflix & YouTube, find EV charging with PlugShare, play GeForce Now — 40+ apps for Tesla." />
+		<meta name="twitter:image" content="https://tesflix.crstian.me/logos/tesdash.webp" />
+		<script type="application/ld+json" set:html={JSON.stringify({
+			"@context": "https://schema.org",
+			"@type": "WebApplication",
+			"name": "Tesdash",
+			"url": "https://tesflix.crstian.me",
+			"description": "Open-source dashboard for Tesla's in-car browser with 40+ apps for streaming, EV charging, gaming, and navigation.",
+			"applicationCategory": "UtilitiesApplication",
+			"operatingSystem": "Tesla Browser",
+			"offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+		})} />
 		<link rel="icon" href="/favicon.ico" sizes="any" />
 		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
 		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />

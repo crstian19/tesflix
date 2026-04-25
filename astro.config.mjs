@@ -1,9 +1,11 @@
 import { defineConfig, fontProviders } from 'astro/config';
 import svelte from '@astrojs/svelte';
+import sitemap from '@astrojs/sitemap';
 import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
-	integrations: [svelte()],
+	site: 'https://tesflix.crstian.me',
+	integrations: [svelte(), sitemap({ filter: (page) => !page.includes('/me') })],
 	build: {
 		inlineStylesheets: 'always'
 	},
