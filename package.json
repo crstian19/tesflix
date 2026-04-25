@@ -11,20 +11,20 @@
 	},
 	"dependencies": {
 		"@astrojs/sitemap": "^3.7.2",
-		"@astrojs/svelte": "^8.0.0",
-		"astro": "^6.0.5",
-		"svelte": "^5.53.12",
-		"three": "^0.183.2"
+		"@astrojs/svelte": "^8.0.5",
+		"astro": "^6.1.9",
+		"svelte": "^5.55.5",
+		"three": "^0.184.0"
 	},
 	"devDependencies": {
-		"@tailwindcss/vite": "^4.0.0",
+		"@tailwindcss/vite": "^4.2.4",
 		"@types/js-yaml": "^4.0.9",
 		"@types/sharp": "^0.32.0",
-		"@types/three": "^0.183.1",
-		"daisyui": "^5.0.0",
-		"js-yaml": "^4.1.0",
+		"@types/three": "^0.184.0",
+		"daisyui": "^5.5.19",
+		"js-yaml": "^4.1.1",
 		"sharp": "^0.34.5",
-		"tailwindcss": "^4.0.0",
-		"typescript": "^5.0.0"
+		"tailwindcss": "^4.2.4",
+		"typescript": "^5"
 	}
 }
