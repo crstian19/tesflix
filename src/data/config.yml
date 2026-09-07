@@ -291,6 +291,14 @@ categories:
       - name: Xbox Cloud
         url: https://www.xbox.com/play
         logo: /logos/xbox-cloud.webp
+  - name: Community
+    apps:
+      - name: TeslaWave
+        url: https://teslawave.app
+        logo: /logos/teslawave.svg
+        color: "#6EE7FF"
+        fullscreen: false
+
   - name: Utility
     apps:
       - name: Google Maps
