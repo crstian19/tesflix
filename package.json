@@ -7,7 +7,10 @@
 		"dev": "astro dev",
 		"prebuild": "node scripts/write-me-config.mjs",
 		"build": "astro build",
-		"preview": "astro preview"
+		"preview": "astro preview",
+		"test": "vitest run",
+		"test:e2e": "playwright test",
+		"test:e2e:ui": "playwright test --ui"
 	},
 	"dependencies": {
 		"@astrojs/sitemap": "^3.7.2",
@@ -19,14 +22,20 @@
 		"three": "^0.186.0"
 	},
 	"devDependencies": {
+		"@playwright/test": "^1.63.0",
+		"@sveltejs/vite-plugin-svelte": "^7.3.0",
 		"@tailwindcss/vite": "^4.2.4",
+		"@testing-library/jest-dom": "^7.0.1",
+		"@testing-library/svelte": "^5.4.2",
 		"@types/canvas-confetti": "^1.9.0",
 		"@types/sharp": "^0.32.0",
 		"@types/three": "^0.185.0",
 		"daisyui": "^5.5.19",
+		"happy-dom": "^20.14.0",
 		"js-yaml": "^5.0.0",
 		"sharp": "^0.35.0",
 		"tailwindcss": "^4.2.4",
-		"typescript": "^5"
+		"typescript": "^5",
+		"vitest": "^5.0.0"
 	}
 }
