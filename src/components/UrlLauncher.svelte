@@ -1,5 +1,5 @@
 <script lang="ts">
-	const YOUTUBE_REDIRECT = 'https://www.youtube.com/redirect?q=';
+	import { buildLaunchUrl } from '../lib/url';
 
 	const TRANSLATIONS: Record<string, { placeholder: string; btn: string; error: string }> = {
 		en: {
@@ -92,21 +92,14 @@
 	});
 
 	function launch() {
-		let target = url.trim();
-		if (!target) return;
-
-		if (!target.startsWith('http://') && !target.startsWith('https://')) {
-			target = 'https://' + target;
+		const wrapped = buildLaunchUrl(url);
+		if (!wrapped) {
+			if (url.trim()) error = true;
+			return;
 		}
-
-		try {
-			new URL(target); // valida que sea una URL real
-			error = false;
-			window.open(`${YOUTUBE_REDIRECT}${encodeURIComponent(target)}`, '_blank');
-			url = '';
-		} catch {
-			error = true;
-		}
+		error = false;
+		window.open(wrapped, '_blank');
+		url = '';
 	}
 
 	function onKeydown(e: KeyboardEvent) {

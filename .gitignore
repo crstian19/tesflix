@@ -25,3 +25,5 @@ Thumbs.db
 # Claude Code
 CLAUDE.md
 .claude/
+test-results/
+playwright-report/
