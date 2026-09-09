@@ -16,7 +16,7 @@
 		"canvas-confetti": "^1.9.4",
 		"lottie-web": "^5.13.0",
 		"svelte": "^5.55.5",
-		"three": "^0.185.0"
+		"three": "^0.186.0"
 	},
 	"devDependencies": {
 		"@tailwindcss/vite": "^4.2.4",
